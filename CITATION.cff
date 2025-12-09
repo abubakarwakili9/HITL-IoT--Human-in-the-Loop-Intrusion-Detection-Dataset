@@ -1,0 +1,10 @@
+`bibtex
+@dataset{Wakili2025hitliot_dataset,
+  author       = {Abubakar Wakili, Muhammad Idris, Sara Bakkali 
+                  },
+  title        = {HITL-IoT: Human-in-the-Loop Intrusion Detection Dataset},
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.XXXXXXX},
+  url          = {https://doi.org/10.5281/zenodo.XXXXXXX}
+}

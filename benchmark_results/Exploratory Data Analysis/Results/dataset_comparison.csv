@@ -1,0 +1,7 @@
+Dataset,Year,Flows,Devices,Attacks,HITL Focus,Human Annotations,EU AI Act Compliant,Reproducibility,Focus
+ToN-IoT,2020,42M,10+,9,✗,0,✗,Partial,Heterogeneous
+Edge-IIoTset,2022,1.0M,10+,14,✗,0,✗,Partial,7-layer arch
+CICIoT2023,2023,46.7M,105,33,✗,0,✗,Partial,Large-scale
+CICIoMT2024,2024,N/A,40,18,✗,0,✗,Partial,Healthcare
+IDSIoT2024,2024,N/A,Multiple,12,✗,0,✗,Partial,Real-time
+HITL-IoT (Ours),2024,128K,5,12,✓,10227,✓,Perfect (Checksum),Human-AI Collab
