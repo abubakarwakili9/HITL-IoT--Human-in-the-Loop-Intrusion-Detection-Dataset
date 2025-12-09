@@ -278,7 +278,7 @@ print(f"Recall: {results['recall']:.4f}")
 
 ### **Primary Download (Zenodo)**
 
-**🔗 [Download from Zenodo](https://doi.org/10.5281/zenodo.XXXXXXX)**
+**🔗 [Download from Zenodo](https://doi.org/10.5281/zenodo.17862334)**
 
 The complete HITL-IoT dataset is hosted on Zenodo with a permanent DOI for citation.
 
@@ -309,8 +309,8 @@ If you use this dataset in your research, please cite both the dataset and the p
   title        = {HITL-IoT: Human-in-the-Loop Intrusion Detection Dataset},
   year         = 2025,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {https://doi.org/10.5281/zenodo.XXXXXXX}
+  doi          = {10.5281/zenodo.17862334},
+  url          = {https://doi.org/10.5281/zenodo.17862334}
 }
 ```
 
