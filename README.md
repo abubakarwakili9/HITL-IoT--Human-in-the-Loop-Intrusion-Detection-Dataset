@@ -391,8 +391,8 @@ This dataset is licensed under the **[Creative Commons Attribution 4.0 Internati
 
 ### **Links:**
 - 🌐 **Project Website:** https://abubakarwakili9.github.io/HITL-IoT
-- 📦 **Dataset (Zenodo):** https://doi.org/10.5281/zenodo.XXXXXXX
-- 📄 **Paper (IEEE TIFS):** https://doi.org/your-paper-doi
+- 📦 **Dataset (Zenodo):** https://doi.org/10.5281/zenodo.178623341
+- 📄 **Paper (IEEE):** https://doi.org/paper-doi
 - 💻 **GitHub:** https://github.com/[username]/HITL-IoT
 
 ---
@@ -402,7 +402,7 @@ This dataset is licensed under the **[Creative Commons Attribution 4.0 Internati
 ![GitHub stars](https://img.shields.io/github/stars/[username]/HITL-IoT?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/[username]/HITL-IoT?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/[username]/HITL-IoT?style=social)
-![Downloads](https://img.shields.io/badge/dynamic/json?url=https://zenodo.org/api/records/XXXXXXX&label=downloads&query=$.metadata.downloads&color=blue)
+![Downloads](https://img.shields.io/badge/dynamic/json?url=https://zenodo.org/api/records/17862334&label=downloads&query=$.metadata.downloads&color=blue)
 
 ---
 
