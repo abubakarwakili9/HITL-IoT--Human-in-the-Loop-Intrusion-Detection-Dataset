@@ -278,7 +278,7 @@ print(f"Recall: {results['recall']:.4f}")
 
 ### **Primary Download (Zenodo)**
 
-**🔗 [Download from Zenodo](https://doi.org/10.5281/zenodo.XXXXXXX)**
+**🔗 [Download from Zenodo](https://doi.org/10.5281/zenodo.17862334)**
 
 The complete HITL-IoT dataset is hosted on Zenodo with a permanent DOI for citation.
 
@@ -309,8 +309,8 @@ If you use this dataset in your research, please cite both the dataset and the p
   title        = {HITL-IoT: Human-in-the-Loop Intrusion Detection Dataset},
   year         = 2025,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {https://doi.org/10.5281/zenodo.XXXXXXX}
+  doi          = {10.5281/zenodo.17862334},
+  url          = {https://doi.org/10.5281/zenodo.17862334}
 }
 ```
 
@@ -391,8 +391,8 @@ This dataset is licensed under the **[Creative Commons Attribution 4.0 Internati
 
 ### **Links:**
 - 🌐 **Project Website:** https://abubakarwakili9.github.io/HITL-IoT
-- 📦 **Dataset (Zenodo):** https://doi.org/10.5281/zenodo.XXXXXXX
-- 📄 **Paper (IEEE TIFS):** https://doi.org/your-paper-doi
+- 📦 **Dataset (Zenodo):** https://doi.org/10.5281/zenodo.178623341
+- 📄 **Paper (IEEE):** https://doi.org/paper-doi
 - 💻 **GitHub:** https://github.com/[username]/HITL-IoT
 
 ---
@@ -402,7 +402,7 @@ This dataset is licensed under the **[Creative Commons Attribution 4.0 Internati
 ![GitHub stars](https://img.shields.io/github/stars/[username]/HITL-IoT?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/[username]/HITL-IoT?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/[username]/HITL-IoT?style=social)
-![Downloads](https://img.shields.io/badge/dynamic/json?url=https://zenodo.org/api/records/XXXXXXX&label=downloads&query=$.metadata.downloads&color=blue)
+![Downloads](https://img.shields.io/badge/dynamic/json?url=https://zenodo.org/api/records/17862334&label=downloads&query=$.metadata.downloads&color=blue)
 
 ---
 
