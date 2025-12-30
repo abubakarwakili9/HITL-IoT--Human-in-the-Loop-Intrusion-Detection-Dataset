@@ -390,10 +390,10 @@ This dataset is licensed under the **[Creative Commons Attribution 4.0 Internati
 **ORCID:** [orcid-id]
 
 ### **Links:**
-- 🌐 **Project Website:** https://abubakarwakili9.github.io/HITL-IoT
+- 🌐 **Project Website:** 
 - 📦 **Dataset (Zenodo):** https://doi.org/10.5281/zenodo.178623341
-- 📄 **Paper (IEEE):** https://doi.org/paper-doi
-- 💻 **GitHub:** https://github.com/[username]/HITL-IoT
+- 📄 **Paper:** 
+- 💻 **GitHub:** 
 
 ---
 
@@ -412,7 +412,7 @@ This dataset is licensed under the **[Creative Commons Attribution 4.0 Internati
 - **Bot-IoT:** Botnet attack dataset
 - **ToN-IoT:** Telemetry data of IoT/IIoT sensors
 - **Edge-IIoTset:** Edge computing IoT dataset
-- **Papers With Code:** https://paperswithcode.com/dataset/hitl-iot
+
 
 ---
 
