@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Paper](https://img.shields.io/badge/Paper-IEEE%20TIFS-blue)](https://doi.org/your-paper-doi)
+[![Paper](https://img.shields.io/badge/Paper-blue)](https://doi.org/your-paper-doi)
 [![GitHub Stars](https://img.shields.io/github/stars/[username]/HITL-IoT?style=social)](https://github.com/[username]/HITL-IoT)
 
 > **The first IoT intrusion detection dataset with human decision metadata for human-AI collaboration research**
