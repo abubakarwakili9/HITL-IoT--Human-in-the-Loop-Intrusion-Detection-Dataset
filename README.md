@@ -34,7 +34,7 @@ This enables research on **human-AI collaboration**, **analyst modeling**, **tru
 | **Expert Annotations** | 8,230 (80.5%) |
 | **Intermediate Annotations** | 1,473 (14.4%) |
 | **Novice Annotations** | 524 (5.1%) |
-| **IoT Device Types** | 12 |
+| **IoT Devices** | 12 |
 | **Attack Categories** | 12 |
 | **Features per Flow** | 54 (CICFlowMeter-style) |
 | **ML Baselines** | 9 models evaluated |
