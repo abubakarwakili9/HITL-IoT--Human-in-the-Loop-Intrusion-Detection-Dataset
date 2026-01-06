@@ -73,21 +73,21 @@ This enables research on **human-AI collaboration**, **analyst modeling**, **tru
 ---
 
 ## ⚔️ Attack Categories
+The dataset covers twelve distinct IoT attack families:
 
-The dataset includes **12 attack categories** spanning the cyber kill chain:
+1. **Botnet C&C** - Command and control communications
+2. **Port Scanning** - Network reconnaissance via port probing
+3. **DNS Tunneling**- Covert data exfiltration through DNS
+4. **Network Mapping** - Topology discovery and enumeration
+5. **Remote Admin** - Unauthorized remote administration attempts
+6. **Bulk Exfiltration** - Large-scale data theft
+7. **Device Hijacking** - Unauthorized device control
+8. **Credential Harvesting** - Password and authentication theft
+9. **Config Tampering** - Configuration modification attacks
+10. **Firmware Exploit** - Firmware-level compromise
+11. **Protocol Abuse** - MQTT, CoAP, and IoT protocol manipulation
+12. **Service Enumeration** - Service discovery and fingerprinting
 
-1. **Reconnaissance** - Network scanning, device enumeration
-2. **Protocol Abuse** - MQTT/CoAP manipulation
-3. **DoS/DDoS** - Resource exhaustion attacks
-4. **Credential Attacks** - Brute force, credential stuffing
-5. **Man-in-the-Middle** - Traffic interception
-6. **Tunneling** - Covert channels
-7. **Configuration Tampering** - Device setting manipulation
-8. **Remote Administration** - Unauthorized remote access
-9. **Firmware Exploitation** - Firmware vulnerabilities
-10. **Botnet Communication** - C&C traffic
-11. **Data Exfiltration** - Sensitive data theft
-12. **Device Hijacking** - Complete device takeover
 
 ---
 
