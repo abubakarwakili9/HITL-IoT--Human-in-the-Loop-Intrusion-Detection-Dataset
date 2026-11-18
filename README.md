@@ -147,7 +147,10 @@ For model training, apply the **provided split assignments**, fit preprocessing 
 
 **Associated accepted manuscript:**
 
-> Wakili, A., Idris, M., and Bakkali, S. *HITL-IoT: A Reproducible Dataset and Benchmark for Studying Trustworthy Human–AI Collaboration, Oversight Mechanisms, and Selective Deferral in IoT Cybersecurity.* Accepted for publication in TBench; final article DOI pending confirmation.
+> Wakili, A., Idris, M., and Bakkali, S. *HITL-IoT: A Reproducible Dataset and Benchmark for Studying Trustworthy Human–AI Collaboration, Oversight Mechanisms, and Selective Deferral in IoT Cybersecurity.*
+
+**Journal:** [*BenchCouncil Transactions on Benchmarks, Standards and Evaluations* (TBench)](https://journal.benchcouncil.org/TBench)  
+**Publication status:** Accepted for publication; currently in copyediting. Final article DOI, volume, issue and page details are pending.
 
 For reproducible research, please cite **both the article and the exact dataset version** when the final identifiers are available. A validated `CITATION.cff` and version-specific Zenodo DOI will be provided with the public release. Do not cite an unverified DOI for v1.1.
 
