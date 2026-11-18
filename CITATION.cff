@@ -1,10 +1,46 @@
-`bibtex
-@dataset{Wakili2025hitliot_dataset,
-  author       = {Abubakar Wakili, Muhammad Idris, Sara Bakkali 
-                  },
-  title        = {HITL-IoT: Human-in-the-Loop Intrusion Detection Dataset},
-  year         = 2025,
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {https://doi.org/10.5281/zenodo.XXXXXXX}
-}
+cff-version: 1.2.0
+type: dataset
+message: >-
+  If you use HITL-IoT in your research, please cite the associated
+  TBench research article listed under preferred-citation and cite
+  the version-specific dataset DOI once the v1.1 Zenodo release is published.
+title: "HITL-IoT: A Reproducible Dataset and Benchmark for Trustworthy Human-AI Oversight and Selective Deferral in IoT Cybersecurity"
+authors:
+  - family-names: Wakili
+    given-names: Abubakar
+  - family-names: Idris
+    given-names: Muhammad
+  - family-names: Bakkali
+    given-names: Sara
+version: "1.1"
+abstract: >-
+  HITL-IoT is a reproducible, deterministically generated Internet of
+  Things cybersecurity dataset and benchmark for intrusion detection,
+  probability calibration, selective prediction and oversight allocation.
+  It contains 127,845 simulated network-flow records and 10,227 records
+  of generated oversight-profile decisions, confidence, latency and
+  rationales. The benchmark provides fixed evaluation splits and a
+  leakage-safe feature policy. The oversight records are not observations
+  from human analysts.
+repository-code: "https://github.com/abubakarwakili9/HITL-IoT-Dataset"
+url: "https://github.com/abubakarwakili9/HITL-IoT-Dataset"
+keywords:
+  - IoT cybersecurity
+  - Intrusion detection
+  - Trustworthy AI
+  - Human-AI collaboration
+  - Human oversight
+  - Selective deferral
+  - Reproducible benchmark
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Wakili
+      given-names: Abubakar
+    - family-names: Idris
+      given-names: Muhammad
+    - family-names: Bakkali
+      given-names: Sara
+  title: "HITL-IoT: A Reproducible Dataset and Benchmark for Studying Trustworthy Human-AI Collaboration, Oversight Mechanisms, and Selective Deferral in IoT Cybersecurity"
+  journal: TBench
+  scope: "Accepted for publication; in copyediting. DOI, volume, issue, pages and publication year have not yet been confirmed."
