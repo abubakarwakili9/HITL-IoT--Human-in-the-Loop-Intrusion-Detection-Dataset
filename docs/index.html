@@ -604,7 +604,7 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
           <div>
             <h3>Controlled Benchmark Design and Data Provenance</h3>
             <p>HITL-IoT was developed using a controlled, reproducible smart-home IoT scenario covering 168 hours and twelve modeled devices. The dataset incorporates defined attack behaviors, known reference labels, configurable traffic characteristics and standardized evaluation partitions. This design enables systematic comparisons of intrusion detection, uncertainty estimation and oversight-aware decision policies under consistent experimental conditions.</p>
-            <p class="prov-statement"><svg aria-hidden="true"><use href="#i-info"/></svg><span><strong>Provenance.</strong> The network flows and oversight profiles are generated. They are not captures from an operational network and not decisions observed from human analysts.</span></p>
+            <p class="prov-statement"><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Fully controlled, generated data.</strong> Every network flow and oversight profile comes from a documented, seeded process. Each record has a known ground-truth label, every result can be reproduced byte for byte, and no private network traffic or analyst data has to be collected or anonymised. This makes HITL-IoT a clean testbed for developing and comparing oversight methods before they are confirmed on captured traffic and with real analysts.</span></p>
           </div>
           <dl class="prov-facts">
             <div><dt>Generation</dt><dd>Deterministic generator, seed 42</dd></div>

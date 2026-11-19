@@ -200,7 +200,7 @@ For reproducible research, please cite **both the article and the exact dataset 
 
 ## Scope and limitations
 
-- **Generated, not captured traffic.** The data represent a controlled smart-home scenario; no raw network PCAP or production telemetry is implied.
+- **Fully controlled, generated data.** Flows come from a documented, seeded smart-home scenario, so every label is known and every result is reproducible; no raw PCAP or production telemetry is included, and none is needed to use the benchmark.
 - **Simulated, not recruited reviewers.** Profile confidence, latency, decisions and rationales are constructed benchmark signals—not measurements of practitioners.
 - **Temporal split is not drift validation.** Chronological evaluation does not by itself demonstrate robustness to deliberate concept drift.
 - **Cross-domain transfer is limited.** Results on CICIoT2023 and ToN-IoT motivate independent external validation and realistic recalibration.

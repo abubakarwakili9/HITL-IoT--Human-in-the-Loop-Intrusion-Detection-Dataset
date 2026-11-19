@@ -365,8 +365,8 @@ pre { margin: 0; padding: 1.1rem 1.25rem; overflow-x: auto; font: 0.84rem/1.65 v
 .prov-facts div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.75rem; }
 .prov-facts dt { color: var(--muted); }
 .prov-facts dd { margin: 0; color: var(--navy); font-weight: 500; }
-.prov-statement { display: flex; gap: 0.6rem; padding: 0.85rem 1rem; border-radius: 10px; background: var(--gold-soft); border: 1px solid #F1DDAE; font-size: 0.9rem; color: #5B4300; margin-top: 1rem; }
-.prov-statement svg { width: 1.2rem; height: 1.2rem; flex: none; color: var(--gold-ink); margin-top: 0.1rem; }
+.prov-statement { display: flex; gap: 0.6rem; padding: 0.85rem 1rem; border-radius: 10px; background: var(--teal-soft); border: 1px solid #A7E6DC; font-size: 0.9rem; color: #134E4A; margin-top: 1rem; }
+.prov-statement svg { width: 1.2rem; height: 1.2rem; flex: none; color: var(--teal-ink); margin-top: 0.1rem; }
 .sheet { overflow: hidden; }
 .sheet details { border-bottom: 1px solid var(--border); }
 .sheet details:last-child { border-bottom: 0; }
