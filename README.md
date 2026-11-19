@@ -19,7 +19,32 @@ Unlike capture-based IoT datasets focused primarily on network-event classificat
 
 > **Data provenance.** All network flows in HITL-IoT v1.1 are **synthetically generated**. The 10,227-record oversight subset contains **simulated profile decisions**, including generated confidence, latency and evidence-based rationales. These are not observations from recruited cybersecurity analysts, real human annotations or measured expertise levels.
 
-**Navigate:** [Overview](#dataset-at-a-glance) · [Design](#benchmark-design) · [Tasks](#research-tasks) · [Results](#reference-results) · [Access](#data-and-code-access) · [Quick start](#quick-start) · [Citation](#citation) · [Limitations](#scope-and-limitations)
+## ⬇ Download the data
+
+**You need only these three files.** Everything else in [`data/v1.1/`](data/v1.1/) is documentation or verification metadata.
+
+| # | File | What it contains | Rows × columns | Size | Download |
+|:-:|:--|:--|:-:|:-:|:-:|
+| **1** | [`HITL-IoT_dataset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/HITL-IoT_dataset_v1.1.csv) | **The full dataset:** every flow with features, labels and oversight metadata | 127,845 × 60 | 55.1 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/HITL-IoT_dataset_v1.1.csv) |
+| **2** | [`HITL-IoT_splits_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/HITL-IoT_splits_v1.1.csv) | **Official train/validation/test assignment** (`temporal_split` is primary, `iid_split` secondary); join on `flow_id` | 127,845 × 4 | 5.8 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/HITL-IoT_splits_v1.1.csv) |
+| **3** | [`HITL-IoT_oversight_subset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/HITL-IoT_oversight_subset_v1.1.csv) | **The 10,227 oversight-selected flows** (same 60 columns) for deferral and review experiments | 10,227 × 60 | 5.9 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/HITL-IoT_oversight_subset_v1.1.csv) |
+
+Also needed to train models correctly: [`HITL-IoT_feature_policy_v1.1.json`](data/v1.1/HITL-IoT_feature_policy_v1.1.json) lists the 39 permitted IDS features, and [`HITL-IoT_schema_v1.1.csv`](data/v1.1/HITL-IoT_schema_v1.1.csv) defines every column.
+
+Load the data directly, without cloning:
+
+```python
+import pandas as pd
+base = "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/"
+df     = pd.read_csv(base + "HITL-IoT_dataset_v1.1.csv", low_memory=False)
+splits = pd.read_csv(base + "HITL-IoT_splits_v1.1.csv")
+df = df.merge(splits, on=["flow_id", "timestamp"])
+train = df[df.temporal_split == "train"]
+```
+
+Other options: [Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) (browse in the browser) · `git clone` (everything, including results) · [Zenodo](#data-and-code-access) (archived, citable DOI). SHA-256 checksums: [`HITL-IoT_checksums_v1.1.txt`](data/v1.1/HITL-IoT_checksums_v1.1.txt).
+
+**Navigate:** [Download](#-download-the-data) · [Overview](#dataset-at-a-glance) · [Design](#benchmark-design) · [Tasks](#research-tasks) · [Results](#reference-results) · [Access](#data-and-code-access) · [Quick start](#quick-start) · [Citation](#citation) · [Limitations](#scope-and-limitations)
 
 ---
 
