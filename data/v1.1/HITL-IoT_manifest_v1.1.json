@@ -1,0 +1,161 @@
+{
+  "dataset_name": "HITL-IoT",
+  "version": "1.1",
+  "generator_version": "1.1",
+  "seed": 42,
+  "rows": 127845,
+  "columns": 60,
+  "class_counts": {
+    "benign": 108668,
+    "attack": 19177
+  },
+  "device_counts": {
+    "camera": 25570,
+    "thermostat": 25570,
+    "speaker": 25569,
+    "doorbell": 25568,
+    "tv": 25568
+  },
+  "attack_counts": {
+    "botnet_communication": 3442,
+    "port_scanning": 2681,
+    "dns_tunneling": 2395,
+    "remote_administration": 1602,
+    "device_hijacking": 1523,
+    "network_mapping": 1507,
+    "protocol_abuse": 1380,
+    "bulk_data_transfer": 1301,
+    "service_enumeration": 1205,
+    "credential_harvesting": 809,
+    "configuration_tampering": 745,
+    "firmware_exploitation": 587
+  },
+  "oversight_count": 10227,
+  "evaluation_protocols": {
+    "primary_evaluation_split": "temporal",
+    "secondary_evaluation_split": "iid_stratified",
+    "proportions": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "iid_seed": 42,
+    "iid_stratify_by": "attack_type",
+    "temporal": {
+      "train": {
+        "count": 89492,
+        "proportion": 0.7,
+        "attack_count": 13469,
+        "attack_rate": 0.15051,
+        "first_timestamp": "2024-01-15T00:00:22",
+        "last_timestamp": "2024-01-19T21:34:44",
+        "oversight_selected": 7148
+      },
+      "validation": {
+        "count": 19176,
+        "proportion": 0.14999,
+        "attack_count": 2869,
+        "attack_rate": 0.14961,
+        "first_timestamp": "2024-01-19T21:34:48",
+        "last_timestamp": "2024-01-20T22:45:31",
+        "oversight_selected": 1538
+      },
+      "test": {
+        "count": 19177,
+        "proportion": 0.15,
+        "attack_count": 2839,
+        "attack_rate": 0.14804,
+        "first_timestamp": "2024-01-20T22:45:34",
+        "last_timestamp": "2024-01-21T23:59:54",
+        "oversight_selected": 1541
+      }
+    },
+    "iid_stratified": {
+      "train": {
+        "count": 89492,
+        "proportion": 0.7,
+        "attack_count": 13424,
+        "attack_rate": 0.15,
+        "first_timestamp": "2024-01-15T00:00:22",
+        "last_timestamp": "2024-01-21T23:59:54",
+        "oversight_selected": 7219
+      },
+      "validation": {
+        "count": 19175,
+        "proportion": 0.14999,
+        "attack_count": 2875,
+        "attack_rate": 0.14993,
+        "first_timestamp": "2024-01-15T00:01:44",
+        "last_timestamp": "2024-01-21T23:59:16",
+        "oversight_selected": 1527
+      },
+      "test": {
+        "count": 19178,
+        "proportion": 0.15001,
+        "attack_count": 2878,
+        "attack_rate": 0.15007,
+        "first_timestamp": "2024-01-15T00:00:25",
+        "last_timestamp": "2024-01-21T23:59:32",
+        "oversight_selected": 1481
+      }
+    }
+  },
+  "feature_policies": {
+    "track1_primary": "track1_primary_flow_only",
+    "track1_secondary": "track1_context_enriched",
+    "track2": "track2_oversight",
+    "n_features": {
+      "track1_primary_flow_only": 39,
+      "track1_context_enriched": 40,
+      "track2_oversight": 49
+    }
+  },
+  "generator": {
+    "filename": "hitl_iot_generator_v1_1.py",
+    "sha256": "08e3914deeef5b74c2ad17b1da17294f4ee8721217261131d537391c2f543542",
+    "version": "1.1"
+  },
+  "execution_configuration": {
+    "score_mode": "evidence",
+    "legacy_profile_mode": false,
+    "config_file": "HITL-IoT_config_v1.1.json"
+  },
+  "publication_ready": true,
+  "files": {
+    "generator": "hitl_iot_generator_v1_1.py",
+    "dataset": "HITL-IoT_dataset_v1.1.csv",
+    "oversight": "HITL-IoT_oversight_subset_v1.1.csv",
+    "config": "HITL-IoT_config_v1.1.json",
+    "schema_csv": "HITL-IoT_schema_v1.1.csv",
+    "schema_json": "HITL-IoT_schema_v1.1.json",
+    "policy": "HITL-IoT_feature_policy_v1.1.json",
+    "splits": "HITL-IoT_splits_v1.1.csv",
+    "summary": "HITL-IoT_summary_v1.1.json",
+    "report": "HITL-IoT_generation_report_v1.1.md",
+    "changelog": "CHANGELOG_v1.1.md",
+    "mapping": "HITL-IoT_schema_mapping_v1.0_to_v1.1.csv"
+  },
+  "sha256": {
+    "hitl_iot_generator_v1_1.py": "08e3914deeef5b74c2ad17b1da17294f4ee8721217261131d537391c2f543542",
+    "HITL-IoT_dataset_v1.1.csv": "c6dd623029f6ca0967773379b2afbba96b73ab9cb2028c5e81ef89a1b15e1291",
+    "HITL-IoT_oversight_subset_v1.1.csv": "58fc268325fcbc5690a81c5acf5ae452b36cc30d853f5750547ac07d502f0237",
+    "HITL-IoT_config_v1.1.json": "a3262da1299493f7277c8fde04311628a6de71b54b50434dd577a4fe2776797d",
+    "HITL-IoT_schema_v1.1.csv": "eb3e667b3f82fe136842189baee95d4a744e4ff893bb93f437610fc58408422d",
+    "HITL-IoT_schema_v1.1.json": "7967ffa9a8ac51d6bf81788c3551a606e3f73dc255f41c9320ec3585fb3285e5",
+    "HITL-IoT_feature_policy_v1.1.json": "0666306f134fabe252bb87ae61d5fa1819f50203ef4382a18b8a6fa25306282f",
+    "HITL-IoT_splits_v1.1.csv": "6a0c19d3c957b92f3eefa53267eeca140f490cd2031637bcda9be8908c8166b8",
+    "HITL-IoT_summary_v1.1.json": "c14f091cc997f40c6017dd0b07edd69e740642726b7d39fe85b81ce7c6162647",
+    "HITL-IoT_generation_report_v1.1.md": "e0faefc87cbaefaa07822bc2962dc005c64f4f7ea9129b725a702eda78d1544f",
+    "CHANGELOG_v1.1.md": "2e2b0a44ecf97f355975b76c86a98a03060a4f2c59e10d4aac64bbaa36797c8a",
+    "HITL-IoT_schema_mapping_v1.0_to_v1.1.csv": "c7d36e806fd564813632df3088c9ba8b66fbea0662ee2bd3ffa0dcb6868e8a1a"
+  },
+  "environment": {
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2"
+  },
+  "hash_coverage": "sha256 covers every file listed in 'files'. The manifest is hashed in the checksum file; the checksum file is not hashed (no self-hashing).",
+  "reproducibility_note": "No wall-clock timestamps are stored; identical code, config, seed and numpy/pandas versions reproduce identical files.",
+  "scope_note": "All values are generated. No real traffic, analysts, or compliance assessment are represented."
+}
