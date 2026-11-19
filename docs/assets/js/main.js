@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   var fmt = new Intl.NumberFormat("en-GB");
-  var REPO = "abubakarwakili9/HITL-IoT-Dataset";
+  var REPO = "wakili-research/HITL-IoT-Dataset";
 
   /* ---- Mobile navigation ----------------------------------------------- */
   var menuBtn = document.querySelector(".menu-btn");
