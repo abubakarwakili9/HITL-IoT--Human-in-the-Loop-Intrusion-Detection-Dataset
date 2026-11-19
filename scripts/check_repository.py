@@ -12,17 +12,19 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from hitl_paths import locate  # noqa: E402
 DATA = ROOT / "data" / "v1.1"
 RELEASE_ASSETS = {"HITL-IoT_dataset_v1.1.csv", "HITL-IoT_oversight_subset_v1.1.csv", "HITL-IoT_splits_v1.1.csv"}
 
 errors = []
 checked = 0
-for line in (DATA / "HITL-IoT_checksums_v1.1.txt").read_text().splitlines():
+for line in locate("HITL-IoT_checksums_v1.1.txt").read_text().splitlines():
     if not line.strip():
         continue
     digest, name = line.split(maxsplit=1)
     name = name.strip().lstrip("*")
-    path = DATA / name
+    path = locate(name)
     if name in RELEASE_ASSETS and not path.exists():
         continue
     if not path.is_file():
@@ -38,7 +40,7 @@ for nb in sorted((ROOT / "notebooks").glob("*.ipynb")):
     except Exception as exc:
         errors.append(f"invalid notebook JSON: {nb.name}: {exc}")
 
-policy = json.loads((DATA / "HITL-IoT_feature_policy_v1.1.json").read_text())
+policy = json.loads(locate("HITL-IoT_feature_policy_v1.1.json").read_text())
 primary = policy["track1_primary_flow_only"]
 forbidden = {"is_attack", "attack_type", "generated_attack_score", "generated_prediction", "ambiguity_score",
              "oversight_selected", "oversight_profile", "profile_decision", "profile_confidence", "flow_id", "timestamp"}
