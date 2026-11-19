@@ -3,273 +3,537 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HITL-IoT v1.1 — IoT intrusion-detection and oversight benchmark</title>
-  <meta name="description" content="HITL-IoT v1.1: 127,845 generated smart-home IoT flows with fixed splits and simulated oversight profiles, for intrusion detection, calibration, selective deferral and human-oversight research.">
+  <title>HITL-IoT v1.1 — Open benchmark for trustworthy AI in IoT cybersecurity</title>
+  <meta name="description" content="HITL-IoT v1.1 is a reproducible research benchmark for IoT intrusion detection, predictive uncertainty, confidence calibration, selective deferral and simulated human–AI oversight. 127,845 flows, 12 attack families, nine reference models. Accepted in BenchCouncil TBench.">
   <meta name="author" content="Abubakar Wakili, Muhammad Idris, Sara Bakkali">
+  <link rel="canonical" href="https://abubakarwakili9.github.io/HITL-IoT-Dataset/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="HITL-IoT v1.1 — what happens after the prediction">
-  <meta property="og:description" content="A reproducible IoT benchmark for intrusion detection, calibration, selective deferral and oversight. Accepted in BenchCouncil TBench.">
+  <meta property="og:url" content="https://abubakarwakili9.github.io/HITL-IoT-Dataset/">
+  <meta property="og:title" content="HITL-IoT — Beyond Intrusion Detection: Advancing Trustworthy AI for IoT Cybersecurity">
+  <meta property="og:description" content="A reproducible research benchmark for intrusion detection, predictive uncertainty, confidence calibration, selective deferral and human–AI oversight.">
   <meta property="og:image" content="https://abubakarwakili9.github.io/HITL-IoT-Dataset/assets/images/figure10_calibration_selective_prediction.png">
-  <meta name="theme-color" content="#0B2C28">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1769D2">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/portal-light-2026.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "HITL-IoT v1.1",
-    "description": "Deterministically generated smart-home IoT network-flow benchmark (127,845 flows, 60 columns) with fixed chronological splits and a 10,227-record subset carrying simulated oversight-profile metadata, for intrusion detection, calibration, selective deferral and oversight research.",
+    "name": "HITL-IoT Dataset v1.1",
+    "alternateName": "HITL-IoT",
+    "description": "Reproducible smart-home IoT network-flow benchmark (127,845 generated flows, 60 columns, 12 attack families) with fixed chronological and IID splits, a feature policy of 39 permitted IDS features, nine reference models, and a 10,227-record subset with simulated oversight-profile metadata, for research on intrusion detection, calibration, selective deferral and human–AI oversight.",
     "version": "1.1",
     "url": "https://abubakarwakili9.github.io/HITL-IoT-Dataset/",
-    "sameAs": ["https://github.com/abubakarwakili9/HITL-IoT-Dataset"],
+    "sameAs": ["https://github.com/abubakarwakili9/HITL-IoT-Dataset", "https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset"],
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "isAccessibleForFree": true,
-    "keywords": ["IoT security", "intrusion detection", "selective prediction", "learning to defer", "calibration", "human oversight", "benchmark"],
+    "keywords": ["IoT security", "intrusion detection", "trustworthy AI", "calibration", "selective prediction", "learning to defer", "human oversight", "benchmark"],
+    "temporalCoverage": "2024-01-15/2024-01-21",
     "creator": [
-      {"@type": "Person", "name": "Abubakar Wakili", "affiliation": "Euromed University of Fez"},
-      {"@type": "Person", "name": "Muhammad Idris", "affiliation": "University of Passau"},
-      {"@type": "Person", "name": "Sara Bakkali", "affiliation": "Euromed University of Fez"}
+      {"@type": "Person", "name": "Abubakar Wakili"},
+      {"@type": "Person", "name": "Muhammad Idris"},
+      {"@type": "Person", "name": "Sara Bakkali"}
     ],
+    "variableMeasured": ["network-flow features", "is_attack", "attack_type", "oversight-profile metadata"],
     "distribution": [
-      {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv"},
-      {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv"},
-      {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv"}
+      {"@type": "DataDownload", "name": "HITL-IoT_dataset_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "57809716 B", "contentUrl": "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv"},
+      {"@type": "DataDownload", "name": "HITL-IoT_splits_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "6034313 B", "contentUrl": "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv"},
+      {"@type": "DataDownload", "name": "HITL-IoT_oversight_subset_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "6222857 B", "contentUrl": "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv"}
     ]
   }
   </script>
 </head>
 <body>
+  <!-- Icon sprite: original line icons, drawn for this site -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-logo" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="8" fill="#1769D2"/><circle cx="9" cy="10" r="2.2" fill="#fff"/><circle cx="9" cy="22" r="2.2" fill="#fff"/><circle cx="16" cy="16" r="3.2" fill="#fff"/><path d="M11 11l3 3.4M11 21l3-3.4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M19.2 14.6L24 11.5" stroke="#14B8A6" stroke-width="2.4" stroke-linecap="round"/><path d="M19.2 17.4L24 20.5" stroke="#F4C76A" stroke-width="2.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-rows" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16"/></g></symbol>
+      <symbol id="i-columns" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></g></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6 7.5V19l-4 1.5v-8L4 5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6l7-3z"/><path d="M12 8.5v4M12 15.8v.2"/></g></symbol>
+      <symbol id="i-model" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.8 7.2l3.4 3.4M6.8 16.8l3.4-3.4M13.8 10.6l3.4-3.4M13.8 13.4l3.4 3.4"/></g></symbol>
+      <symbol id="i-person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></g></symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 16a8 8 0 1116 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1.2" fill="currentColor"/></g></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></g></symbol>
+      <symbol id="i-split" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h7l4-6h7M14 18h7M10 12l4 6"/><path d="M18 3.5L21 6l-3 2.5M18 15.5l3 2.5-3 2.5"/></g></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9S14.5 18.4 12 21c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"/></g></symbol>
+      <symbol id="i-scale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 20h10M5 7h14"/><path d="M5 7l-2.5 6a2.5 2.5 0 005 0L5 7zM19 7l-2.5 6a2.5 2.5 0 005 0L19 7z"/></g></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></g></symbol>
+      <symbol id="i-network" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/></g></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></g></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v15H6.5A2.5 2.5 0 004 20.5v-15z"/><path d="M4 20.5A2.5 2.5 0 016.5 18H20v3H6.5"/></g></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-hash" viewBox="0 0 24 24"><path d="M9 3L7 21M17 3l-2 18M4 8.5h16M3.5 15.5h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-5M12 16V8M16 16v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></g></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.2"/></g></symbol>
+      <symbol id="i-question" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1.1-1.5 2.2M12 16.8v.2"/></g></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></symbol>
+      <symbol id="d-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 10.5l5-3v9l-5-3"/></g></symbol>
+      <symbol id="d-thermostat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 1.5"/></g></symbol>
+      <symbol id="d-speaker" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="3"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7.5" r="0.8" fill="currentColor"/></g></symbol>
+      <symbol id="d-tv" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></g></symbol>
+      <symbol id="d-doorbell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="3" width="10" height="18" rx="5"/><circle cx="12" cy="9" r="2"/><circle cx="12" cy="16" r="1.2" fill="currentColor"/></g></symbol>
+    </defs>
+  </svg>
+
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="wordmark" href="#top" aria-label="HITL-IoT home">
-        <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="12" width="17" height="4" rx="2" class="wm-accept"/><rect x="21" y="12" width="5" height="4" rx="2" class="wm-defer"/></svg>
-        HITL-IoT
+      <a class="brand" href="#top" aria-label="HITL-IoT home">
+        <svg aria-hidden="true"><use href="#i-logo"/></svg>
+        <span>HITL-IoT<small>Trustworthy AI benchmark</small></span>
       </a>
-      <nav aria-label="Sections">
-        <ul class="nav">
-          <li><a href="#research">Research</a></li>
-          <li><a href="#governance">Why it matters</a></li>
-          <li><a href="#download">Data</a></li>
-          <li><a href="#baselines">Results</a></li>
-          <li><a href="#datasheet">Datasheet</a></li>
-          <li><a href="#citation">Cite</a></li>
-          <li><a class="nav-gh" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub</a></li>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg aria-hidden="true"><use href="#i-menu"/></svg>Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#applications">Research Applications</a></li>
+          <li><a href="#dataset">Dataset</a></li>
+          <li><a href="#benchmarks">Benchmarks</a></li>
+          <li><a href="#governance">AI Governance</a></li>
+          <li><a href="#datasheet">Documentation</a></li>
+          <li><a href="#citation">Citation</a></li>
+          <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub</a></li>
+          <li class="nav-cta"><a href="#download">Download Dataset</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section id="top" class="hero">
+
+    <!-- HERO -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
-        <div class="hero-copy">
-        <p class="release">HITL-IoT dataset, version 1.1, accepted in <em>BenchCouncil Transactions on Benchmarks, Standards and Evaluations</em></p>
-        <h1>Beyond Intrusion Detection: Toward Trustworthy AI Decisions in IoT Cybersecurity</h1>
-        <p class="lede">A reproducible benchmark for intrusion detection, calibration, selective deferral and human–AI oversight. It tests not only whether AI can identify cyberattacks, but when its predictions should be trusted, reviewed or deferred.</p>
-        <div class="actions">
-          <a class="btn btn-amber" href="#download">Download the data</a>
-          <a class="btn btn-ghost" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">View on GitHub</a>
-          <a class="btn btn-ghost" href="#citation">Cite</a>
+        <div>
+          <span class="eyebrow">HITL-IoT Dataset v1.1 | Open Research Benchmark</span>
+          <h1 id="hero-title">Beyond Intrusion Detection: Advancing Trustworthy AI for IoT Cybersecurity</h1>
+          <p class="subtitle">A reproducible research benchmark for intrusion detection, predictive uncertainty, confidence calibration, selective deferral and human–AI oversight.</p>
+          <p class="desc">HITL-IoT helps researchers investigate what happens after an AI system detects a potential cyberattack. By combining controlled IoT network-flow scenarios, standardized evaluation protocols and simulated oversight profiles, the benchmark enables systematic study of model reliability, alert prioritization and risk-aware cybersecurity decisions.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download"><svg aria-hidden="true"><use href="#i-download"/></svg>Download Dataset</a>
+            <a class="btn btn-outline" href="#applications">Explore Research Applications</a>
+            <a class="btn btn-quiet" href="#benchmarks">View Benchmark Results</a>
+            <a class="link-arrow" href="#citation">Cite the Dataset</a>
+          </div>
+          <ul class="trust" aria-label="Status and quality">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Accepted in BenchCouncil TBench</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Open research dataset (CC BY 4.0)</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Versioned data and SHA-256 integrity checks</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Reproducible benchmark protocols</li>
+          </ul>
         </div>
-        <ul class="trust" aria-label="At a glance">
-          <li>Peer-reviewed in BenchCouncil TBench</li>
-          <li>Every file SHA-256 verified</li>
-          <li>Nine baselines and an official scorer</li>
-          <li>Open under CC BY 4.0</li>
-        </ul>
-        </div>
-        <svg class="flow-art" viewBox="-40 0 400 330" role="img" aria-labelledby="flow-art-title">
-          <title id="flow-art-title">Traffic from five device types passes through a detector; most decisions are accepted and a small share is sent to review</title>
-          <g class="fa-links" fill="none" stroke-width="2">
-            <path d="M88 40 C150 40 140 165 182 165"/><path d="M88 102 C150 102 140 165 182 165"/><path d="M88 165 L182 165"/><path d="M88 228 C150 228 140 165 182 165"/><path d="M88 290 C150 290 140 165 182 165"/>
-          </g>
-          <path class="fa-accept" d="M226 165 C270 165 270 110 340 110" fill="none" stroke-width="10" stroke-linecap="round"/>
-          <path class="fa-review" d="M226 165 C270 165 270 222 340 222" fill="none" stroke-width="3" stroke-linecap="round"/>
-          <g class="fa-dev">
-            <circle cx="70" cy="40" r="18"/><circle cx="70" cy="102" r="18"/><circle cx="70" cy="165" r="18"/><circle cx="70" cy="228" r="18"/><circle cx="70" cy="290" r="18"/>
-          </g>
-          <g class="fa-lbl" text-anchor="end" font-size="12">
-            <text x="44" y="44">camera</text><text x="44" y="106">thermostat</text><text x="44" y="169">speaker</text><text x="44" y="232">TV</text><text x="44" y="294">doorbell</text>
-          </g>
-          <circle class="fa-ids" cx="204" cy="165" r="26"/>
-          <text class="fa-ids-t" x="204" y="170" text-anchor="middle" font-size="13" font-weight="700">IDS</text>
-          <text class="fa-out" x="340" y="94" text-anchor="end" font-size="13" font-weight="700">92% accepted</text>
-          <text class="fa-out fa-out-r" x="340" y="246" text-anchor="end" font-size="13" font-weight="700">8% to review</text>
-        </svg>
-      </div>
 
-      <div class="wrap">
-        <figure class="desk" aria-labelledby="desk-title">
-          <div class="desk-head">
-            <h2 id="desk-title">See the problem in one slider</h2>
-            <p>Each thin line is one of the <strong>19,177</strong> held-out test flows, ordered from least to most confident Random Forest prediction. Red marks are the <strong>289</strong> attacks it missed. Flows left of the amber edge go to review.</p>
+        <figure class="card diagram" aria-labelledby="dg-title">
+          <h2 id="dg-title">From IoT Data to Trustworthy AI Decisions</h2>
+          <p>How each benchmark record moves from a device to a decision.</p>
+          <svg viewBox="0 0 522 330" role="img" aria-labelledby="dg-svg-title dg-svg-desc">
+            <title id="dg-svg-title">Decision pipeline</title>
+            <desc id="dg-svg-desc">Five IoT device types send network flows to an intrusion-detection model. A confidence assessment then routes each decision to accept, review or defer.</desc>
+            <g>
+              <path class="dg-link" d="M66 45 C120 45 120 165 172 165"/><path class="dg-link" d="M66 105 C120 105 120 165 172 165"/><path class="dg-link" d="M66 165 L172 165"/><path class="dg-link" d="M66 225 C120 225 120 165 172 165"/><path class="dg-link" d="M66 285 C120 285 120 165 172 165"/>
+              <path class="dg-flow" d="M66 45 C120 45 120 165 172 165"/><path class="dg-flow" d="M66 165 L172 165"/><path class="dg-flow" d="M66 285 C120 285 120 165 172 165"/>
+              <path class="dg-link" d="M232 165 L282 165"/><path class="dg-flow" d="M232 165 L282 165"/>
+            </g>
+            <g style="color:#173D70">
+              <circle class="dg-dev" cx="44" cy="45" r="22"/><use href="#d-camera" x="33" y="34" width="22" height="22"/>
+              <circle class="dg-dev" cx="44" cy="105" r="22"/><use href="#d-thermostat" x="33" y="94" width="22" height="22"/>
+              <circle class="dg-dev" cx="44" cy="165" r="22"/><use href="#d-speaker" x="33" y="154" width="22" height="22"/>
+              <circle class="dg-dev" cx="44" cy="225" r="22"/><use href="#d-tv" x="33" y="214" width="22" height="22"/>
+              <circle class="dg-dev" cx="44" cy="285" r="22"/><use href="#d-doorbell" x="33" y="274" width="22" height="22"/>
+            </g>
+            <text class="dg-small" x="44" y="322" text-anchor="middle">IoT devices</text>
+            <circle class="dg-node" cx="202" cy="165" r="30"/>
+            <use href="#i-shield" x="189" y="152" width="26" height="26" style="color:#fff"/>
+            <text class="dg-label" x="202" y="218" text-anchor="middle">Intrusion</text>
+            <text class="dg-label" x="202" y="235" text-anchor="middle">detection</text>
+            <circle class="dg-node-2" cx="312" cy="165" r="30"/>
+            <use href="#i-gauge" x="299" y="151" width="26" height="26" style="color:#1769D2"/>
+            <text class="dg-label" x="312" y="218" text-anchor="middle">Confidence</text>
+            <text class="dg-label" x="312" y="235" text-anchor="middle">assessment</text>
+            <path class="dg-path-accept" d="M342 165 C376 165 376 80 398 80"/>
+            <path class="dg-path-review" d="M342 165 L398 165"/>
+            <path class="dg-path-review" d="M342 165 C376 165 376 250 398 250" stroke-dasharray="5 4"/>
+            <rect class="dg-out-accept" x="398" y="52" width="122" height="56" rx="10"/>
+            <text class="dg-label" x="459" y="77" text-anchor="middle">Accept</text>
+            <text class="dg-small" x="459" y="95" text-anchor="middle">confident</text>
+            <rect class="dg-out-review" x="398" y="137" width="122" height="56" rx="10"/>
+            <text class="dg-label" x="459" y="162" text-anchor="middle">Review</text>
+            <text class="dg-small" x="459" y="180" text-anchor="middle">simulated profile</text>
+            <rect class="dg-out-defer" x="398" y="222" width="122" height="56" rx="10"/>
+            <text class="dg-label" x="459" y="247" text-anchor="middle">Defer</text>
+            <text class="dg-small" x="459" y="265" text-anchor="middle">held for decision</text>
+          </svg>
+          <div class="legend" aria-hidden="true">
+            <span><i style="background:#1769D2"></i>AI detection</span>
+            <span><i style="background:#14B8A6"></i>Accepted decision</span>
+            <span><i style="background:#F4C76A"></i>Simulated review</span>
           </div>
-
-          <div class="strip-wrap">
-            <canvas id="strip" height="96" role="img" aria-label="Test flows ranked by model uncertainty, with missed attacks marked and the reviewed share highlighted"></canvas>
-            <div class="strip-axis" aria-hidden="true"><span>least confident</span><span>most confident</span></div>
-          </div>
-
-          <div class="desk-controls">
-            <label for="budget">Review budget <output id="budget-out" for="budget">8%</output> of flows</label>
-            <input id="budget" type="range" min="0" max="50" step="1" value="8" aria-describedby="desk-note">
-          </div>
-
-          <dl class="desk-readout" aria-live="polite">
-            <div><dt>Flows sent to review</dt><dd id="r-deferred">1,535</dd></div>
-            <div><dt>Missed attacks caught by review</dt><dd id="r-caught"><span class="caught">41</span> of 289</dd></div>
-            <div><dt>Share of errors caught</dt><dd id="r-share">14.2%</dd></div>
-          </dl>
-          <figcaption id="desk-note">Computed in your browser from the released held-out probabilities (Random Forest, chronological test split, raw uncertainty |p − 0.5|). Reviewing the 8% least confident flows catches only 14.2% of errors: missed attacks look confident. With isotonic calibration the paper reports 15.2%. Source: <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/results/intrusion_detection">track1 benchmark archive</a>.</figcaption>
         </figure>
       </div>
     </section>
 
-
-
-
-
-    <section id="research" class="band">
+    <!-- AT A GLANCE -->
+    <section id="overview" class="section" aria-labelledby="overview-title">
       <div class="wrap">
-        <h2>From detection to oversight</h2>
-        <p class="intro">Four research areas follow a security decision from the first alert to the final call. Each has a fixed protocol and metric, so results from different papers can be compared directly.</p>
-        <ol class="path">
-          <li><span class="node" aria-hidden="true">1</span><h3>Intrusion detection</h3><p>Evaluate detectors across twelve IoT attack families with consistent features and fixed evaluation splits.</p><p class="metric">Macro-F1, MCC, AUROC</p></li>
-          <li><span class="node" aria-hidden="true">2</span><h3>Trustworthy AI and calibration</h3><p>Measure predictive uncertainty and whether a model's confidence matches how often it is right.</p><p class="metric">ECE, Brier score</p></li>
-          <li><span class="node" aria-hidden="true">3</span><h3>Selective deferral</h3><p>Decide when to accept a prediction and when to send it for review under a fixed budget.</p><p class="metric">Errors captured at 8% review</p></li>
-          <li><span class="node" aria-hidden="true">4</span><h3>Human–AI oversight</h3><p>Compare review routing and intervention policies with simulated reviewer profiles, counting fixes against new mistakes.</p><p class="metric">Corrections minus harms</p></li>
-        </ol>
+        <div class="section-head">
+          <span class="eyebrow">Benchmark at a glance</span>
+          <h2 id="overview-title">One frozen release, ready for comparable research</h2>
+          <p>Every value below is read from the released v1.1 files and the accepted article.</p>
+        </div>
+        <div class="grid stats">
+          <div class="card stat"><div class="ico"><svg aria-hidden="true"><use href="#i-rows"/></svg></div><div class="stat-num">127,845</div><div class="lbl">Network-flow records</div></div>
+          <div class="card stat"><div class="ico"><svg aria-hidden="true"><use href="#i-columns"/></svg></div><div class="stat-num">60</div><div class="lbl">Dataset columns</div></div>
+          <div class="card stat"><div class="ico"><svg aria-hidden="true"><use href="#i-filter"/></svg></div><div class="stat-num">39</div><div class="lbl">Permitted primary IDS features</div></div>
+          <div class="card stat"><div class="ico"><svg aria-hidden="true"><use href="#i-shield"/></svg></div><div class="stat-num">12</div><div class="lbl">IoT attack families</div></div>
+          <div class="card stat"><div class="ico"><svg aria-hidden="true"><use href="#i-model"/></svg></div><div class="stat-num">9</div><div class="lbl">Reference IDS models</div></div>
+          <div class="card stat"><div class="ico"><svg aria-hidden="true"><use href="#i-person"/></svg></div><div class="stat-num">10,227</div><div class="lbl">Simulated oversight records</div></div>
+        </div>
+        <div class="overview-text">
+          <div>
+            <p>HITL-IoT models one week (168 hours) of smart-home traffic from <strong>five device types and twelve simulated device instances</strong>. Attacks from twelve families, organized into four threat groups, make up 15% of flows, and every flow carries a known reference label.</p>
+            <p>A published feature policy separates the 39 permitted detection features from identifiers, labels, construction variables and oversight metadata, so detection results cannot rely on label shortcuts.</p>
+          </div>
+          <ul class="devices" aria-label="Device types">
+            <li><svg aria-hidden="true"><use href="#d-camera"/></svg>Camera ×3</li>
+            <li><svg aria-hidden="true"><use href="#d-speaker"/></svg>Speaker ×3</li>
+            <li><svg aria-hidden="true"><use href="#d-thermostat"/></svg>Thermostat ×2</li>
+            <li><svg aria-hidden="true"><use href="#d-tv"/></svg>TV ×2</li>
+            <li><svg aria-hidden="true"><use href="#d-doorbell"/></svg>Doorbell ×2</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="governance" class="band band-deep">
+    <!-- WHY -->
+    <section id="why" class="section section-ice" aria-labelledby="why-title">
       <div class="wrap">
-        <h2>Why HITL-IoT matters</h2>
-        <p class="intro">High detection accuracy does not show whether a model's predictions are reliable, how uncertainty should shape a security decision, or when extra oversight actually helps. HITL-IoT makes those questions measurable.</p>
-        <div class="two">
-          <div>
-            <h3 class="h-small">With HITL-IoT, researchers can</h3>
-            <ul class="can">
-              <li>evaluate intrusion detection across diverse IoT attack scenarios</li>
-              <li>measure model confidence, calibration and uncertainty</li>
-              <li>test selective prediction and learning-to-defer strategies</li>
-              <li>compare alert prioritisation and oversight policies under a fixed review budget</li>
-              <li>weigh the errors an intervention corrects against the ones it introduces</li>
-            </ul>
+        <div class="section-head">
+          <span class="eyebrow">Research motivation</span>
+          <h2 id="why-title">Why HITL-IoT Matters</h2>
+          <p>Moving beyond detection accuracy toward reliable, uncertainty-aware and oversight-aware AI cybersecurity.</p>
+        </div>
+        <p style="max-width:75ch">Intrusion-detection benchmarks commonly focus on attack classification. HITL-IoT keeps that evaluation and adds two complementary research dimensions: how far a model's confidence can be trusted, and what happens when uncertain decisions are reviewed or deferred under a limited budget.</p>
+        <div class="grid compare" style="margin-top:1.5rem">
+          <div class="card panel panel-1"><span class="tag">Traditional IDS evaluation</span><ul><li>Detection accuracy and classification metrics</li><li>Benign-versus-attack prediction</li><li>Model comparisons</li></ul></div>
+          <div class="card panel panel-2"><span class="tag">Trustworthy AI evaluation</span><ul><li>Confidence calibration</li><li>Prediction uncertainty</li><li>Reliability and selective risk</li></ul></div>
+          <div class="card panel panel-3"><span class="tag">Oversight-aware evaluation</span><ul><li>Simulated review allocation</li><li>Decision deferral</li><li>Intervention benefits and harms</li><li>Fixed-budget comparisons</li></ul></div>
+        </div>
+        <div class="question">
+          <svg aria-hidden="true"><use href="#i-question"/></svg>
+          <p><small>The central research question</small>“When should an AI security system trust its prediction, request additional review, or defer a decision?”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section id="demo" class="section" aria-labelledby="demo-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Interactive research demo</span>
+          <h2 id="demo-title">How Much Security Review Is Enough?</h2>
+          <p>Explore how an uncertainty-based review budget changes the number of model errors selected for additional investigation.</p>
+        </div>
+        <div class="card demo">
+          <div class="demo-intro">
+            <p>Each thin line in the strip is one of the <strong>19,177</strong> test flows, ordered from the <strong>least</strong> to the <strong>most confident</strong> prediction of the reference Random Forest. Red marks show its <strong>289</strong> errors, all of them missed attacks.</p>
+            <p>Move the slider to choose what share of flows is sent for review. The gold area shows the flows selected. Being selected for review does not by itself correct an error; it only gives a reviewer the chance to.</p>
           </div>
-          <div>
-            <h3 class="h-small">Research informed by international frameworks</h3>
-            <dl class="frameworks">
-              <div><dt><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14">EU AI Act, Article 14</a></dt><dd>Human oversight of high-risk AI: when people should interpret, intervene in or override a system's output.</dd></div>
-              <div><dt><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF 1.0</a></dt><dd>Measuring reliability and managing AI risk, through its Govern, Map, Measure and Manage functions.</dd></div>
-              <div><dt><a href="https://www.nist.gov/cyberframework">NIST CSF 2.0</a></dt><dd>Detection and alert prioritisation as part of the Detect, Respond and Govern functions.</dd></div>
-              <div><dt><a href="https://oecd.ai/en/ai-principles">OECD AI Principles</a></dt><dd>Transparency, robustness and accountability in human-centred AI.</dd></div>
+          <div class="strip-wrap">
+            <canvas id="strip" height="104" role="img" aria-label="Test flows ranked by model uncertainty, with model errors marked and the share selected for review highlighted"></canvas>
+            <div class="strip-axis" aria-hidden="true"><span>Least confident</span><span>Most confident</span></div>
+          </div>
+          <div class="slider-row">
+            <label for="budget">Review budget</label>
+            <input id="budget" type="range" min="0" max="50" step="1" value="8" aria-describedby="demo-method">
+            <output id="budget-out" class="budget-pill" for="budget">8%</output>
+          </div>
+          <dl class="grid results" aria-live="polite">
+            <div class="result"><dt>Flows selected for review</dt><dd id="r-deferred">1,535</dd></div>
+            <div class="result r-sel"><dt>Model errors selected for review</dt><dd id="r-caught"><span class="hl">41</span> of 289</dd></div>
+            <div class="result"><dt>Share of errors selected</dt><dd id="r-share">14.2%</dd></div>
+          </dl>
+          <p class="method" id="demo-method"><strong>Method.</strong> Reference Random Forest, chronological test split (19,177 flows). Flows are ranked by raw uncertainty, 1 − 2|p − 0.5|, and the top ⌈b × N⌉ are selected. Computed in your browser from the released held-out probabilities (<a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/results/intrusion_detection">track-1 benchmark archive</a>); it reproduces the paper's raw-uncertainty results, for example 41 of 289 errors at 8%. With isotonic calibration the paper reports 15.2% at the same budget.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLICATIONS -->
+    <section id="applications" class="section section-ice" aria-labelledby="apps-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Research applications</span>
+          <h2 id="apps-title">Six research directions supported by one benchmark</h2>
+          <p>Each direction uses the same frozen data and splits, so results from different studies can be compared.</p>
+        </div>
+        <div class="grid apps">
+          <article class="card app">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+            <h3>IoT Intrusion Detection</h3>
+            <p>Evaluate machine-learning and deep-learning classifiers using fixed benchmark features and splits.</p>
+            <h4>Possible experiments</h4>
+            <ul><li>New detectors against nine reference models</li><li>Per-family detection difficulty</li></ul>
+            <div class="chips"><span class="chip">Macro-F1</span><span class="chip">MCC</span><span class="chip">AUROC</span><span class="chip">False-positive rate</span></div>
+          </article>
+          <article class="card app t-teal">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
+            <h3>Trustworthy AI and Reliability</h3>
+            <p>Study how reliable intrusion-detection decisions remain across different attack scenarios.</p>
+            <h4>Possible experiments</h4>
+            <ul><li>Reliability by attack family and device</li><li>Uncertainty estimation methods</li></ul>
+            <div class="chips"><span class="chip">Model reliability</span><span class="chip">Robustness</span><span class="chip">Uncertainty</span></div>
+          </article>
+          <article class="card app t-teal">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-gauge"/></svg></div>
+            <h3>Probability Calibration</h3>
+            <p>Investigate whether model confidence corresponds to observed predictive reliability.</p>
+            <h4>Possible experiments</h4>
+            <ul><li>Isotonic, Platt and temperature scaling</li><li>Calibration under a temporal split</li></ul>
+            <div class="chips"><span class="chip">Brier score</span><span class="chip">ECE</span><span class="chip">Reliability diagrams</span></div>
+          </article>
+          <article class="card app t-gold">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-split"/></svg></div>
+            <h3>Selective Prediction and Deferral</h3>
+            <p>Evaluate when automated decisions should be accepted versus referred for additional review.</p>
+            <h4>Possible experiments</h4>
+            <ul><li>Uncertainty versus learned deferral rules</li><li>Exact coverage control</li></ul>
+            <div class="chips"><span class="chip">Risk–coverage curves</span><span class="chip">Errors selected under review budgets</span></div>
+          </article>
+          <article class="card app t-gold">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-person"/></svg></div>
+            <h3>Simulated Human–AI Oversight</h3>
+            <p>Compare configurable simulated reviewer profiles, intervention policies and review-routing strategies.</p>
+            <p class="app-note">Profiles are configurable simulations, not measured decisions of human cybersecurity experts.</p>
+            <div class="chips"><span class="chip">Correction versus harm</span><span class="chip">Review efficiency</span></div>
+          </article>
+          <article class="card app">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-globe"/></svg></div>
+            <h3>External Validation and Domain Shift</h3>
+            <p>Study generalization with independent capture-based datasets such as CICIoT2023 and ToN-IoT, using an aligned feature protocol.</p>
+            <p class="app-note">The paper's external tests show a substantial domain gap and limited direct transfer, which makes domain adaptation an open research problem.</p>
+            <div class="chips"><span class="chip">Domain discrimination</span><span class="chip">Cross-dataset transfer</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOVERNANCE -->
+    <section id="governance" class="section" aria-labelledby="gov-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Research informed by international frameworks</span>
+          <h2 id="gov-title">Research Relevance to International AI and Cybersecurity Frameworks</h2>
+          <p>HITL-IoT supports experiments on questions that these frameworks raise about oversight, reliability and accountable decisions.</p>
+        </div>
+        <div class="grid frameworks">
+          <article class="card fw">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-scale"/></svg></div>
+            <div class="src">European Union</div>
+            <h3>EU AI Act — Article 14</h3>
+            <p>Human oversight of high-risk AI systems. Relevant to research on how people interpret outputs and when they should intervene in, or override, an automated decision.</p>
+            <a class="link-arrow" href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14">Read Article 14</a>
+          </article>
+          <article class="card fw">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-layers"/></svg></div>
+            <div class="src">United States, NIST</div>
+            <h3>NIST AI Risk Management Framework</h3>
+            <p>Measuring and managing AI risk and reliability through the Govern, Map, Measure and Manage functions.</p>
+            <a class="link-arrow" href="https://airc.nist.gov/airmf-resources/airmf/">Open the AI RMF</a>
+          </article>
+          <article class="card fw">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-network"/></svg></div>
+            <div class="src">United States, NIST</div>
+            <h3>NIST Cybersecurity Framework 2.0</h3>
+            <p>Detection, risk management and response prioritization, through the Detect, Respond and Govern functions.</p>
+            <a class="link-arrow" href="https://www.nist.gov/cyberframework">Open CSF 2.0</a>
+          </article>
+          <article class="card fw">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-globe"/></svg></div>
+            <div class="src">OECD</div>
+            <h3>OECD AI Principles</h3>
+            <p>Human-centred AI with transparency, robustness and accountability.</p>
+            <a class="link-arrow" href="https://oecd.ai/en/ai-principles">Read the principles</a>
+          </article>
+        </div>
+        <p class="disclaimer"><svg aria-hidden="true"><use href="#i-info"/></svg><span>HITL-IoT is research informed by these frameworks. It does not claim EU AI Act compliance, NIST certification, official endorsement or regulatory validation, and its simulated oversight profiles do not measure real analysts.</span></p>
+      </div>
+    </section>
+
+    <!-- DATASET EXPLORER -->
+    <section id="dataset" class="section section-ice" aria-labelledby="dataset-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Dataset explorer</span>
+          <h2 id="dataset-title">Inside the released data</h2>
+          <p>Composition, attack families, real sample records and a searchable dictionary of all 60 columns. Nothing here downloads the full CSV.</p>
+        </div>
+        <div class="grid explorer">
+          <div class="card ex-card">
+            <h3>Benign versus attack</h3>
+            <div class="split-bar" role="img" aria-label="85.0% benign, 15.0% attack"><span style="width:85%;background:var(--teal)"></span><span style="width:15%;background:var(--miss)"></span></div>
+            <dl class="kv">
+              <dt><span class="sw" style="background:var(--teal)"></span>Benign</dt><dd>108,668 (85.0%)</dd>
+              <dt><span class="sw" style="background:var(--miss)"></span>Attack</dt><dd>19,177 (15.0%)</dd>
             </dl>
           </div>
-        </div>
-        <p class="scope">Research scope: HITL-IoT uses generated network flows and simulated oversight profiles. It supports experiments on the questions these frameworks raise; it does not certify compliance or measure real analysts.</p>
-      </div>
-    </section>
-
-    <section id="about" class="band band-alt">
-      <div class="wrap two">
-        <div>
-          <h2>What is in the benchmark</h2>
-          <p>One week of smart-home traffic from five kinds of device, with twelve attack families spread across four threat groups and fixed train, validation and test splits. Every label is exact, every file is checked against a published SHA-256 hash, and the whole release can be rebuilt byte for byte.</p>
-          <p>Beyond detection, 10,227 flows carry review metadata: a decision, confidence, latency and written rationale from three configurable review profiles. That turns deferral, routing and correct-versus-harm questions into experiments anyone can repeat and compare.</p>
-          <aside class="built">
-            <h3>Built for controlled experiments</h3>
-            <ul>
-              <li><strong>Exact ground truth.</strong> Traffic is produced by a seeded simulation, so labels are known by construction rather than inferred after the fact.</li>
-              <li><strong>Tunable difficulty.</strong> Each attack family's similarity to normal traffic is set explicitly, so hard cases are there on purpose.</li>
-              <li><strong>Repeatable oversight.</strong> Review decisions come from configurable profiles, so a routing policy can be tested thousands of times at no cost.</li>
-              <li><strong>Privacy-free.</strong> No real network, household or person is behind any record.</li>
-            </ul>
-            <p>It is designed to sit alongside capture-based datasets such as CICIoT2023 and ToN-IoT: they test detection on real traffic, HITL-IoT tests what happens after detection.</p>
-          </aside>
-        </div>
-        <dl class="facts">
-          <div><dt>Flows</dt><dd>127,845</dd><dd class="sub">108,668 benign, 19,177 attack</dd></div>
-          <div><dt>Columns</dt><dd>60</dd><dd class="sub">39 allowed as IDS features</dd></div>
-          <div><dt>Devices</dt><dd>5 types</dd><dd class="sub">12 instances: cameras, thermostats, speakers, TVs, doorbells</dd></div>
-          <div><dt>Attacks</dt><dd>12 families</dd><dd class="sub">reconnaissance, command and control, data movement, device manipulation</dd></div>
-          <div><dt>Time span</dt><dd>168 hours</dd><dd class="sub">one simulated week, seed 42</dd></div>
-          <div><dt>Oversight subset</dt><dd>10,227</dd><dd class="sub">8% of flows, chosen by ambiguity</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="inside" class="band">
-      <div class="wrap">
-        <h2>Inside the data</h2>
-        <p class="intro">Twelve attack families in four threat groups, from frequent botnet traffic to rare firmware exploitation. Counts are from the released file.</p>
-        <div class="two two-even">
-          <figure class="attack-chart" aria-labelledby="attack-cap">
+          <div class="card ex-card">
+            <h3>Evaluation splits</h3>
+            <div class="split-bar" role="img" aria-label="Chronological split: 70% train, 15% validation, 15% test"><span style="width:70%;background:var(--blue)"></span><span style="width:15%;background:#7FB0EC"></span><span style="width:15%;background:var(--gold)"></span></div>
+            <dl class="kv">
+              <dt><span class="sw" style="background:var(--blue)"></span>Train</dt><dd>89,492</dd>
+              <dt><span class="sw" style="background:#7FB0EC"></span>Validation</dt><dd>19,176</dd>
+              <dt><span class="sw" style="background:var(--gold)"></span>Test</dt><dd>19,177</dd>
+            </dl>
+            <p class="note" style="margin:0.75rem 0 0">Chronological (primary). A stratified IID split is also provided.</p>
+          </div>
+          <div class="card ex-card">
+            <h3>Device categories</h3>
+            <dl class="kv">
+              <dt><span class="sw" style="background:var(--blue)"></span>Camera</dt><dd>25,570</dd>
+              <dt><span class="sw" style="background:var(--blue)"></span>Thermostat</dt><dd>25,570</dd>
+              <dt><span class="sw" style="background:var(--blue)"></span>Speaker</dt><dd>25,569</dd>
+              <dt><span class="sw" style="background:var(--blue)"></span>Doorbell</dt><dd>25,568</dd>
+              <dt><span class="sw" style="background:var(--blue)"></span>TV</dt><dd>25,568</dd>
+            </dl>
+          </div>
+          <figure class="card ex-card ex-wide" style="margin:0">
+            <h3>Attack families by threat group</h3>
             <div id="attack-bars"></div>
-            <figcaption id="attack-cap">Attack flows per family (19,177 in total), grouped by threat group.</figcaption>
+            <figcaption class="note">Attack flows per family (19,177 in total), from the released summary file.</figcaption>
           </figure>
-          <div>
-            <h3 class="h-small">A few real rows</h3>
-            <div class="table-scroll tight">
+          <div class="card ex-card">
+            <h3>Feature categories</h3>
+            <ul class="cat-list">
+              <li><b>Flow evidence</b><span>19</span></li>
+              <li><b>Contextual</b><span>12</span></li>
+              <li><b>Historical</b><span>9</span></li>
+              <li><b>Identifiers</b><span>8</span></li>
+              <li><b>Oversight metadata</b><span>7</span></li>
+              <li><b>Construction variables</b><span>3</span></li>
+              <li><b>Target labels</b><span>2</span></li>
+            </ul>
+          </div>
+          <div class="card ex-card ex-full">
+            <h3>Sample of released records</h3>
+            <div class="table-scroll">
               <table class="sample">
-                <thead><tr><th scope="col">Time</th><th scope="col">Device</th><th scope="col">Service</th><th scope="col" class="num">Packets</th><th scope="col">Label</th></tr></thead>
+                <caption class="sr">Eight records copied from HITL-IoT_dataset_v1.1.csv, showing ten of 60 columns</caption>
+                <thead><tr><th scope="col">flow_id</th><th scope="col">timestamp</th><th scope="col">device</th><th scope="col">protocol</th><th scope="col" class="num">dst_port</th><th scope="col">service</th><th scope="col" class="num">packets</th><th scope="col" class="num">bytes_sent</th><th scope="col" class="num">duration (s)</th><th scope="col">label</th></tr></thead>
                 <tbody>
-                  <tr><td>00:00:22</td><td>camera</td><td>http, TCP 80</td><td class="num">709</td><td>normal</td></tr>
-                  <tr><td>00:00:25</td><td>doorbell</td><td>https, UDP 443</td><td class="num">7</td><td>normal</td></tr>
-                  <tr class="atk"><td>00:00:37</td><td>camera</td><td>smb, TCP 445</td><td class="num">55,521</td><td>port scanning</td></tr>
-                  <tr><td>00:00:59</td><td>camera</td><td>https, UDP 443</td><td class="num">611</td><td>normal</td></tr>
-                  <tr class="atk"><td>00:01:44</td><td>speaker</td><td>http, TCP 80</td><td class="num">20</td><td>botnet communication</td></tr>
-                  <tr class="atk"><td>00:02:32</td><td>tv</td><td>dns, UDP 53</td><td class="num">772</td><td>DNS tunnelling</td></tr>
+                  <tr><td class="mono">HITL11-000001</td><td>2024-01-15 00:00:22</td><td>camera</td><td>TCP</td><td class="num">80</td><td>http</td><td class="num">709</td><td class="num">395,707</td><td class="num">79.21</td><td><span class="lab lab-n">normal</span></td></tr>
+                  <tr><td class="mono">HITL11-000002</td><td>2024-01-15 00:00:25</td><td>doorbell</td><td>TCP</td><td class="num">80</td><td>http</td><td class="num">18</td><td class="num">4,285</td><td class="num">13.24</td><td><span class="lab lab-n">normal</span></td></tr>
+                  <tr><td class="mono">HITL11-000004</td><td>2024-01-15 00:00:25</td><td>doorbell</td><td>UDP</td><td class="num">443</td><td>https</td><td class="num">7</td><td class="num">3,938</td><td class="num">19.97</td><td><span class="lab lab-n">normal</span></td></tr>
+                  <tr><td class="mono">HITL11-000006</td><td>2024-01-15 00:00:37</td><td>camera</td><td>TCP</td><td class="num">445</td><td>smb</td><td class="num">55,521</td><td class="num">1,311,006</td><td class="num">0.36</td><td><span class="lab lab-a">port scanning</span></td></tr>
+                  <tr><td class="mono">HITL11-000010</td><td>2024-01-15 00:00:52</td><td>thermostat</td><td>UDP</td><td class="num">53</td><td>dns</td><td class="num">8</td><td class="num">567</td><td class="num">0.22</td><td><span class="lab lab-n">normal</span></td></tr>
+                  <tr><td class="mono">HITL11-000020</td><td>2024-01-15 00:01:44</td><td>speaker</td><td>TCP</td><td class="num">80</td><td>http</td><td class="num">20</td><td class="num">13,339</td><td class="num">29.39</td><td><span class="lab lab-a">botnet communication</span></td></tr>
+                  <tr><td class="mono">HITL11-000032</td><td>2024-01-15 00:02:32</td><td>tv</td><td>UDP</td><td class="num">53</td><td>dns</td><td class="num">772</td><td class="num">252,317</td><td class="num">57.20</td><td><span class="lab lab-a">dns tunneling</span></td></tr>
+                  <tr><td class="mono">HITL11-000059</td><td>2024-01-15 00:04:09</td><td>thermostat</td><td>UDP</td><td class="num">5683</td><td>coap_port</td><td class="num">62</td><td class="num">2,377</td><td class="num">2.78</td><td><span class="lab lab-a">credential harvesting</span></td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="note">Six of the 127,845 flows, from the first minutes of 15 January 2024, showing a few of the 60 columns. The botnet flow uses an ordinary web port and only 20 packets: attacks are built to blend in.</p>
+            <p class="note" style="margin:0.8rem 0 0">Eight rows copied from <code>HITL-IoT_dataset_v1.1.csv</code>, ten of 60 columns, durations rounded to two decimals. Several attacks use ordinary ports and small packet counts by design.</p>
+          </div>
+          <div class="card ex-card ex-full">
+            <h3>Feature dictionary</h3>
+            <div class="dict-tools">
+              <label class="search"><svg aria-hidden="true"><use href="#i-search"/></svg><span class="sr">Search columns</span><input id="dict-q" type="search" placeholder="Search 60 columns, e.g. bytes, port, oversight"></label>
+              <label><span class="sr">Filter by category</span><select id="dict-cat"><option value="">All categories</option></select></label>
+              <label class="check"><input id="dict-ids" type="checkbox"> Permitted IDS features only</label>
+              <span class="dict-count" id="dict-count" aria-live="polite"></span>
+            </div>
+            <div class="dict">
+              <table>
+                <caption class="sr">Column definitions from HITL-IoT_schema_v1.1.csv</caption>
+                <thead><tr><th scope="col">Column</th><th scope="col">Category</th><th scope="col">Type</th><th scope="col">Definition</th><th scope="col">IDS feature</th></tr></thead>
+                <tbody id="dict-body"><tr><td colspan="5">Loading the column dictionary…</td></tr></tbody>
+              </table>
+            </div>
+            <p class="note" style="margin:0.8rem 0 0">Loaded from the released schema (<a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_schema_v1.1.csv">HITL-IoT_schema_v1.1.csv</a>); "IDS feature" follows the 39-column primary policy.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="download" class="band band-alt">
+    <!-- DOWNLOADS -->
+    <section id="download" class="section" aria-labelledby="download-title">
       <div class="wrap">
-        <h2>Download the data</h2>
-        <p class="intro">Three CSV files are all you need. Each button saves the frozen v1.1 file to your computer.</p>
-        <div class="table-scroll">
-          <table class="files">
-            <thead><tr><th scope="col">File</th><th scope="col">Contents</th><th scope="col" class="num">Rows × cols</th><th scope="col" class="num">Size</th><th scope="col"><span class="sr">Download</span></th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row"><code>HITL-IoT_dataset_v1.1.csv</code></th>
-                <td>Every flow, with features, labels and oversight metadata</td>
-                <td class="num">127,845 × 60</td><td class="num">55.1 MB</td>
-                <td><a class="btn btn-primary btn-sm" href="https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv" download="HITL-IoT_dataset_v1.1.csv" data-fetch-download>Download</a></td>
-              </tr>
-              <tr>
-                <th scope="row"><code>HITL-IoT_splits_v1.1.csv</code></th>
-                <td>Official train, validation and test assignment; join on <code>flow_id</code></td>
-                <td class="num">127,845 × 4</td><td class="num">5.8 MB</td>
-                <td><a class="btn btn-sm" href="https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv" download="HITL-IoT_splits_v1.1.csv" data-fetch-download>Download</a></td>
-              </tr>
-              <tr>
-                <th scope="row"><code>HITL-IoT_oversight_subset_v1.1.csv</code></th>
-                <td>The 10,227 oversight-selected flows, same 60 columns</td>
-                <td class="num">10,227 × 60</td><td class="num">5.9 MB</td>
-                <td><a class="btn btn-sm" href="https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv" download="HITL-IoT_oversight_subset_v1.1.csv" data-fetch-download>Download</a></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="section-head">
+          <span class="eyebrow">Download centre</span>
+          <h2 id="download-title">Download the research files</h2>
+          <p>Each file downloads individually and is byte-identical to the frozen v1.1 release. Verify it with the published SHA-256 checksums.</p>
         </div>
-        <p class="aside-links">Also: <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json">feature policy</a> (the 39 allowed IDS features), <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_schema_v1.1.csv">column schema</a>, <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt">SHA-256 checksums</a> and the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/results">result archives</a>.</p>
+        <div class="grid downloads">
+          <article class="card dl primary">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-rows"/></svg></div>
+            <h3>Complete HITL-IoT Dataset</h3>
+            <div class="fname">HITL-IoT_dataset_v1.1.csv</div>
+            <p>Complete released flow-level dataset: features, labels and oversight metadata.</p>
+            <dl class="meta"><dt>Size</dt><dd>57,809,716 bytes (55.1 MB)</dd><dt>Format</dt><dd>CSV, UTF-8</dd><dt>Version</dt><dd>1.1</dd><dt>Shape</dt><dd>127,845 × 60</dd></dl>
+            <div class="dl-actions" data-dl data-file="HITL-IoT_dataset_v1.1.csv" data-bytes="57809716">
+              <button class="btn btn-primary dl-btn" type="button"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CSV</button>
+              <div class="progress" hidden><span></span></div>
+              <p class="dl-status" role="status"></p>
+              <p class="dl-alt">Or open the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
+            </div>
+          </article>
+          <article class="card dl">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-split"/></svg></div>
+            <h3>Official Evaluation Splits</h3>
+            <div class="fname">HITL-IoT_splits_v1.1.csv</div>
+            <p>Fixed training, validation and testing assignments (chronological and IID); join on <code>flow_id</code>.</p>
+            <dl class="meta"><dt>Size</dt><dd>6,034,313 bytes (5.8 MB)</dd><dt>Format</dt><dd>CSV, UTF-8</dd><dt>Version</dt><dd>1.1</dd><dt>Shape</dt><dd>127,845 × 4</dd></dl>
+            <div class="dl-actions" data-dl data-file="HITL-IoT_splits_v1.1.csv" data-bytes="6034313">
+              <button class="btn btn-outline dl-btn" type="button"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CSV</button>
+              <div class="progress" hidden><span></span></div>
+              <p class="dl-status" role="status"></p>
+              <p class="dl-alt">Or open the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
+            </div>
+          </article>
+          <article class="card dl">
+            <div class="ico"><svg aria-hidden="true"><use href="#i-person"/></svg></div>
+            <h3>Oversight Research Subset</h3>
+            <div class="fname">HITL-IoT_oversight_subset_v1.1.csv</div>
+            <p>Selected records with simulated oversight metadata: profile decision, confidence, latency and rationale.</p>
+            <dl class="meta"><dt>Size</dt><dd>6,222,857 bytes (5.9 MB)</dd><dt>Format</dt><dd>CSV, UTF-8</dd><dt>Version</dt><dd>1.1</dd><dt>Shape</dt><dd>10,227 × 60</dd></dl>
+            <div class="dl-actions" data-dl data-file="HITL-IoT_oversight_subset_v1.1.csv" data-bytes="6222857">
+              <button class="btn btn-outline dl-btn" type="button"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CSV</button>
+              <div class="progress" hidden><span></span></div>
+              <p class="dl-status" role="status"></p>
+              <p class="dl-alt">Or open the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
+            </div>
+          </article>
+        </div>
 
-        <div class="code-block">
-          <div class="code-head"><h3>Load it in Python</h3><button class="copy" type="button" data-copy="snippet">Copy</button></div>
+        <div class="card resources">
+          <h3>Research resources</h3>
+          <ul class="res-list">
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/notebooks"><svg aria-hidden="true"><use href="#i-code"/></svg>Notebooks 01–05</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/results"><svg aria-hidden="true"><use href="#i-chart"/></svg>Benchmark result archives</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/benchmark"><svg aria-hidden="true"><use href="#i-target"/></svg>Official scorer kit</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_schema_v1.1.csv"><svg aria-hidden="true"><use href="#i-file"/></svg>Schema</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json"><svg aria-hidden="true"><use href="#i-filter"/></svg>Feature policy</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt"><svg aria-hidden="true"><use href="#i-hash"/></svg>SHA-256 checksums</a></li>
+            <li><a href="https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset"><svg aria-hidden="true"><use href="#i-globe"/></svg>Kaggle listing</a> <small>check the version shown</small></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/data/v1.1/metadata"><svg aria-hidden="true"><use href="#i-book"/></svg>Methodology and provenance records</a></li>
+            <li><span class="note"><svg aria-hidden="true" style="width:1.05rem;height:1.05rem;vertical-align:-0.2em"><use href="#i-info"/></svg> Zenodo DOI: added once the v1.1 record is published</span></li>
+          </ul>
+        </div>
+
+        <div class="code">
+          <div class="code-head"><h3>Load the data in Python</h3><button class="copy" type="button" data-copy="snippet">Copy</button></div>
 <pre id="snippet"><code>import pandas as pd
 
-base = "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/"
+base = "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/"
 df     = pd.read_csv(base + "HITL-IoT_dataset_v1.1.csv", low_memory=False)
 splits = pd.read_csv(base + "HITL-IoT_splits_v1.1.csv")
 
@@ -280,122 +544,202 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
       </div>
     </section>
 
-    <section id="baselines" class="band">
+    <!-- BENCHMARKS -->
+    <section id="benchmarks" class="section section-ice" aria-labelledby="bench-title">
       <div class="wrap">
-        <h2>Reference results</h2>
-        <p class="intro">Nine models trained on the 39 flow features, scored once on the chronological test split (70/15/15). Reproduce any row with the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/benchmark">benchmark scorer</a>.</p>
-        <div class="table-scroll">
-          <table class="results">
-            <thead><tr><th scope="col">Model</th><th scope="col" class="bar-col">Macro-F1</th><th scope="col" class="num">MCC</th><th scope="col" class="num">AUROC</th></tr></thead>
-            <tbody id="results-body"></tbody>
-          </table>
+        <div class="section-head">
+          <span class="eyebrow">Benchmark results</span>
+          <h2 id="bench-title">Nine reference models on the chronological test split</h2>
+          <p>Manuscript-reported results, re-scored from the released held-out probabilities with the official scorer.</p>
         </div>
-        <p class="scale-note">Bars show Macro-F1 on a 0.90 to 1.00 scale.</p>
-        <p class="note"><a class="btn btn-sm btn-inline" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">Submit your result</a></p>
-        <p class="note">False-alarm rates stay below 0.7% for every model, but false-negative rates range from 10.2% to 23.2%. The models rarely cry wolf; they do miss attacks. That asymmetry is what the oversight tasks study.</p>
-      </div>
-    </section>
+        <div class="bench-grid">
+          <div class="card bench-table">
+            <div class="table-scroll">
+              <table>
+                <caption class="sr">Track-1 results on the chronological test split; bar length shows Macro-F1 on a 0.90 to 1.00 scale</caption>
+                <thead><tr><th scope="col">Model</th><th scope="col" style="min-width:12rem">Macro-F1</th><th scope="col" class="num">MCC</th><th scope="col" class="num">AUROC</th><th scope="col" class="num">FPR</th></tr></thead>
+                <tbody id="results-body"></tbody>
+              </table>
+            </div>
+            <p class="bench-foot">Bars show Macro-F1 on a 0.90 to 1.00 scale. FPR is the false-positive rate on the test split.</p>
+          </div>
+          <div class="card method-card">
+            <h3>Evaluation method</h3>
+            <ol>
+              <li>Train on the chronological training split (70%); tune on validation (15%).</li>
+              <li>Use only the 39 permitted primary features.</li>
+              <li>Score the test split (15%, 19,177 flows) once.</li>
+              <li>The reference model is chosen on validation performance.</li>
+            </ol>
+            <div class="verified"><svg aria-hidden="true"><use href="#i-check"/></svg><span>All nine rows were re-scored from the released probabilities with the official scorer and match the manuscript to four decimals.</span></div>
+            <p class="note" style="margin:0">Reproduce: <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/benchmark">benchmark scorer</a>, <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/notebooks/03_Track1_IDS_Benchmark_CLEAN.ipynb">notebook 03</a>, <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/results/intrusion_detection/Table7_Track1_Temporal_All9_Baselines.csv">Table 7 (CSV)</a>. False-positive rates stay below 0.7%, while missed-attack rates range from 10.2% to 23.2%.</p>
+          </div>
+        </div>
 
-    <section id="oversight" class="band band-alt">
-      <div class="wrap two">
-        <div>
-          <h2>What the oversight experiments found</h2>
-          <ul class="findings">
-            <li><strong>Missed attacks look confident.</strong> Reviewing the least-confident 8% of test flows catches 15.2% of the Random Forest's errors after calibration.</li>
-            <li><strong>Calibration fixes the probabilities, not the misses.</strong> Isotonic calibration cuts expected calibration error from 0.0186 to 0.0014.</li>
-            <li><strong>Two kinds of "uncertain" barely overlap.</strong> The generator's ambiguity and the model's own uncertainty agree almost at chance (AUROC 0.503, Spearman ρ 0.053).</li>
-            <li><strong>Blind override does harm.</strong> Letting review profiles overrule every reachable prediction corrects 7 errors and introduces 293. A confidence gate prevents this.</li>
-          </ul>
-          <p class="note">Results from the peer-reviewed article, using the benchmark's configurable review profiles.</p>
+        <div class="grid evidence">
+          <article class="card ev"><div class="big">15.2%</div><h3>Errors selected at an 8% review budget</h3><p>After calibration, reviewing the 8% least-confident predictions selects 15.2% of the Random Forest's errors: missed attacks tend to look confident.</p></article>
+          <article class="card ev t-teal"><div class="big">0.0186 → 0.0014</div><h3>Expected calibration error</h3><p>Isotonic calibration, selected on validation, sharply improves how well confidence matches observed accuracy.</p></article>
+          <article class="card ev"><div class="big">AUROC 0.503</div><h3>Two kinds of uncertainty</h3><p>The generator's ambiguity score and the model's own uncertainty identify largely different flows (Spearman ρ 0.053).</p></article>
+          <article class="card ev t-gold"><div class="big">7 vs 293</div><h3>Correction versus harm</h3><p>Unconditional simulated-profile override corrects 7 errors but changes 293 correct decisions; a confidence gate avoids this harm.</p></article>
         </div>
-        <figure class="paper-fig">
-          <img src="assets/images/figure10_calibration_selective_prediction.png" alt="Four panels: reliability curves before and after calibration, risk–coverage curves, errors captured versus review workload, and Brier score and ECE before and after calibration" decoding="async" width="1331" height="1210">
-          <figcaption>Calibration and selective deferral for the reference Random Forest (paper, Figure 8).</figcaption>
+
+        <figure class="card figure-card">
+          <img src="assets/images/figure10_calibration_selective_prediction.png" alt="Four panels: reliability curves before and after calibration, risk–coverage curves, model errors captured versus review workload, and Brier score and ECE before and after calibration" width="1331" height="1210" loading="lazy" decoding="async">
+          <figcaption><strong>Calibration and selective deferral (paper, Figure 8)</strong>Reliability curves, risk–coverage under exact workload control, errors captured versus review workload, and Brier score and ECE for the reference Random Forest. These results use configurable simulated profiles, not human analysts, and do not imply deployment validation.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section id="datasheet" class="band">
+    <!-- DATASHEET -->
+    <section id="datasheet" class="section" aria-labelledby="sheet-title">
       <div class="wrap">
-        <h2>Datasheet</h2>
-        <p class="intro">Documentation in the seven-part format of <a href="https://arxiv.org/abs/1803.09010">Datasheets for Datasets</a> (Gebru et al.).</p>
-        <div class="sheet">
+        <div class="section-head">
+          <span class="eyebrow">Documentation</span>
+          <h2 id="sheet-title">Datasheet and data provenance</h2>
+          <p>Documented in the seven-part format of <a href="https://arxiv.org/abs/1803.09010">Datasheets for Datasets</a> (Gebru et al.).</p>
+        </div>
+
+        <div class="card provenance">
+          <div>
+            <h3>Controlled Benchmark Design and Data Provenance</h3>
+            <p>HITL-IoT was developed using a controlled, reproducible smart-home IoT scenario covering 168 hours and twelve modeled devices. The dataset incorporates defined attack behaviors, known reference labels, configurable traffic characteristics and standardized evaluation partitions. This design enables systematic comparisons of intrusion detection, uncertainty estimation and oversight-aware decision policies under consistent experimental conditions.</p>
+            <p class="prov-statement"><svg aria-hidden="true"><use href="#i-info"/></svg><span><strong>Provenance.</strong> The network flows and oversight profiles are generated. They are not captures from an operational network and not decisions observed from human analysts.</span></p>
+          </div>
+          <dl class="prov-facts">
+            <div><dt>Generation</dt><dd>Deterministic generator, seed 42</dd></div>
+            <div><dt>Time span</dt><dd>15–21 January 2024 (168 h)</dd></div>
+            <div><dt>Devices</dt><dd>5 types, 12 modeled instances</dd></div>
+            <div><dt>Oversight subset</dt><dd>Top 8% of flows by ambiguity score</dd></div>
+            <div><dt>Integrity</dt><dd>13 files with published SHA-256 hashes; byte-reproducible</dd></div>
+            <div><dt>Records</dt><dd><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/data/v1.1/metadata">Generator, configuration, manifest and generation report</a></dd></div>
+          </dl>
+        </div>
+
+        <div class="card sheet">
           <details open>
-            <summary>Motivation</summary>
-            <p>Most IoT intrusion datasets provide traffic features and labels only, so they cannot test what happens after a prediction: deferral, review routing, calibration and the trade-off between correcting and harming decisions. HITL-IoT provides a controlled, repeatable setting for those questions, relevant to human-oversight requirements such as Article 14 of the EU AI Act. Created by Abubakar Wakili (Euromed University of Fez), Muhammad Idris (University of Passau) and Sara Bakkali (Euromed University of Fez). No specific funding was received.</p>
+            <summary><span class="n">1</span>Motivation</summary>
+            <div class="body"><p>Most IoT intrusion datasets provide traffic features and labels only, so they cannot test what happens after a prediction: deferral, review routing, calibration and the trade-off between correcting and harming decisions. HITL-IoT provides a controlled, repeatable setting for those questions. Created by Abubakar Wakili, Muhammad Idris and Sara Bakkali. No specific funding was received.</p></div>
           </details>
           <details>
-            <summary>Composition</summary>
-            <p>127,845 flow records with 60 columns: time, addressing, ports and services, device identity, volume and rate statistics, per-device rolling statistics, labels (<code>is_attack</code>, <code>attack_type</code>), construction signals and oversight-profile fields. 85.0% benign and 15.0% attack across twelve attack families. The oversight subset has 10,227 records: 8,160 high, 1,557 medium and 510 low competence profiles. Addresses are synthetic; the dataset contains no personal data.</p>
+            <summary><span class="n">2</span>Composition</summary>
+            <div class="body"><p>127,845 flow records with 60 columns: time, addressing, ports and services, device identity, volume and rate statistics, per-device rolling statistics, labels (<code>is_attack</code>, <code>attack_type</code>), construction variables and oversight-profile fields. 85.0% benign and 15.0% attack across twelve attack families in four threat groups. The oversight subset has 10,227 records: 8,160 high, 1,557 medium and 510 low competence profiles. Addresses are synthetic and the dataset contains no personal data.</p></div>
           </details>
           <details>
-            <summary>Collection process</summary>
-            <p>Produced in a fully controlled simulation of a smart home: 168 hours of traffic from 15 to 21 January 2024 across twelve devices. Each attack family has an explicit port-mimicry rate and similarity to normal traffic, so difficulty is known and adjustable. Labels are exact by construction, the release is byte-reproducible (seed 42), and no real network, household or person is involved.</p>
+            <summary><span class="n">3</span>Controlled benchmark design and data provenance</summary>
+            <div class="body"><p>Produced in a controlled simulation of a smart home: 168 hours of traffic from 15 to 21 January 2024 across twelve modeled devices. Each attack family has an explicit port-mimicry rate and similarity to benign traffic, so difficulty is known and adjustable. Labels are exact by construction and the release is byte-reproducible (seed 42). The flows and oversight profiles are generated; they are not operational captures or observed human decisions, and no human participants were involved.</p></div>
           </details>
           <details>
-            <summary>Preprocessing and labelling</summary>
-            <p>Labels are exact by construction. The oversight subset is the 8% of flows with the highest ambiguity score. Version 1.1 is leakage-audited: fields that could reveal the label are removed, and a published feature policy separates the 39 detection features from construction signals, so a high score has to be earned from traffic behaviour.</p>
+            <summary><span class="n">4</span>Preprocessing and labelling</summary>
+            <div class="body"><p>Labels are exact by construction. The oversight subset is the 8% of flows with the highest ambiguity score. Version 1.1 is leakage-audited: fields that could reveal the label are removed from the detection features, and a published feature policy separates the 39 detection features from construction variables.</p></div>
           </details>
           <details>
-            <summary>Uses</summary>
-            <p>Leakage-safe IDS benchmarking, probability calibration, selective prediction, learning to defer, review routing, correction-versus-harm analysis, and teaching. Review profiles are configurable stand-ins for analysts, which makes oversight policies cheap to compare; studies of real analyst behaviour need human participants. For detection on real traffic, pair HITL-IoT with capture-based datasets such as CICIoT2023 and ToN-IoT.</p>
+            <summary><span class="n">5</span>Uses</summary>
+            <div class="body"><p>Leakage-safe IDS benchmarking, probability calibration, selective prediction, learning to defer, review routing, correction-versus-harm analysis and teaching. Simulated profiles make oversight policies cheap to compare; studies of real analyst behaviour need human participants. For detection on real traffic, pair HITL-IoT with capture-based datasets such as CICIoT2023 and ToN-IoT.</p></div>
           </details>
           <details>
-            <summary>Distribution</summary>
-            <p>Free under CC BY 4.0 from <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub</a>. A versioned Zenodo archive with its own DOI accompanies each release.</p>
+            <summary><span class="n">6</span>Distribution</summary>
+            <div class="body"><p>Free under CC BY 4.0 from <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub</a>. A versioned Zenodo record with its own DOI accompanies the release once published.</p></div>
           </details>
           <details>
-            <summary>Maintenance</summary>
-            <p>Maintained by Abubakar Wakili. Report problems or submit benchmark results through <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">GitHub issues</a>. Released versions are frozen; any data change becomes a new version with its own changelog and DOI.</p>
+            <summary><span class="n">7</span>Maintenance</summary>
+            <div class="body"><p>Maintained by Abubakar Wakili. Report problems or submit benchmark results through <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">GitHub issues</a>. Released versions are frozen; any data change becomes a new version with its own changelog and DOI.</p></div>
           </details>
         </div>
       </div>
     </section>
 
-    <section id="citation" class="band band-alt">
+    <!-- CITATION -->
+    <section id="citation" class="section section-ice" aria-labelledby="cite-title">
       <div class="wrap">
-        <h2>Cite HITL-IoT</h2>
-        <p class="intro">Please cite the article and the dataset version you used.</p>
-        <div class="cite">
-          <div class="tabs" role="tablist" aria-label="Citation format">
-            <button role="tab" id="tab-article" aria-selected="true" aria-controls="cite-article" type="button">Article</button>
-            <button role="tab" id="tab-dataset" aria-selected="false" aria-controls="cite-dataset" type="button" tabindex="-1">Dataset</button>
-            <button class="copy" type="button" data-copy="active-cite">Copy BibTeX</button>
+        <div class="section-head">
+          <span class="eyebrow">Publication and citation</span>
+          <h2 id="cite-title">Cite HITL-IoT</h2>
+          <p>Please cite both the journal article and the dataset version you used.</p>
+        </div>
+        <div class="card pub">
+          <div>
+            <span class="status">Accepted for publication</span>
+            <h3>HITL-IoT: A Reproducible Dataset and Benchmark for Studying Trustworthy Human–AI Collaboration, Oversight Mechanisms, and Selective Deferral in IoT Cybersecurity</h3>
+            <p class="authors">Abubakar Wakili, Muhammad Idris, Sara Bakkali</p>
+            <p class="journal">BenchCouncil Transactions on Benchmarks, Standards and Evaluations</p>
+            <p class="note">Volume, issue, pages and DOI will be added when the journal publishes them.</p>
+            <div class="pub-links">
+              <a class="btn btn-outline btn-sm" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/CITATION.cff">CITATION.cff</a>
+              <a class="btn btn-quiet btn-sm" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+              <a class="btn btn-quiet btn-sm" href="https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset">Kaggle</a>
+            </div>
           </div>
-<pre role="tabpanel" id="cite-article" aria-labelledby="tab-article"><code>@article{wakili2026hitliot,
+          <div>
+            <div class="cite-box">
+              <div class="tabs" role="tablist" aria-label="Citation type">
+                <button role="tab" id="tab-article" aria-selected="true" aria-controls="cite-article" type="button">Journal article</button>
+                <button role="tab" id="tab-dataset" aria-selected="false" aria-controls="cite-dataset" type="button" tabindex="-1">Dataset v1.1</button>
+                <span class="spacer"></span>
+                <button class="copy" type="button" data-copy="active-cite">Copy BibTeX</button>
+                <button class="copy" type="button" data-bib>Download .bib</button>
+              </div>
+<pre role="tabpanel" id="cite-article" aria-labelledby="tab-article" tabindex="0"><code>@article{wakili2026hitliot,
   author  = {Wakili, Abubakar and Idris, Muhammad and Bakkali, Sara},
   title   = {{HITL-IoT}: A Reproducible Dataset and Benchmark for Studying
              Trustworthy Human--AI Collaboration, Oversight Mechanisms, and
              Selective Deferral in IoT Cybersecurity},
   journal = {BenchCouncil Transactions on Benchmarks, Standards and Evaluations},
   year    = {2026},
-  note    = {Accepted}
+  note    = {Accepted for publication}
 }</code></pre>
-<pre role="tabpanel" id="cite-dataset" aria-labelledby="tab-dataset" hidden><code>@misc{wakili2026hitliot_data,
+<pre role="tabpanel" id="cite-dataset" aria-labelledby="tab-dataset" tabindex="0" hidden><code>@misc{wakili2026hitliot_data,
   author       = {Wakili, Abubakar and Idris, Muhammad and Bakkali, Sara},
   title        = {{HITL-IoT} Dataset, version 1.1},
   year         = {2026},
   howpublished = {\url{https://github.com/abubakarwakili9/HITL-IoT-Dataset}},
   note         = {CC BY 4.0}
 }</code></pre>
+            </div>
+            <p class="doi-note">The article DOI and the version-specific Zenodo DOI will be added here once confirmed.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer id="contact" class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <p class="wordmark wordmark-foot">HITL-IoT</p>
-        <p>Abubakar Wakili, Muhammad Idris and Sara Bakkali<br>Euromed University of Fez and University of Passau</p>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#top"><svg aria-hidden="true"><use href="#i-logo"/></svg><span>HITL-IoT</span></a>
+          <p class="footer-mission">An open benchmark for research on reliable, uncertainty-aware and oversight-aware AI decisions in IoT cybersecurity.</p>
+        </div>
+        <div>
+          <h4>Data</h4>
+          <ul>
+            <li><a href="#download">Download centre</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub repository</a></li>
+            <li><a href="https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset">Kaggle</a></li>
+            <li><span class="note">Zenodo: DOI pending</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="#datasheet">Datasheet</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/CHANGELOG.md">Changelog</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/LICENSE">License (CC BY 4.0)</a></li>
+            <li><a href="#citation">Citation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">Report an issue</a></li>
+            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">Submit a benchmark result</a></li>
+            <li><a href="https://github.com/abubakarwakili9">Maintainer on GitHub</a></li>
+          </ul>
+        </div>
       </div>
-      <ul>
-        <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">Repository</a></li>
-        <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">Report a problem or submit a result</a></li>
-        <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/CHANGELOG.md">Changelog</a></li>
-        <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/legacy/v1.0">Version 1.0 (superseded)</a></li>
-      </ul>
-      <p class="license">Data and documentation under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+      <div class="footer-bottom">
+        <span>© 2026 Abubakar Wakili, Muhammad Idris and Sara Bakkali. Data and documentation under CC BY 4.0.</span>
+        <span>HITL-IoT v1.1</span>
+      </div>
     </div>
   </footer>
 
