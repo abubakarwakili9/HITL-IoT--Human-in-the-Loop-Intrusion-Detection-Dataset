@@ -1,10 +1,6 @@
-# Large v1.1 release assets: distributed via GitHub Release / Zenodo / Kaggle, not Git history.
-# Fetch them with: python scripts/download_release_assets.py
-data/v1.1/HITL-IoT_dataset_v1.1.csv
-data/v1.1/HITL-IoT_oversight_subset_v1.1.csv
-data/v1.1/HITL-IoT_splits_v1.1.csv
-results/*/*.zip
+# Trained-model package (128.6 MB) exceeds GitHub's 100 MB file limit: distributed via Zenodo / release asset.
 models/
+*model_binaries*.zip
 
 # Notebook outputs and Python caches
 analysis_v1.1/
@@ -12,3 +8,4 @@ analysis_v1.1/
 __pycache__/
 *.pyc
 .venv/
+*.part

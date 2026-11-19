@@ -3,9 +3,10 @@
 | Path | In Git? | Contents |
 |:--|:--|:--|
 | `data/v1.1/` | yes | 10 frozen metadata files + generator + `HITL-IoT_checksums_v1.1.txt` (byte-exact; `.gitattributes` disables line-ending conversion) |
-| `data/v1.1/HITL-IoT_{dataset,oversight_subset,splits}_v1.1.csv` | no (release assets) | Fetched by `scripts/download_release_assets.py` |
+| `data/v1.1/HITL-IoT_{dataset,oversight_subset,splits}_v1.1.csv` | yes | Full dataset, oversight subset, splits (byte-exact) |
 | `results/intrusion_detection/Table7_…csv` | yes | Main benchmark table |
-| `results/*/*.zip` (4 archives) | no (release assets) | `download_release_assets.py --results` |
+| `results/*/*.zip` (4 archives) | yes | Result archives (byte-exact) |
+| Trained-model package (128.6 MB) | no | Above GitHub's 100 MB file limit; on Zenodo |
 | `notebooks/` | yes | 01–05 |
 | `benchmark/` | yes | Scorer kit |
 | `scripts/` | yes | Download and verification |
