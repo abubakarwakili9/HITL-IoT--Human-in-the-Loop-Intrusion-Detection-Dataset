@@ -52,10 +52,10 @@
       </a>
       <nav aria-label="Sections">
         <ul class="nav">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#governance">Why it matters</a></li>
           <li><a href="#download">Data</a></li>
-          <li><a href="#tasks">Tasks</a></li>
           <li><a href="#baselines">Results</a></li>
-          <li><a href="#oversight">Oversight</a></li>
           <li><a href="#datasheet">Datasheet</a></li>
           <li><a href="#citation">Cite</a></li>
           <li><a class="nav-gh" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub</a></li>
@@ -67,9 +67,9 @@
   <main id="main">
     <section id="top" class="hero">
       <div class="wrap">
-        <p class="release">Version 1.1, accepted in <em>BenchCouncil Transactions on Benchmarks, Standards and Evaluations</em></p>
-        <h1>Every intrusion detector makes mistakes. Which of its predictions should a person check?</h1>
-        <p class="lede">HITL-IoT is a reproducible smart-home IoT benchmark for the questions that come after detection: how confident the model really is, which predictions to send for review, and when intervening helps or harms.</p>
+        <p class="release">HITL-IoT dataset, version 1.1, accepted in <em>BenchCouncil Transactions on Benchmarks, Standards and Evaluations</em></p>
+        <h1>Beyond Intrusion Detection: Toward Trustworthy AI Decisions in IoT Cybersecurity</h1>
+        <p class="lede">A reproducible benchmark for intrusion detection, calibration, selective deferral and human–AI oversight. It tests not only whether AI can identify cyberattacks, but when its predictions should be trusted, reviewed or deferred.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#download">Download the data</a>
           <a class="btn" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">View on GitHub</a>
@@ -86,7 +86,7 @@
       <div class="wrap">
         <figure class="desk" aria-labelledby="desk-title">
           <div class="desk-head">
-            <h2 id="desk-title">Try a review budget</h2>
+            <h2 id="desk-title">See the problem in one slider</h2>
             <p>Each thin line is one of the <strong>19,177</strong> held-out test flows, ordered from least to most confident Random Forest prediction. Red marks are the <strong>289</strong> attacks it missed. Flows left of the amber edge go to review.</p>
           </div>
 
@@ -110,7 +110,53 @@
       </div>
     </section>
 
-    <section id="about" class="band">
+
+
+
+
+    <section id="research" class="band band-alt">
+      <div class="wrap">
+        <h2>Four research areas, one benchmark</h2>
+        <p class="intro">Each area comes with a fixed protocol and metric, so results from different papers can be compared directly.</p>
+        <dl class="tasks">
+          <div><dt>Intrusion detection</dt><dd>Evaluate detectors across twelve IoT attack families with consistent features and fixed evaluation splits.</dd><dd class="metric">Macro-F1, MCC, AUROC</dd></div>
+          <div><dt>Trustworthy AI and calibration</dt><dd>Measure predictive uncertainty and whether a model's confidence matches how often it is right.</dd><dd class="metric">ECE, Brier score</dd></div>
+          <div><dt>Selective deferral</dt><dd>Decide when to accept a prediction and when to send it for review under a fixed budget.</dd><dd class="metric">Errors captured at 8% review</dd></div>
+          <div><dt>Human–AI oversight</dt><dd>Compare review routing and intervention policies with simulated reviewer profiles, counting fixes against new mistakes.</dd><dd class="metric">Corrections minus harms</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="governance" class="band">
+      <div class="wrap">
+        <h2>Why HITL-IoT matters</h2>
+        <p class="intro">High detection accuracy does not show whether a model's predictions are reliable, how uncertainty should shape a security decision, or when extra oversight actually helps. HITL-IoT makes those questions measurable.</p>
+        <div class="two">
+          <div>
+            <h3 class="h-small">With HITL-IoT, researchers can</h3>
+            <ul class="can">
+              <li>evaluate intrusion detection across diverse IoT attack scenarios</li>
+              <li>measure model confidence, calibration and uncertainty</li>
+              <li>test selective prediction and learning-to-defer strategies</li>
+              <li>compare alert prioritisation and oversight policies under a fixed review budget</li>
+              <li>weigh the errors an intervention corrects against the ones it introduces</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="h-small">Research informed by international frameworks</h3>
+            <dl class="frameworks">
+              <div><dt><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14">EU AI Act, Article 14</a></dt><dd>Human oversight of high-risk AI: when people should interpret, intervene in or override a system's output.</dd></div>
+              <div><dt><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF 1.0</a></dt><dd>Measuring reliability and managing AI risk, through its Govern, Map, Measure and Manage functions.</dd></div>
+              <div><dt><a href="https://www.nist.gov/cyberframework">NIST CSF 2.0</a></dt><dd>Detection and alert prioritisation as part of the Detect, Respond and Govern functions.</dd></div>
+              <div><dt><a href="https://oecd.ai/en/ai-principles">OECD AI Principles</a></dt><dd>Transparency, robustness and accountability in human-centred AI.</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="scope">Research scope: HITL-IoT uses generated network flows and simulated oversight profiles. It supports experiments on the questions these frameworks raise; it does not certify compliance or measure real analysts.</p>
+      </div>
+    </section>
+
+    <section id="about" class="band band-alt">
       <div class="wrap two">
         <div>
           <h2>What is in the benchmark</h2>
@@ -135,6 +181,36 @@
           <div><dt>Time span</dt><dd>168 hours</dd><dd class="sub">one simulated week, seed 42</dd></div>
           <div><dt>Oversight subset</dt><dd>10,227</dd><dd class="sub">8% of flows, chosen by ambiguity</dd></div>
         </dl>
+      </div>
+    </section>
+
+    <section id="inside" class="band">
+      <div class="wrap">
+        <h2>Inside the data</h2>
+        <p class="intro">Twelve attack families in four threat groups, from frequent botnet traffic to rare firmware exploitation. Counts are from the released file.</p>
+        <div class="two two-even">
+          <figure class="attack-chart" aria-labelledby="attack-cap">
+            <div id="attack-bars"></div>
+            <figcaption id="attack-cap">Attack flows per family (19,177 in total), grouped by threat group.</figcaption>
+          </figure>
+          <div>
+            <h3 class="h-small">A few real rows</h3>
+            <div class="table-scroll tight">
+              <table class="sample">
+                <thead><tr><th scope="col">Time</th><th scope="col">Device</th><th scope="col">Service</th><th scope="col" class="num">Packets</th><th scope="col">Label</th></tr></thead>
+                <tbody>
+                  <tr><td>00:00:22</td><td>camera</td><td>http, TCP 80</td><td class="num">709</td><td>normal</td></tr>
+                  <tr><td>00:00:25</td><td>doorbell</td><td>https, UDP 443</td><td class="num">7</td><td>normal</td></tr>
+                  <tr class="atk"><td>00:00:37</td><td>camera</td><td>smb, TCP 445</td><td class="num">55,521</td><td>port scanning</td></tr>
+                  <tr><td>00:00:59</td><td>camera</td><td>https, UDP 443</td><td class="num">611</td><td>normal</td></tr>
+                  <tr class="atk"><td>00:01:44</td><td>speaker</td><td>http, TCP 80</td><td class="num">20</td><td>botnet communication</td></tr>
+                  <tr class="atk"><td>00:02:32</td><td>tv</td><td>dns, UDP 53</td><td class="num">772</td><td>DNS tunnelling</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">Six of the 127,845 flows, from the first minutes of 15 January 2024, showing a few of the 60 columns. The botnet flow uses an ordinary web port and only 20 packets: attacks are built to blend in.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -181,49 +257,6 @@ df = df.merge(splits, on=["flow_id", "timestamp"])
 train = df[df.temporal_split == "train"]      # 89,492 flows
 test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
         </div>
-      </div>
-    </section>
-
-    <section id="inside" class="band">
-      <div class="wrap">
-        <h2>Inside the data</h2>
-        <p class="intro">Twelve attack families in four threat groups, from frequent botnet traffic to rare firmware exploitation. Counts are from the released file.</p>
-        <div class="two two-even">
-          <figure class="attack-chart" aria-labelledby="attack-cap">
-            <div id="attack-bars"></div>
-            <figcaption id="attack-cap">Attack flows per family (19,177 in total), grouped by threat group.</figcaption>
-          </figure>
-          <div>
-            <h3 class="h-small">A few real rows</h3>
-            <div class="table-scroll tight">
-              <table class="sample">
-                <thead><tr><th scope="col">Time</th><th scope="col">Device</th><th scope="col">Service</th><th scope="col" class="num">Packets</th><th scope="col">Label</th></tr></thead>
-                <tbody>
-                  <tr><td>00:00:22</td><td>camera</td><td>http, TCP 80</td><td class="num">709</td><td>normal</td></tr>
-                  <tr><td>00:00:25</td><td>doorbell</td><td>https, UDP 443</td><td class="num">7</td><td>normal</td></tr>
-                  <tr class="atk"><td>00:00:37</td><td>camera</td><td>smb, TCP 445</td><td class="num">55,521</td><td>port scanning</td></tr>
-                  <tr><td>00:00:59</td><td>camera</td><td>https, UDP 443</td><td class="num">611</td><td>normal</td></tr>
-                  <tr class="atk"><td>00:01:44</td><td>speaker</td><td>http, TCP 80</td><td class="num">20</td><td>botnet communication</td></tr>
-                  <tr class="atk"><td>00:02:32</td><td>tv</td><td>dns, UDP 53</td><td class="num">772</td><td>DNS tunnelling</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="note">Six of the 127,845 flows, from the first minutes of 15 January 2024, showing a few of the 60 columns. The botnet flow uses an ordinary web port and only 20 packets: attacks are built to blend in.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="tasks" class="band band-alt">
-      <div class="wrap">
-        <h2>Four benchmark tasks</h2>
-        <p class="intro">Each task has a fixed protocol and metric, so results from different papers can be compared directly.</p>
-        <dl class="tasks">
-          <div><dt>Detection</dt><dd>Classify each flow as benign or attack using only the 39 permitted features.</dd><dd class="metric">Macro-F1, MCC, AUROC</dd></div>
-          <div><dt>Calibration</dt><dd>Make predicted probabilities match how often the model is actually right.</dd><dd class="metric">ECE, Brier score</dd></div>
-          <div><dt>Selective deferral</dt><dd>Choose which predictions to send for review under a fixed review budget.</dd><dd class="metric">Errors captured at 8% review</dd></div>
-          <div><dt>Oversight routing</dt><dd>Decide when a reviewer should overrule the model, and measure fixes against new mistakes.</dd><dd class="metric">Corrections minus harms</dd></div>
-        </dl>
       </div>
     </section>
 
