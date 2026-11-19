@@ -1,6 +1,6 @@
 # HITL-IoT
 
-[![Integrity](https://github.com/abubakarwakili9/HITL-IoT-Dataset/actions/workflows/integrity.yml/badge.svg)](https://github.com/abubakarwakili9/HITL-IoT-Dataset/actions/workflows/integrity.yml)
+[![Integrity](https://github.com/wakili-research/HITL-IoT-Dataset/actions/workflows/integrity.yml/badge.svg)](https://github.com/wakili-research/HITL-IoT-Dataset/actions/workflows/integrity.yml)
 [![Paper: TBench (accepted)](https://img.shields.io/badge/paper-TBench%20(accepted)-1f6feb)](https://journal.benchcouncil.org/TBench)
 [![Dataset v1.1](https://img.shields.io/badge/dataset-v1.1-orange)](CHANGELOG.md)
 [![Kaggle](https://img.shields.io/badge/Kaggle-dataset-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset)
@@ -25,9 +25,9 @@ Unlike capture-based IoT datasets focused primarily on network-event classificat
 
 | # | File | What it contains | Rows × columns | Size | Download |
 |:-:|:--|:--|:-:|:-:|:-:|
-| **1** | [`HITL-IoT_dataset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) | **The full dataset:** every flow with features, labels and oversight metadata | 127,845 × 60 | 55.1 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) |
-| **2** | [`HITL-IoT_splits_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) | **Official train/validation/test assignment** (`temporal_split` is primary, `iid_split` secondary); join on `flow_id` | 127,845 × 4 | 5.8 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) |
-| **3** | [`HITL-IoT_oversight_subset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) | **The 10,227 oversight-selected flows** (same 60 columns) for deferral and review experiments | 10,227 × 60 | 5.9 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) |
+| **1** | [`HITL-IoT_dataset_v1.1.csv`](https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) | **The full dataset:** every flow with features, labels and oversight metadata | 127,845 × 60 | 55.1 MB | [⬇ CSV](https://github.com/wakili-research/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) |
+| **2** | [`HITL-IoT_splits_v1.1.csv`](https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) | **Official train/validation/test assignment** (`temporal_split` is primary, `iid_split` secondary); join on `flow_id` | 127,845 × 4 | 5.8 MB | [⬇ CSV](https://github.com/wakili-research/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) |
+| **3** | [`HITL-IoT_oversight_subset_v1.1.csv`](https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) | **The 10,227 oversight-selected flows** (same 60 columns) for deferral and review experiments | 10,227 × 60 | 5.9 MB | [⬇ CSV](https://github.com/wakili-research/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) |
 
 Also needed to train models correctly: [`HITL-IoT_feature_policy_v1.1.json`](data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json) lists the 39 permitted IDS features, and [`HITL-IoT_schema_v1.1.csv`](data/v1.1/metadata/HITL-IoT_schema_v1.1.csv) defines every column.
 
@@ -35,7 +35,7 @@ Load the data directly, without cloning:
 
 ```python
 import pandas as pd
-base = "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/"
+base = "https://github.com/wakili-research/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/"
 df     = pd.read_csv(base + "HITL-IoT_dataset_v1.1.csv", low_memory=False)
 splits = pd.read_csv(base + "HITL-IoT_splits_v1.1.csv")
 df = df.merge(splits, on=["flow_id", "timestamp"])
@@ -155,7 +155,7 @@ All dataset files and result archives are in the repository; the trained-model p
 ## Quick start
 
 ```bash
-git clone https://github.com/abubakarwakili9/HITL-IoT-Dataset.git
+git clone https://github.com/wakili-research/HITL-IoT-Dataset.git
 cd HITL-IoT-Dataset
 pip install pandas scikit-learn
 python scripts/verify_merged_release.py      # checks all 13 frozen files, counts and splits
