@@ -6,12 +6,12 @@
   <title>HITL-IoT v1.1 — Open benchmark for trustworthy AI in IoT cybersecurity</title>
   <meta name="description" content="HITL-IoT v1.1 is a reproducible research benchmark for IoT intrusion detection, predictive uncertainty, confidence calibration, selective deferral and simulated human–AI oversight. 127,845 flows, 12 attack families, nine reference models. Accepted in BenchCouncil TBench.">
   <meta name="author" content="Abubakar Wakili, Muhammad Idris, Sara Bakkali">
-  <link rel="canonical" href="https://abubakarwakili9.github.io/HITL-IoT-Dataset/">
+  <link rel="canonical" href="https://wakili-research.github.io/HITL-IoT-Dataset/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://abubakarwakili9.github.io/HITL-IoT-Dataset/">
+  <meta property="og:url" content="https://wakili-research.github.io/HITL-IoT-Dataset/">
   <meta property="og:title" content="HITL-IoT — Beyond Intrusion Detection: Advancing Trustworthy AI for IoT Cybersecurity">
   <meta property="og:description" content="A reproducible research benchmark for intrusion detection, predictive uncertainty, confidence calibration, selective deferral and human–AI oversight.">
-  <meta property="og:image" content="https://abubakarwakili9.github.io/HITL-IoT-Dataset/assets/images/figure10_calibration_selective_prediction.png">
+  <meta property="og:image" content="https://wakili-research.github.io/HITL-IoT-Dataset/assets/images/figure10_calibration_selective_prediction.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#1769D2">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -27,8 +27,8 @@
     "alternateName": "HITL-IoT",
     "description": "Reproducible smart-home IoT network-flow benchmark (127,845 generated flows, 60 columns, 12 attack families) with fixed chronological and IID splits, a feature policy of 39 permitted IDS features, nine reference models, and a 10,227-record subset with simulated oversight-profile metadata, for research on intrusion detection, calibration, selective deferral and human–AI oversight.",
     "version": "1.1",
-    "url": "https://abubakarwakili9.github.io/HITL-IoT-Dataset/",
-    "sameAs": ["https://github.com/abubakarwakili9/HITL-IoT-Dataset", "https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset"],
+    "url": "https://wakili-research.github.io/HITL-IoT-Dataset/",
+    "sameAs": ["https://github.com/wakili-research/HITL-IoT-Dataset", "https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset"],
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "isAccessibleForFree": true,
     "keywords": ["IoT security", "intrusion detection", "trustworthy AI", "calibration", "selective prediction", "learning to defer", "human oversight", "benchmark"],
@@ -40,9 +40,9 @@
     ],
     "variableMeasured": ["network-flow features", "is_attack", "attack_type", "oversight-profile metadata"],
     "distribution": [
-      {"@type": "DataDownload", "name": "HITL-IoT_dataset_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "57809716 B", "contentUrl": "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv"},
-      {"@type": "DataDownload", "name": "HITL-IoT_splits_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "6034313 B", "contentUrl": "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv"},
-      {"@type": "DataDownload", "name": "HITL-IoT_oversight_subset_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "6222857 B", "contentUrl": "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv"}
+      {"@type": "DataDownload", "name": "HITL-IoT_dataset_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "57809716 B", "contentUrl": "https://raw.githubusercontent.com/wakili-research/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv"},
+      {"@type": "DataDownload", "name": "HITL-IoT_splits_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "6034313 B", "contentUrl": "https://raw.githubusercontent.com/wakili-research/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv"},
+      {"@type": "DataDownload", "name": "HITL-IoT_oversight_subset_v1.1.csv", "encodingFormat": "text/csv", "contentSize": "6222857 B", "contentUrl": "https://raw.githubusercontent.com/wakili-research/HITL-IoT-Dataset/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv"}
     ]
   }
   </script>
@@ -103,7 +103,7 @@
           <li><a href="#governance">AI Governance</a></li>
           <li><a href="#datasheet">Documentation</a></li>
           <li><a href="#citation">Citation</a></li>
-          <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub</a></li>
+          <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset">GitHub</a></li>
           <li class="nav-cta"><a href="#download">Download Dataset</a></li>
         </ul>
       </nav>
@@ -263,7 +263,7 @@
             <div class="result r-sel"><dt>Model errors selected for review</dt><dd id="r-caught"><span class="hl">41</span> of 289</dd></div>
             <div class="result"><dt>Share of errors selected</dt><dd id="r-share">14.2%</dd></div>
           </dl>
-          <p class="method" id="demo-method"><strong>Method.</strong> Reference Random Forest, chronological test split (19,177 flows). Flows are ranked by raw uncertainty, 1 − 2|p − 0.5|, and the top ⌈b × N⌉ are selected. Computed in your browser from the released held-out probabilities (<a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/results/intrusion_detection">track-1 benchmark archive</a>); it reproduces the paper's raw-uncertainty results, for example 41 of 289 errors at 8%. With isotonic calibration the paper reports 15.2% at the same budget.</p>
+          <p class="method" id="demo-method"><strong>Method.</strong> Reference Random Forest, chronological test split (19,177 flows). Flows are ranked by raw uncertainty, 1 − 2|p − 0.5|, and the top ⌈b × N⌉ are selected. Computed in your browser from the released held-out probabilities (<a href="https://github.com/wakili-research/HITL-IoT-Dataset/tree/main/results/intrusion_detection">track-1 benchmark archive</a>); it reproduces the paper's raw-uncertainty results, for example 41 of 289 errors at 8%. With isotonic calibration the paper reports 15.2% at the same budget.</p>
         </div>
       </div>
     </section>
@@ -458,7 +458,7 @@
                 <tbody id="dict-body"><tr><td colspan="5">Loading the column dictionary…</td></tr></tbody>
               </table>
             </div>
-            <p class="note" style="margin:0.8rem 0 0">Loaded from the released schema (<a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_schema_v1.1.csv">HITL-IoT_schema_v1.1.csv</a>); "IDS feature" follows the 39-column primary policy.</p>
+            <p class="note" style="margin:0.8rem 0 0">Loaded from the released schema (<a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_schema_v1.1.csv">HITL-IoT_schema_v1.1.csv</a>); "IDS feature" follows the 39-column primary policy.</p>
           </div>
         </div>
       </div>
@@ -483,7 +483,7 @@
               <button class="btn btn-primary dl-btn" type="button"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CSV</button>
               <div class="progress" hidden><span></span></div>
               <p class="dl-status" role="status"></p>
-              <p class="dl-alt">Or open the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
+              <p class="dl-alt">Or open the <a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
             </div>
           </article>
           <article class="card dl">
@@ -496,7 +496,7 @@
               <button class="btn btn-outline dl-btn" type="button"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CSV</button>
               <div class="progress" hidden><span></span></div>
               <p class="dl-status" role="status"></p>
-              <p class="dl-alt">Or open the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
+              <p class="dl-alt">Or open the <a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
             </div>
           </article>
           <article class="card dl">
@@ -509,7 +509,7 @@
               <button class="btn btn-outline dl-btn" type="button"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CSV</button>
               <div class="progress" hidden><span></span></div>
               <p class="dl-status" role="status"></p>
-              <p class="dl-alt">Or open the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
+              <p class="dl-alt">Or open the <a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv">GitHub file page</a> and choose <strong>Download raw file</strong>.</p>
             </div>
           </article>
         </div>
@@ -517,14 +517,14 @@
         <div class="card resources">
           <h3>Research resources</h3>
           <ul class="res-list">
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/notebooks"><svg aria-hidden="true"><use href="#i-code"/></svg>Notebooks 01–05</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/results"><svg aria-hidden="true"><use href="#i-chart"/></svg>Benchmark result archives</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/benchmark"><svg aria-hidden="true"><use href="#i-target"/></svg>Official scorer kit</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_schema_v1.1.csv"><svg aria-hidden="true"><use href="#i-file"/></svg>Schema</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json"><svg aria-hidden="true"><use href="#i-filter"/></svg>Feature policy</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt"><svg aria-hidden="true"><use href="#i-hash"/></svg>SHA-256 checksums</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/tree/main/notebooks"><svg aria-hidden="true"><use href="#i-code"/></svg>Notebooks 01–05</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/tree/main/results"><svg aria-hidden="true"><use href="#i-chart"/></svg>Benchmark result archives</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/tree/main/benchmark"><svg aria-hidden="true"><use href="#i-target"/></svg>Official scorer kit</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_schema_v1.1.csv"><svg aria-hidden="true"><use href="#i-file"/></svg>Schema</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json"><svg aria-hidden="true"><use href="#i-filter"/></svg>Feature policy</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt"><svg aria-hidden="true"><use href="#i-hash"/></svg>SHA-256 checksums</a></li>
             <li><a href="https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset"><svg aria-hidden="true"><use href="#i-globe"/></svg>Kaggle listing</a> <small>check the version shown</small></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/data/v1.1/metadata"><svg aria-hidden="true"><use href="#i-book"/></svg>Methodology and provenance records</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/tree/main/data/v1.1/metadata"><svg aria-hidden="true"><use href="#i-book"/></svg>Methodology and provenance records</a></li>
             <li><span class="note"><svg aria-hidden="true" style="width:1.05rem;height:1.05rem;vertical-align:-0.2em"><use href="#i-info"/></svg> Zenodo DOI: added once the v1.1 record is published</span></li>
           </ul>
         </div>
@@ -533,7 +533,7 @@
           <div class="code-head"><h3>Load the data in Python</h3><button class="copy" type="button" data-copy="snippet">Copy</button></div>
 <pre id="snippet"><code>import pandas as pd
 
-base = "https://raw.githubusercontent.com/abubakarwakili9/HITL-IoT-Dataset/main/data/v1.1/dataset/"
+base = "https://raw.githubusercontent.com/wakili-research/HITL-IoT-Dataset/main/data/v1.1/dataset/"
 df     = pd.read_csv(base + "HITL-IoT_dataset_v1.1.csv", low_memory=False)
 splits = pd.read_csv(base + "HITL-IoT_splits_v1.1.csv")
 
@@ -572,7 +572,7 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
               <li>The reference model is chosen on validation performance.</li>
             </ol>
             <div class="verified"><svg aria-hidden="true"><use href="#i-check"/></svg><span>All nine rows were re-scored from the released probabilities with the official scorer and match the manuscript to four decimals.</span></div>
-            <p class="note" style="margin:0">Reproduce: <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/benchmark">benchmark scorer</a>, <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/notebooks/03_Track1_IDS_Benchmark_CLEAN.ipynb">notebook 03</a>, <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/results/intrusion_detection/Table7_Track1_Temporal_All9_Baselines.csv">Table 7 (CSV)</a>. False-positive rates stay below 0.7%, while missed-attack rates range from 10.2% to 23.2%.</p>
+            <p class="note" style="margin:0">Reproduce: <a href="https://github.com/wakili-research/HITL-IoT-Dataset/tree/main/benchmark">benchmark scorer</a>, <a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/notebooks/03_Track1_IDS_Benchmark_CLEAN.ipynb">notebook 03</a>, <a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/results/intrusion_detection/Table7_Track1_Temporal_All9_Baselines.csv">Table 7 (CSV)</a>. False-positive rates stay below 0.7%, while missed-attack rates range from 10.2% to 23.2%.</p>
           </div>
         </div>
 
@@ -611,7 +611,7 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
             <div><dt>Devices</dt><dd>5 types, 12 modeled instances</dd></div>
             <div><dt>Oversight subset</dt><dd>Top 8% of flows by ambiguity score</dd></div>
             <div><dt>Integrity</dt><dd>13 files with published SHA-256 hashes; byte-reproducible</dd></div>
-            <div><dt>Records</dt><dd><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/main/data/v1.1/metadata">Generator, configuration, manifest and generation report</a></dd></div>
+            <div><dt>Records</dt><dd><a href="https://github.com/wakili-research/HITL-IoT-Dataset/tree/main/data/v1.1/metadata">Generator, configuration, manifest and generation report</a></dd></div>
           </dl>
         </div>
 
@@ -638,11 +638,11 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
           </details>
           <details>
             <summary><span class="n">6</span>Distribution</summary>
-            <div class="body"><p>Free under CC BY 4.0 from <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub</a>. A versioned Zenodo record with its own DOI accompanies the release once published.</p></div>
+            <div class="body"><p>Free under CC BY 4.0 from <a href="https://github.com/wakili-research/HITL-IoT-Dataset">GitHub</a>. A versioned Zenodo record with its own DOI accompanies the release once published.</p></div>
           </details>
           <details>
             <summary><span class="n">7</span>Maintenance</summary>
-            <div class="body"><p>Maintained by Abubakar Wakili. Report problems or submit benchmark results through <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">GitHub issues</a>. Released versions are frozen; any data change becomes a new version with its own changelog and DOI.</p></div>
+            <div class="body"><p>Maintained by Abubakar Wakili. Report problems or submit benchmark results through <a href="https://github.com/wakili-research/HITL-IoT-Dataset/issues/new/choose">GitHub issues</a>. Released versions are frozen; any data change becomes a new version with its own changelog and DOI.</p></div>
           </details>
         </div>
       </div>
@@ -664,8 +664,8 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
             <p class="journal">BenchCouncil Transactions on Benchmarks, Standards and Evaluations</p>
             <p class="note">Volume, issue, pages and DOI will be added when the journal publishes them.</p>
             <div class="pub-links">
-              <a class="btn btn-outline btn-sm" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/CITATION.cff">CITATION.cff</a>
-              <a class="btn btn-quiet btn-sm" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+              <a class="btn btn-outline btn-sm" href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/CITATION.cff">CITATION.cff</a>
+              <a class="btn btn-quiet btn-sm" href="https://github.com/wakili-research/HITL-IoT-Dataset"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
               <a class="btn btn-quiet btn-sm" href="https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset">Kaggle</a>
             </div>
           </div>
@@ -691,7 +691,7 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
   author       = {Wakili, Abubakar and Idris, Muhammad and Bakkali, Sara},
   title        = {{HITL-IoT} Dataset, version 1.1},
   year         = {2026},
-  howpublished = {\url{https://github.com/abubakarwakili9/HITL-IoT-Dataset}},
+  howpublished = {\url{https://github.com/wakili-research/HITL-IoT-Dataset}},
   note         = {CC BY 4.0}
 }</code></pre>
             </div>
@@ -713,7 +713,7 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
           <h4>Data</h4>
           <ul>
             <li><a href="#download">Download centre</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">GitHub repository</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset">GitHub repository</a></li>
             <li><a href="https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset">Kaggle</a></li>
             <li><span class="note">Zenodo: DOI pending</span></li>
           </ul>
@@ -722,17 +722,17 @@ test  = df[df.temporal_split == "test"]       # 19,177 flows</code></pre>
           <h4>Documentation</h4>
           <ul>
             <li><a href="#datasheet">Datasheet</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/CHANGELOG.md">Changelog</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/LICENSE">License (CC BY 4.0)</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/CHANGELOG.md">Changelog</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/blob/main/LICENSE">License (CC BY 4.0)</a></li>
             <li><a href="#citation">Citation</a></li>
           </ul>
         </div>
         <div>
           <h4>Contact</h4>
           <ul>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">Report an issue</a></li>
-            <li><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues/new/choose">Submit a benchmark result</a></li>
-            <li><a href="https://github.com/abubakarwakili9">Maintainer on GitHub</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/issues/new/choose">Report an issue</a></li>
+            <li><a href="https://github.com/wakili-research/HITL-IoT-Dataset/issues/new/choose">Submit a benchmark result</a></li>
+            <li><a href="https://github.com/wakili-research">Maintainer on GitHub</a></li>
           </ul>
         </div>
       </div>
