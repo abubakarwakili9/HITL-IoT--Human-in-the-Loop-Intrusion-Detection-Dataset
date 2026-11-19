@@ -100,6 +100,71 @@
     body.parentNode.insertBefore(cap, body.parentNode.firstChild);
   }
 
+
+  /* ---- Attack families (counts from HITL-IoT_summary_v1.1.json) -------- */
+  var GROUPS = [
+    ["Command and control", [["Botnet communication", 3442], ["Remote administration", 1602], ["Device hijacking", 1523]]],
+    ["Reconnaissance", [["Port scanning", 2681], ["Network mapping", 1507], ["Service enumeration", 1205]]],
+    ["Data movement", [["DNS tunnelling", 2395], ["Bulk data transfer", 1301], ["Credential harvesting", 809]]],
+    ["Device manipulation", [["Protocol abuse", 1380], ["Configuration tampering", 745], ["Firmware exploitation", 587]]]
+  ];
+  var bars = document.getElementById("attack-bars");
+  if (bars) {
+    var max = 3442;
+    bars.innerHTML = GROUPS.map(function (g, gi) {
+      var total = g[1].reduce(function (a, f) { return a + f[1]; }, 0);
+      return '<div class="ag" data-g="' + (gi + 1) + '"><h4>' + g[0] + " (" + fmt.format(total) + ")</h4>" +
+        g[1].map(function (f) {
+          return '<div class="ab"><span>' + f[0] + '</span><span class="t" style="width:' + (100 * f[1] / max).toFixed(1) + '%"></span><span class="n">' + fmt.format(f[1]) + "</span></div>";
+        }).join("") + "</div>";
+    }).join("");
+  }
+
+  /* ---- Download buttons ---------------------------------------------------
+     GitHub serves CSV files as text/plain from another origin, so browsers
+     show them instead of saving them and ignore the download attribute.
+     raw.githubusercontent.com allows cross-origin reads, so fetch the file,
+     show progress, and save it from a same-origin blob URL. If anything
+     fails, fall back to opening the link. */
+  function mb(n) { return (n / 1048576).toFixed(n > 10485760 ? 0 : 1); }
+  document.querySelectorAll("a[data-fetch-download]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (!window.fetch || !window.ReadableStream || a.dataset.busy) return;
+      e.preventDefault();
+      a.dataset.busy = "1";
+      var label = a.textContent;
+      a.setAttribute("data-progress", ""); a.setAttribute("aria-busy", "true");
+      a.textContent = "Starting...";
+      fetch(a.href).then(function (res) {
+        if (!res.ok) throw new Error(res.status);
+        var total = Number(res.headers.get("content-length")) || 0;
+        var reader = res.body.getReader(), chunks = [], got = 0;
+        function pump() {
+          return reader.read().then(function (r) {
+            if (r.done) return;
+            chunks.push(r.value); got += r.value.length;
+            a.textContent = total ? Math.floor(100 * got / total) + "%" : mb(got) + " MB";
+            return pump();
+          });
+        }
+        return pump().then(function () { return new Blob(chunks, { type: "text/csv" }); });
+      }).then(function (blob) {
+        var url = URL.createObjectURL(blob);
+        var tmp = document.createElement("a");
+        tmp.href = url; tmp.download = a.getAttribute("download") || "download.csv";
+        document.body.appendChild(tmp); tmp.click(); tmp.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
+        a.textContent = "Saved";
+        setTimeout(function () { a.textContent = label; }, 2500);
+      }).catch(function () {
+        a.textContent = label;
+        window.location.href = a.href;
+      }).finally(function () {
+        delete a.dataset.busy; a.removeAttribute("data-progress"); a.removeAttribute("aria-busy");
+      });
+    });
+  });
+
   /* ---- Copy buttons ---------------------------------------------------- */
   function copyText(text, btn) {
     var done = function () {
