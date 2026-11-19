@@ -6,9 +6,11 @@ Run from the repository root (standard library only):
     python scripts/download_release_assets.py            # data CSVs only (~70 MB)
     python scripts/download_release_assets.py --results  # data CSVs + four result archives
 
-The large files are published as GitHub Release assets (tag v1.1) rather than
-committed to Git history. Each file is placed where the notebooks and
-verification scripts expect it, and is checked against RELEASE_ASSETS_v1.1.sha256.
+Each file is fetched from the GitHub Release (tag v1.1); if it is not attached
+there, the byte-identical copy stored in the repository at that tag is used.
+Files are placed where the notebooks and verification scripts expect them and
+checked against RELEASE_ASSETS_v1.1.sha256. Files already present and verified
+(e.g. after `git clone`) are not downloaded again.
 """
 from __future__ import annotations
 
@@ -61,14 +63,21 @@ def main() -> int:
         if dest.is_file() and not args.force and sha256(dest) == manifest[name]:
             print(f"OK (cached)  {dest.relative_to(ROOT)}")
             continue
-        url = f"https://github.com/{REPO}/releases/download/{TAG}/{name}"
-        print(f"Downloading  {name} ...", flush=True)
+        urls = [f"https://github.com/{REPO}/releases/download/{TAG}/{name}",
+                f"https://raw.githubusercontent.com/{REPO}/{TAG}/{DESTINATIONS[name]}/{name}"]
         tmp = dest.with_suffix(dest.suffix + ".part")
-        try:
-            urllib.request.urlretrieve(url, tmp)
-        except Exception as exc:  # network errors, 404 before the release is published
-            print(f"FAILED       {name}: {exc}\n             Download it manually from {url}")
-            tmp.unlink(missing_ok=True)
+        fetched = False
+        for url in urls:
+            print(f"Downloading  {name} from {url.split('/')[2]} ...", flush=True)
+            try:
+                urllib.request.urlretrieve(url, tmp)
+                fetched = True
+                break
+            except Exception as exc:  # 404 if not attached / not in repository, or network error
+                print(f"             not available there ({exc})")
+                tmp.unlink(missing_ok=True)
+        if not fetched:
+            print(f"FAILED       {name}: not found as a release asset or in the repository")
             failures += 1
             continue
         if sha256(tmp) != manifest[name]:
