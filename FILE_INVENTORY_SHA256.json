@@ -1,5 +1,5 @@
 {
-  "title": "HITL-IoT v1.1 \u2014 reorganized repository",
+  "title": "HITL-IoT v1.1 — reorganized repository",
   "version": "1.1",
   "root": "HITL-IoT-Dataset/",
   "file_count_before_manifest": 37,
@@ -13,20 +13,20 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "585c10afb301502e03c3fdfa45f2b4e130296a59216554cad15769c698dbcdce",
-      "bytes": 1988,
+      "sha256": "616ae4a747f626b86b0d0e5a334970cd03d3dab7005e72c1590d06840a55e8cf",
+      "bytes": 2181,
       "original_research_artifact_preserved": false
     },
     {
       "path": "README.md",
-      "sha256": "b0432b5191156c27abe0d41b905284784e254c67d54f3da90f97c626c856952f",
-      "bytes": 13438,
+      "sha256": "9aa80d642372511f6ebc44dc8bc7fe424555b9cb3d818cef0f6634641c0d8bdd",
+      "bytes": 13447,
       "original_research_artifact_preserved": false
     },
     {
       "path": "REPOSITORY_LAYOUT.md",
-      "sha256": "2719665d466e52fb6962d4f860dbc73746276476b1f84dccacae8a75ab634c82",
-      "bytes": 2813,
+      "sha256": "773d8a9c9ecc7cfcba9500027628f4bf83ae82d149bfcf7f5321498d362e6597",
+      "bytes": 1542,
       "original_research_artifact_preserved": false
     },
     {
@@ -151,14 +151,14 @@
     },
     {
       "path": "notebooks/README.md",
-      "sha256": "db1cb85db5497424f7b98313ebf172a49593c5c424560d617131e5fca09c0cc1",
-      "bytes": 1019,
+      "sha256": "8cfc13c07ab2890a9bb588ca42a4dad8ae37b10cb3c5fd6a14baf788f36bcd42",
+      "bytes": 1384,
       "original_research_artifact_preserved": false
     },
     {
       "path": "results/README.md",
-      "sha256": "e30aef1e31da16b0f2b3c37927f9c55d98531f2bdacd95ff9c305f8ea3f3327d",
-      "bytes": 1337,
+      "sha256": "01198e18e3e5fdf1c0937642f7d9b6226b34720bc6ad39fe01407dbdcbaa6edc",
+      "bytes": 1476,
       "original_research_artifact_preserved": false
     },
     {
@@ -199,8 +199,8 @@
     },
     {
       "path": "scripts/README.md",
-      "sha256": "0ae93495e33b97c408e29428a502aa85059fa2dd7b414b7009f7b7c4918983dd",
-      "bytes": 475,
+      "sha256": "42a507a317d01176d96ec11112b2197c02c5b662afbb9b11e229dba373ff8354",
+      "bytes": 636,
       "original_research_artifact_preserved": false
     },
     {

@@ -57,7 +57,7 @@
           <div class="hero-buttons">
             <a href="#download" class="btn btn-primary"><i class="fas fa-download"></i> Data and downloads</a>
             <a href="#citation" class="btn btn-secondary"><i class="fas fa-file-alt"></i> Accepted paper</a>
-            <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/release/v1.1" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Browse repository</a>
+            <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Browse repository</a>
           </div>
         </div>
       </div>
@@ -91,7 +91,11 @@
               <li><i class="fas fa-check"></i> Nine-model baseline and oversight evaluation protocols</li>
             </ul>
           </div>
-          <div class="content-image"><img src="assets/images/Figure13.png" alt="Illustrative calibration analysis from the historical website" /><p class="image-caption">Illustrative legacy figure; use the v1.1 results archives for the documented evaluation.</p></div>
+          <figure style="margin:1.5rem 0 0;max-width:680px">
+            <img src="assets/images/figure10_calibration_selective_prediction.png" alt="Reliability curves, risk-coverage curves, errors captured versus deferral rate, and Brier score and ECE for the reference Random Forest" style="width:100%;height:auto;border-radius:8px;background:#fff">
+            <figcaption style="font-size:.9rem;opacity:.8;margin-top:.5rem">Calibration and selective deferral for the reference Random Forest (paper Figure 8). Isotonic calibration lowers ECE from 0.0186 to 0.0014.</figcaption>
+          </figure>
+          
         </div>
       </div>
     </section>
@@ -115,7 +119,7 @@
       <div class="container">
         <h2 class="section-title">Data and reproducibility</h2>
         <div class="download-content">
-          <p class="download-intro">Source code, notebooks, schemas and feature policy are available in the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/tree/release/v1.1" target="_blank" rel="noopener">v1.1 preparation branch</a>. The full frozen v1.1 dataset and experimental ZIP files are planned as <strong>separately downloadable GitHub Release assets</strong>. Until those assets appear, do not assume they are available from the source tree.</p>
+          <p class="download-intro">Source code, notebooks, schemas and feature policy are available in the <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset" target="_blank" rel="noopener">v1.1 preparation branch</a>. The full frozen v1.1 dataset and experimental ZIP files are planned as <strong>separately downloadable GitHub Release assets</strong>. Until those assets appear, do not assume they are available from the source tree.</p>
           <div class="download-card">
             <h3><i class="fab fa-github"></i> Official repository and release files</h3>
             <p>Download individual dataset and results assets after the v1.1 release is published. The v1.0 archive remains available for historical reproducibility.</p>
@@ -133,7 +137,7 @@
               <tr><td><code>step8_external_validation_v1.1.zip</code></td><td>External-validation results</td></tr>
             </tbody></table>
           </div>
-          <p>Verify datasets against the source hashes in <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/release/v1.1/data/v1.1/HITL-IoT_checksums_v1.1.txt" target="_blank" rel="noopener">SHA-256 checksums</a>. The v1.1 Zenodo version-specific DOI will be added after confirmation of the matching public deposit.</p>
+          <p>Verify datasets against the source hashes in <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/HITL-IoT_checksums_v1.1.txt" target="_blank" rel="noopener">SHA-256 checksums</a>. The v1.1 Zenodo version-specific DOI will be added after confirmation of the matching public deposit.</p>
         </div>
       </div>
     </section>
@@ -160,7 +164,7 @@
           </table>
         </div>
         <p>For the validation-selected Random Forest: accuracy 0.9849, balanced accuracy 0.9491, MCC 0.9395 and AUROC 0.9690. External tests on CICIoT2023 and ToN-IoT show domain shift and limited direct transfer; these results do not establish operational deployment readiness.</p>
-        <p><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/release/v1.1/results/intrusion_detection/Table7_Track1_Temporal_All9_Baselines.csv" target="_blank" rel="noopener">Inspect the Table 7 baseline summary</a>.</p>
+        <p><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/results/intrusion_detection/Table7_Track1_Temporal_All9_Baselines.csv" target="_blank" rel="noopener">Inspect the Table 7 baseline summary</a>.</p>
       </div>
     </section>
 
@@ -175,7 +179,7 @@
           </div>
           <div class="citation-box">
             <h3>Dataset citation</h3>
-            <p>For reproducibility, cite both the article and the exact dataset version when the corresponding identifiers are published. The machine-readable <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/release/v1.1/CITATION.cff" target="_blank" rel="noopener">CITATION.cff</a> includes the accepted paper. The verified Zenodo DOI for dataset v1.1 will be added after its public deposit.</p>
+            <p>For reproducibility, cite both the article and the exact dataset version when the corresponding identifiers are published. The machine-readable <a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/CITATION.cff" target="_blank" rel="noopener">CITATION.cff</a> includes the accepted paper. The verified Zenodo DOI for dataset v1.1 will be added after its public deposit.</p>
           </div>
         </div>
       </div>
@@ -187,7 +191,7 @@
         <h2 class="section-title">Contact and contributions</h2>
         <div class="contact-grid">
           <div class="contact-card"><i class="fas fa-user"></i><h3>Corresponding author</h3><p><strong>Abubakar Wakili</strong></p><p>HITL-IoT research team</p></div>
-          <div class="contact-card"><i class="fab fa-github"></i><h3>Project repository</h3><p><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset" target="_blank" rel="noopener">HITL-IoT-Dataset</a></p></div>
+          <div class="contact-card"><i class="fab fa-github"></i><h3>Project repository</h3><p><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset" target="_blank" rel="noopener">HITL-IoT on GitHub</a></p></div>
           <div class="contact-card"><i class="fas fa-comment"></i><h3>Issues and questions</h3><p><a href="https://github.com/abubakarwakili9/HITL-IoT-Dataset/issues" target="_blank" rel="noopener">Report a documentation, data or reproducibility issue</a></p></div>
         </div>
         <div class="issues-section"><h3>Help improve reproducibility</h3><p>Please open an issue for missing metadata, schema problems, discrepancies in benchmark results or proposed extensions. External validation and real-analyst studies remain important future work.</p></div>
@@ -224,6 +228,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
