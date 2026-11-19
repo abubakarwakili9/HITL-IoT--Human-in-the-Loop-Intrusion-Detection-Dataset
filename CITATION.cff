@@ -26,8 +26,8 @@ abstract: >-
   rationales. The benchmark provides fixed evaluation splits and a
   leakage-safe feature policy. The oversight records are not observations
   from human analysts.
-repository-code: "https://github.com/abubakarwakili9/HITL-IoT-Dataset"
-url: "https://github.com/abubakarwakili9/HITL-IoT-Dataset"
+repository-code: "https://github.com/wakili-research/HITL-IoT-Dataset"
+url: "https://github.com/wakili-research/HITL-IoT-Dataset"
 keywords:
   - Probability calibration
   - Learning to defer
