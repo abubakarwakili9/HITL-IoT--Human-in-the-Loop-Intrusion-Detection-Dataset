@@ -1,0 +1,36 @@
+{
+  "release": "v1.1",
+  "scope": "Author-supplied immutable result artifacts; folder paths reorganized",
+  "files": [
+    {
+      "path": "results/dataset_characterization/analysis_v1.1.zip",
+      "sha256": "774fc4a2fb3aacf4044174ad211f63d11c949dcc6f4f125d38ac148671e1ef2c",
+      "size_bytes": 2961707,
+      "description": "Dataset characterization, distributions, tables and figures"
+    },
+    {
+      "path": "results/intrusion_detection/track1_benchmark_v1.1_review_revision.zip",
+      "sha256": "f7ffc3d6492c3b55c886d63feeb984f0bf5b86413f6d940a4435711a94ccfb27",
+      "size_bytes": 11380461,
+      "description": "Nine-model IDS benchmark, probability files and scoring artifacts"
+    },
+    {
+      "path": "results/intrusion_detection/Table7_Track1_Temporal_All9_Baselines.csv",
+      "sha256": "a1af5a9c2107882838c1cf5e29a0035b677036f3dd0c56f95808a9c79a400110",
+      "size_bytes": 1004,
+      "description": "Table 7 nine-model chronological benchmark summary"
+    },
+    {
+      "path": "results/oversight_and_deferral/step7_selective_deferral_calibration_oversight_v1.1.zip",
+      "sha256": "f5e97c73ee08e2654c12bc60490a8f97ce9c089870775fcb7b85982c0d1ce851",
+      "size_bytes": 1675947,
+      "description": "Probability calibration, selective deferral and simulated oversight experiments"
+    },
+    {
+      "path": "results/external_validation/step8_external_validation_v1.1.zip",
+      "sha256": "2e33b55c4b02f446779ef9dd7d118848784800b4eb490a03aa5ebf9dfc698df1",
+      "size_bytes": 3495037,
+      "description": "External CICIoT2023 and ToN-IoT validation artifacts (no third-party raw data)"
+    }
+  ]
+}

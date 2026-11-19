@@ -1,0 +1,729 @@
+{
+  "dataset_name": "HITL-IoT",
+  "version": "1.1",
+  "seed": 42,
+  "start_time": "2024-01-15T00:00:00",
+  "duration_hours": 168,
+  "total_records": 127845,
+  "attack_ratio": 0.15,
+  "oversight_rate": 0.08,
+  "score_mode": "evidence",
+  "legacy_profile_mode": false,
+  "csv_float_format": "%.6f",
+  "device_weights": {
+    "thermostat": 0.2,
+    "camera": 0.2,
+    "speaker": 0.2,
+    "tv": 0.2,
+    "doorbell": 0.2
+  },
+  "devices": {
+    "thermostat": {
+      "instances": [
+        20,
+        25
+      ],
+      "normal_ports": [
+        443,
+        80,
+        8080,
+        1883,
+        5683
+      ],
+      "bytes_sent_range": [
+        100,
+        2000
+      ],
+      "duration_range_s": [
+        0.2,
+        5.0
+      ],
+      "packet_size_range": [
+        64,
+        300
+      ],
+      "udp_443_probability": 0.0,
+      "initial_ttl": 255
+    },
+    "camera": {
+      "instances": [
+        21,
+        22,
+        26
+      ],
+      "normal_ports": [
+        554,
+        443,
+        80,
+        8000
+      ],
+      "bytes_sent_range": [
+        10000,
+        500000
+      ],
+      "duration_range_s": [
+        5.0,
+        120.0
+      ],
+      "packet_size_range": [
+        800,
+        1400
+      ],
+      "udp_443_probability": 0.3,
+      "initial_ttl": 64
+    },
+    "speaker": {
+      "instances": [
+        23,
+        24,
+        27
+      ],
+      "normal_ports": [
+        443,
+        80
+      ],
+      "bytes_sent_range": [
+        500,
+        10000
+      ],
+      "duration_range_s": [
+        1.0,
+        60.0
+      ],
+      "packet_size_range": [
+        200,
+        1200
+      ],
+      "udp_443_probability": 0.3,
+      "initial_ttl": 64
+    },
+    "tv": {
+      "instances": [
+        28,
+        29
+      ],
+      "normal_ports": [
+        443,
+        80,
+        8080,
+        7001
+      ],
+      "bytes_sent_range": [
+        1000,
+        100000
+      ],
+      "duration_range_s": [
+        5.0,
+        300.0
+      ],
+      "packet_size_range": [
+        600,
+        1400
+      ],
+      "udp_443_probability": 0.2,
+      "initial_ttl": 64
+    },
+    "doorbell": {
+      "instances": [
+        30,
+        31
+      ],
+      "normal_ports": [
+        443,
+        80,
+        554
+      ],
+      "bytes_sent_range": [
+        200,
+        5000
+      ],
+      "duration_range_s": [
+        1.0,
+        30.0
+      ],
+      "packet_size_range": [
+        300,
+        1200
+      ],
+      "udp_443_probability": 0.3,
+      "initial_ttl": 255
+    }
+  },
+  "lan_prefix": "192.168.1.",
+  "gateway_mac": "02:00:00:00:00:01",
+  "benign_auxiliary_services": {
+    "dns": {
+      "port": 53,
+      "probability": 0.06,
+      "bytes_sent_range": [
+        60,
+        600
+      ],
+      "duration_range_s": [
+        0.01,
+        0.5
+      ],
+      "packet_size_range": [
+        60,
+        512
+      ]
+    },
+    "ntp": {
+      "port": 123,
+      "probability": 0.04,
+      "bytes_sent_range": [
+        48,
+        96
+      ],
+      "duration_range_s": [
+        0.01,
+        0.2
+      ],
+      "packet_size_range": [
+        76,
+        90
+      ]
+    }
+  },
+  "benign_bytes_received_factor": [
+    0.5,
+    2.0
+  ],
+  "destination_categories": {
+    "benign_probabilities": {
+      "legitimate_like": 0.85,
+      "ambiguous": 0.1,
+      "suspicious_like": 0.05
+    },
+    "attack_probabilities": {
+      "legitimate_like": 0.4,
+      "ambiguous": 0.3,
+      "suspicious_like": 0.3
+    },
+    "address_pools": {
+      "legitimate_like": "203.0.113.",
+      "ambiguous": "198.51.100.",
+      "suspicious_like": "192.0.2."
+    },
+    "hosts_per_pool": 40
+  },
+  "attacks": {
+    "port_scanning": {
+      "weight": 0.169,
+      "legacy_risk_range": [
+        0.65,
+        0.85
+      ],
+      "uses_normal_ports": 0.4,
+      "data_similarity": 0.7,
+      "service_ports": [
+        21,
+        22,
+        23,
+        25,
+        110,
+        139,
+        445,
+        3389
+      ],
+      "random_port_probability": 0.5,
+      "duration_range_s": [
+        0.05,
+        2.0
+      ],
+      "packet_size_range": [
+        40,
+        80
+      ]
+    },
+    "network_mapping": {
+      "weight": 0.095,
+      "legacy_risk_range": [
+        0.55,
+        0.75
+      ],
+      "uses_normal_ports": 0.5,
+      "data_similarity": 0.8,
+      "service_ports": [
+        161,
+        1900,
+        5353,
+        7
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        0.05,
+        2.0
+      ],
+      "packet_size_range": [
+        40,
+        120
+      ]
+    },
+    "service_enumeration": {
+      "weight": 0.076,
+      "legacy_risk_range": [
+        0.6,
+        0.8
+      ],
+      "uses_normal_ports": 0.3,
+      "data_similarity": 0.75,
+      "service_ports": [
+        21,
+        22,
+        23,
+        161,
+        1900,
+        5000
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        0.1,
+        5.0
+      ],
+      "packet_size_range": [
+        60,
+        400
+      ]
+    },
+    "dns_tunneling": {
+      "weight": 0.151,
+      "legacy_risk_range": [
+        0.7,
+        0.9
+      ],
+      "uses_normal_ports": 0.2,
+      "data_similarity": 0.6,
+      "service_ports": [
+        53
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        1.0,
+        60.0
+      ],
+      "packet_size_range": [
+        200,
+        512
+      ]
+    },
+    "protocol_abuse": {
+      "weight": 0.087,
+      "legacy_risk_range": [
+        0.65,
+        0.85
+      ],
+      "uses_normal_ports": 0.6,
+      "data_similarity": 0.75,
+      "service_ports": [
+        1883,
+        5683,
+        8883
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        0.5,
+        30.0
+      ],
+      "packet_size_range": [
+        60,
+        600
+      ]
+    },
+    "botnet_communication": {
+      "weight": 0.217,
+      "legacy_risk_range": [
+        0.7,
+        0.9
+      ],
+      "uses_normal_ports": 0.5,
+      "data_similarity": 0.65,
+      "service_ports": [
+        6667,
+        4444,
+        1337,
+        31337,
+        9999
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        1.0,
+        120.0
+      ],
+      "packet_size_range": [
+        60,
+        600
+      ]
+    },
+    "remote_administration": {
+      "weight": 0.101,
+      "legacy_risk_range": [
+        0.65,
+        0.85
+      ],
+      "uses_normal_ports": 0.3,
+      "data_similarity": 0.7,
+      "service_ports": [
+        22,
+        23,
+        2323,
+        3389,
+        5900
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        5.0,
+        300.0
+      ],
+      "packet_size_range": [
+        60,
+        800
+      ]
+    },
+    "bulk_data_transfer": {
+      "weight": 0.082,
+      "legacy_risk_range": [
+        0.75,
+        0.95
+      ],
+      "uses_normal_ports": 0.4,
+      "data_similarity": 0.5,
+      "service_ports": [
+        21,
+        9999,
+        8443
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        10.0,
+        600.0
+      ],
+      "packet_size_range": [
+        1000,
+        1500
+      ]
+    },
+    "credential_harvesting": {
+      "weight": 0.051,
+      "legacy_risk_range": [
+        0.7,
+        0.88
+      ],
+      "uses_normal_ports": 0.7,
+      "data_similarity": 0.85,
+      "service_ports": [
+        22,
+        23,
+        2323,
+        21
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        0.5,
+        20.0
+      ],
+      "packet_size_range": [
+        60,
+        300
+      ]
+    },
+    "firmware_exploitation": {
+      "weight": 0.037,
+      "legacy_risk_range": [
+        0.8,
+        0.95
+      ],
+      "uses_normal_ports": 0.25,
+      "data_similarity": 0.6,
+      "service_ports": [
+        69,
+        7547,
+        37215,
+        52869
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        1.0,
+        60.0
+      ],
+      "packet_size_range": [
+        200,
+        1400
+      ]
+    },
+    "configuration_tampering": {
+      "weight": 0.047,
+      "legacy_risk_range": [
+        0.7,
+        0.9
+      ],
+      "uses_normal_ports": 0.5,
+      "data_similarity": 0.75,
+      "service_ports": [
+        7547,
+        8443,
+        5000
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        0.5,
+        10.0
+      ],
+      "packet_size_range": [
+        100,
+        800
+      ]
+    },
+    "device_hijacking": {
+      "weight": 0.096,
+      "legacy_risk_range": [
+        0.75,
+        0.92
+      ],
+      "uses_normal_ports": 0.4,
+      "data_similarity": 0.65,
+      "service_ports": [
+        4444,
+        5555,
+        2323
+      ],
+      "random_port_probability": 0.0,
+      "duration_range_s": [
+        1.0,
+        60.0
+      ],
+      "packet_size_range": [
+        100,
+        1000
+      ]
+    }
+  },
+  "similarity_bands": [
+    {
+      "min_exclusive": 0.7,
+      "bytes_factor": [
+        0.8,
+        1.5
+      ]
+    },
+    {
+      "min_exclusive": 0.5,
+      "bytes_factor": [
+        0.5,
+        3.0
+      ]
+    },
+    {
+      "min_exclusive": -1.0,
+      "bytes_factor": [
+        0.3,
+        10.0
+      ]
+    }
+  ],
+  "attack_bytes_received_factor": [
+    0.3,
+    1.5
+  ],
+  "attack_udp_443_probability": 0.15,
+  "udp_ports": [
+    53,
+    123,
+    161,
+    1900,
+    5353,
+    5683,
+    69,
+    7
+  ],
+  "evidence": {
+    "flow_weights": {
+      "bytes": 0.3,
+      "duration": 0.2,
+      "port": 0.3,
+      "ratio": 0.05,
+      "packet_size": 0.15
+    },
+    "deviation_scale": 3.0,
+    "auxiliary_port_evidence": 0.2,
+    "ratio_scale": 1.0,
+    "destination_category_evidence": {
+      "legitimate_like": 0.0,
+      "ambiguous": 0.5,
+      "suspicious_like": 1.0
+    },
+    "dns_payload_bytes_threshold": 1000
+  },
+  "construction_score": {
+    "slope": 8.0,
+    "offset": 0.35,
+    "logit_noise_sd": 0.6
+  },
+  "decision_threshold": 0.5,
+  "legacy_risk": {
+    "benign_risk_range": [
+      0.0,
+      0.4
+    ],
+    "noise_half_width": 0.15,
+    "decision_threshold": 0.6
+  },
+  "profiles": {
+    "high_competence": {
+      "legacy_label": "expert",
+      "weight": 0.8,
+      "context_weight": 0.35,
+      "anchor_weight": 0.1,
+      "noise_sd": 0.06,
+      "threshold": 0.35,
+      "confidence_range": [
+        0.8,
+        0.95
+      ],
+      "latency_range_s": [
+        5,
+        15
+      ],
+      "legacy_accuracy": 0.92
+    },
+    "medium_competence": {
+      "legacy_label": "intermediate",
+      "weight": 0.15,
+      "context_weight": 0.2,
+      "anchor_weight": 0.25,
+      "noise_sd": 0.1,
+      "threshold": 0.35,
+      "confidence_range": [
+        0.65,
+        0.85
+      ],
+      "latency_range_s": [
+        8,
+        25
+      ],
+      "legacy_accuracy": 0.85
+    },
+    "low_competence": {
+      "legacy_label": "novice",
+      "weight": 0.05,
+      "context_weight": 0.05,
+      "anchor_weight": 0.45,
+      "noise_sd": 0.16,
+      "threshold": 0.35,
+      "confidence_range": [
+        0.5,
+        0.75
+      ],
+      "latency_range_s": [
+        12,
+        35
+      ],
+      "legacy_accuracy": 0.75
+    }
+  },
+  "confidence_model": {
+    "margin_scale": 0.1,
+    "ambiguity_penalty": 0.3,
+    "noise_sd": 0.02
+  },
+  "latency_model": {
+    "ambiguity_coefficient": 0.5
+  },
+  "rationale": {
+    "deviation_flag": 0.5,
+    "ratio_flag": 0.6,
+    "high_ambiguity": 0.8,
+    "max_reasons": 2,
+    "context_visibility_min_weight": 0.1
+  },
+  "rolling_windows": [
+    5,
+    10,
+    20
+  ],
+  "connection_windows_s": {
+    "connection_frequency": 60,
+    "connection_count_prev_5min": 300,
+    "connection_count_prev_10min": 600
+  },
+  "splits": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15,
+    "stratify_by": "attack_type",
+    "primary": "temporal",
+    "secondary": "iid_stratified",
+    "tolerance": 0.005
+  },
+  "profile_acceptance": {
+    "order": [
+      "high_competence",
+      "medium_competence",
+      "low_competence"
+    ],
+    "low_competence_min_accuracy": 0.5
+  },
+  "derived": {
+    "normalized_attack_proportions": {
+      "port_scanning": 0.13978494623655915,
+      "network_mapping": 0.07857733664185278,
+      "service_enumeration": 0.06286186931348223,
+      "dns_tunneling": 0.12489660876757652,
+      "protocol_abuse": 0.07196029776674938,
+      "botnet_communication": 0.17948717948717952,
+      "remote_administration": 0.08354011579818033,
+      "bulk_data_transfer": 0.06782464846980978,
+      "credential_harvesting": 0.04218362282878412,
+      "firmware_exploitation": 0.030603804797353185,
+      "configuration_tampering": 0.03887510339123243,
+      "device_hijacking": 0.07940446650124071
+    },
+    "ambiguity_definition": "a_i = 1 - 2|generated_attack_score_i - 0.5|",
+    "top_k_rule": "K = floor(oversight_rate * N); sort ambiguity desc, flow order asc; select first K",
+    "latency_formula": "t_i = U(t_min_k, t_max_k) * (1 + ambiguity_coefficient * a_i)",
+    "profile_decision_rule": "P = w_anchor*E_implied + (1-w_anchor)*((1-w_ctx)*flow_evidence + w_ctx*context_evidence); E_implied = offset + logit(generated_attack_score)/slope; decision = 1[P + N(0, noise_sd) > threshold]",
+    "profile_confidence_rule": "c = c_min + (c_max-c_min)*tanh(|margin|/margin_scale)*(1-ambiguity_penalty*a) + N(0, noise_sd); clipped to [0,1]; no ground truth, no model agreement",
+    "construction_score_rule": "sigmoid(slope*(flow_evidence - offset) + N(0, logit_noise_sd))",
+    "temporal_split_rule": "sort by (timestamp, flow_id); earliest 70% train, next 15% validation, latest 15% test; cut points advanced to next timestamp change for strict boundaries",
+    "iid_split_rule": "stratified by attack_type, seeded shuffle, 70/15/15",
+    "service_map": {
+      "7": "echo",
+      "21": "ftp",
+      "22": "ssh",
+      "23": "telnet",
+      "25": "smtp",
+      "53": "dns",
+      "69": "tftp",
+      "80": "http",
+      "110": "pop3",
+      "123": "ntp",
+      "139": "netbios",
+      "161": "snmp",
+      "443": "https",
+      "445": "smb",
+      "554": "rtsp",
+      "1337": "other_high",
+      "1883": "mqtt_port",
+      "1900": "ssdp",
+      "2323": "telnet_alt",
+      "3389": "rdp",
+      "4444": "other_high",
+      "5000": "upnp",
+      "5353": "mdns",
+      "5555": "adb",
+      "5683": "coap_port",
+      "5900": "vnc",
+      "6667": "irc",
+      "7001": "vendor_app",
+      "7547": "tr069",
+      "8000": "http_alt",
+      "8080": "http_alt",
+      "8443": "https_alt",
+      "8883": "mqtt_tls_port",
+      "9999": "other_high",
+      "31337": "other_high",
+      "37215": "other_high",
+      "52869": "other_high"
+    }
+  }
+}
