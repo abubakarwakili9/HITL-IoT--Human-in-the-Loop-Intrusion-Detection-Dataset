@@ -10,7 +10,7 @@
   <meta property="og:title" content="HITL-IoT v1.1 — what happens after the prediction">
   <meta property="og:description" content="A reproducible IoT benchmark for intrusion detection, calibration, selective deferral and oversight. Accepted in BenchCouncil TBench.">
   <meta property="og:image" content="https://abubakarwakili9.github.io/HITL-IoT-Dataset/assets/images/figure10_calibration_selective_prediction.png">
-  <meta name="theme-color" content="#1F5F55">
+  <meta name="theme-color" content="#0B2C28">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,14 +66,15 @@
 
   <main id="main">
     <section id="top" class="hero">
-      <div class="wrap">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
         <p class="release">HITL-IoT dataset, version 1.1, accepted in <em>BenchCouncil Transactions on Benchmarks, Standards and Evaluations</em></p>
         <h1>Beyond Intrusion Detection: Toward Trustworthy AI Decisions in IoT Cybersecurity</h1>
         <p class="lede">A reproducible benchmark for intrusion detection, calibration, selective deferral and human–AI oversight. It tests not only whether AI can identify cyberattacks, but when its predictions should be trusted, reviewed or deferred.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">Download the data</a>
-          <a class="btn" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">View on GitHub</a>
-          <a class="btn" href="#citation">Cite</a>
+          <a class="btn btn-amber" href="#download">Download the data</a>
+          <a class="btn btn-ghost" href="https://github.com/abubakarwakili9/HITL-IoT-Dataset">View on GitHub</a>
+          <a class="btn btn-ghost" href="#citation">Cite</a>
         </div>
         <ul class="trust" aria-label="At a glance">
           <li>Peer-reviewed in BenchCouncil TBench</li>
@@ -81,6 +82,25 @@
           <li>Nine baselines and an official scorer</li>
           <li>Open under CC BY 4.0</li>
         </ul>
+        </div>
+        <svg class="flow-art" viewBox="-40 0 400 330" role="img" aria-labelledby="flow-art-title">
+          <title id="flow-art-title">Traffic from five device types passes through a detector; most decisions are accepted and a small share is sent to review</title>
+          <g class="fa-links" fill="none" stroke-width="2">
+            <path d="M88 40 C150 40 140 165 182 165"/><path d="M88 102 C150 102 140 165 182 165"/><path d="M88 165 L182 165"/><path d="M88 228 C150 228 140 165 182 165"/><path d="M88 290 C150 290 140 165 182 165"/>
+          </g>
+          <path class="fa-accept" d="M226 165 C270 165 270 110 340 110" fill="none" stroke-width="10" stroke-linecap="round"/>
+          <path class="fa-review" d="M226 165 C270 165 270 222 340 222" fill="none" stroke-width="3" stroke-linecap="round"/>
+          <g class="fa-dev">
+            <circle cx="70" cy="40" r="18"/><circle cx="70" cy="102" r="18"/><circle cx="70" cy="165" r="18"/><circle cx="70" cy="228" r="18"/><circle cx="70" cy="290" r="18"/>
+          </g>
+          <g class="fa-lbl" text-anchor="end" font-size="12">
+            <text x="44" y="44">camera</text><text x="44" y="106">thermostat</text><text x="44" y="169">speaker</text><text x="44" y="232">TV</text><text x="44" y="294">doorbell</text>
+          </g>
+          <circle class="fa-ids" cx="204" cy="165" r="26"/>
+          <text class="fa-ids-t" x="204" y="170" text-anchor="middle" font-size="13" font-weight="700">IDS</text>
+          <text class="fa-out" x="340" y="94" text-anchor="end" font-size="13" font-weight="700">92% accepted</text>
+          <text class="fa-out fa-out-r" x="340" y="246" text-anchor="end" font-size="13" font-weight="700">8% to review</text>
+        </svg>
       </div>
 
       <div class="wrap">
@@ -114,20 +134,20 @@
 
 
 
-    <section id="research" class="band band-alt">
+    <section id="research" class="band">
       <div class="wrap">
-        <h2>Four research areas, one benchmark</h2>
-        <p class="intro">Each area comes with a fixed protocol and metric, so results from different papers can be compared directly.</p>
-        <dl class="tasks">
-          <div><dt>Intrusion detection</dt><dd>Evaluate detectors across twelve IoT attack families with consistent features and fixed evaluation splits.</dd><dd class="metric">Macro-F1, MCC, AUROC</dd></div>
-          <div><dt>Trustworthy AI and calibration</dt><dd>Measure predictive uncertainty and whether a model's confidence matches how often it is right.</dd><dd class="metric">ECE, Brier score</dd></div>
-          <div><dt>Selective deferral</dt><dd>Decide when to accept a prediction and when to send it for review under a fixed budget.</dd><dd class="metric">Errors captured at 8% review</dd></div>
-          <div><dt>Human–AI oversight</dt><dd>Compare review routing and intervention policies with simulated reviewer profiles, counting fixes against new mistakes.</dd><dd class="metric">Corrections minus harms</dd></div>
-        </dl>
+        <h2>From detection to oversight</h2>
+        <p class="intro">Four research areas follow a security decision from the first alert to the final call. Each has a fixed protocol and metric, so results from different papers can be compared directly.</p>
+        <ol class="path">
+          <li><span class="node" aria-hidden="true">1</span><h3>Intrusion detection</h3><p>Evaluate detectors across twelve IoT attack families with consistent features and fixed evaluation splits.</p><p class="metric">Macro-F1, MCC, AUROC</p></li>
+          <li><span class="node" aria-hidden="true">2</span><h3>Trustworthy AI and calibration</h3><p>Measure predictive uncertainty and whether a model's confidence matches how often it is right.</p><p class="metric">ECE, Brier score</p></li>
+          <li><span class="node" aria-hidden="true">3</span><h3>Selective deferral</h3><p>Decide when to accept a prediction and when to send it for review under a fixed budget.</p><p class="metric">Errors captured at 8% review</p></li>
+          <li><span class="node" aria-hidden="true">4</span><h3>Human–AI oversight</h3><p>Compare review routing and intervention policies with simulated reviewer profiles, counting fixes against new mistakes.</p><p class="metric">Corrections minus harms</p></li>
+        </ol>
       </div>
     </section>
 
-    <section id="governance" class="band">
+    <section id="governance" class="band band-deep">
       <div class="wrap">
         <h2>Why HITL-IoT matters</h2>
         <p class="intro">High detection accuracy does not show whether a model's predictions are reliable, how uncertainty should shape a security decision, or when extra oversight actually helps. HITL-IoT makes those questions measurable.</p>
