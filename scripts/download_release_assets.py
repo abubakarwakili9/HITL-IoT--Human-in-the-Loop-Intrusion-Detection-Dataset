@@ -25,9 +25,9 @@ TAG = "v1.1"
 ROOT = Path(__file__).resolve().parents[1]
 
 DESTINATIONS = {
-    "HITL-IoT_dataset_v1.1.csv": "data/v1.1",
-    "HITL-IoT_oversight_subset_v1.1.csv": "data/v1.1",
-    "HITL-IoT_splits_v1.1.csv": "data/v1.1",
+    "HITL-IoT_dataset_v1.1.csv": "data/v1.1/dataset",
+    "HITL-IoT_oversight_subset_v1.1.csv": "data/v1.1/dataset",
+    "HITL-IoT_splits_v1.1.csv": "data/v1.1/dataset",
     "analysis_v1.1.zip": "results/dataset_characterization",
     "track1_benchmark_v1.1_review_revision.zip": "results/intrusion_detection",
     "step7_selective_deferral_calibration_oversight_v1.1.zip": "results/oversight_and_deferral",

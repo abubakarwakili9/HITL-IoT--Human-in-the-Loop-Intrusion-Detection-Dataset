@@ -19,14 +19,14 @@
     },
     {
       "path": "README.md",
-      "sha256": "9aa80d642372511f6ebc44dc8bc7fe424555b9cb3d818cef0f6634641c0d8bdd",
-      "bytes": 13447,
+      "sha256": "06847f377d2d8395aa8271f9977bb4a3e89cfc5f811e9450d447c0a82bb8fb4b",
+      "bytes": 16373,
       "original_research_artifact_preserved": false
     },
     {
       "path": "REPOSITORY_LAYOUT.md",
-      "sha256": "773d8a9c9ecc7cfcba9500027628f4bf83ae82d149bfcf7f5321498d362e6597",
-      "bytes": 1542,
+      "sha256": "9bc472957d3e31460296c2305d7f5498af3a087d2face328feeccda85291ab00",
+      "bytes": 1901,
       "original_research_artifact_preserved": false
     },
     {
@@ -36,129 +36,129 @@
       "original_research_artifact_preserved": false
     },
     {
-      "path": "data/v1.1/CHANGELOG_v1.1.md",
+      "path": "data/v1.1/metadata/CHANGELOG_v1.1.md",
       "sha256": "2e2b0a44ecf97f355975b76c86a98a03060a4f2c59e10d4aac64bbaa36797c8a",
       "bytes": 5834,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_checksums_v1.1.txt",
+      "path": "data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt",
       "sha256": "c6071faf419b8aa8d1bf798eb43a0bd9232dba98b68ac22b816f4d99fbc4b2b5",
       "bytes": 1244,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_config_v1.1.json",
+      "path": "data/v1.1/metadata/HITL-IoT_config_v1.1.json",
       "sha256": "a3262da1299493f7277c8fde04311628a6de71b54b50434dd577a4fe2776797d",
       "bytes": 15277,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_dataset_v1.1.csv",
+      "path": "data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv",
       "sha256": "c6dd623029f6ca0967773379b2afbba96b73ab9cb2028c5e81ef89a1b15e1291",
       "bytes": 57809716,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_feature_policy_v1.1.json",
+      "path": "data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json",
       "sha256": "0666306f134fabe252bb87ae61d5fa1819f50203ef4382a18b8a6fa25306282f",
       "bytes": 7008,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_generation_report_v1.1.md",
+      "path": "data/v1.1/metadata/HITL-IoT_generation_report_v1.1.md",
       "sha256": "e0faefc87cbaefaa07822bc2962dc005c64f4f7ea9129b725a702eda78d1544f",
       "bytes": 7619,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_manifest_v1.1.json",
+      "path": "data/v1.1/metadata/HITL-IoT_manifest_v1.1.json",
       "sha256": "29d220e832697c3814a5a932542cb80025bbae2d0c5106aedc83dd3fa052668d",
       "bytes": 5967,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_oversight_subset_v1.1.csv",
+      "path": "data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv",
       "sha256": "58fc268325fcbc5690a81c5acf5ae452b36cc30d853f5750547ac07d502f0237",
       "bytes": 6222857,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_schema_mapping_v1.0_to_v1.1.csv",
+      "path": "data/v1.1/metadata/HITL-IoT_schema_mapping_v1.0_to_v1.1.csv",
       "sha256": "c7d36e806fd564813632df3088c9ba8b66fbea0662ee2bd3ffa0dcb6868e8a1a",
       "bytes": 2163,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_schema_v1.1.csv",
+      "path": "data/v1.1/metadata/HITL-IoT_schema_v1.1.csv",
       "sha256": "eb3e667b3f82fe136842189baee95d4a744e4ff893bb93f437610fc58408422d",
       "bytes": 10405,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_schema_v1.1.json",
+      "path": "data/v1.1/metadata/HITL-IoT_schema_v1.1.json",
       "sha256": "7967ffa9a8ac51d6bf81788c3551a606e3f73dc255f41c9320ec3585fb3285e5",
       "bytes": 22608,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_splits_v1.1.csv",
+      "path": "data/v1.1/dataset/HITL-IoT_splits_v1.1.csv",
       "sha256": "6a0c19d3c957b92f3eefa53267eeca140f490cd2031637bcda9be8908c8166b8",
       "bytes": 6034313,
       "original_research_artifact_preserved": true
     },
     {
-      "path": "data/v1.1/HITL-IoT_summary_v1.1.json",
+      "path": "data/v1.1/metadata/HITL-IoT_summary_v1.1.json",
       "sha256": "c14f091cc997f40c6017dd0b07edd69e740642726b7d39fe85b81ce7c6162647",
       "bytes": 21585,
       "original_research_artifact_preserved": true
     },
     {
       "path": "data/v1.1/README.md",
-      "sha256": "fbdd0cca9874f054ea19d43e00a80cbb2c7369f19b31b8788b6eb81e108ae00b",
-      "bytes": 957,
+      "sha256": "22cda30321cc10593144295f122d5aa180de1b0fe1908ca1c2b4896b7e522cde",
+      "bytes": 3179,
       "original_research_artifact_preserved": false
     },
     {
-      "path": "data/v1.1/hitl_iot_generator_v1_1.py",
+      "path": "data/v1.1/metadata/hitl_iot_generator_v1_1.py",
       "sha256": "08e3914deeef5b74c2ad17b1da17294f4ee8721217261131d537391c2f543542",
       "bytes": 95282,
       "original_research_artifact_preserved": true
     },
     {
       "path": "notebooks/01_Quickstart_Kaggle.ipynb",
-      "sha256": "307f03d503ff04e20e23dfb4f19cff661392889e550d4b1e5ad3bb3f7932558f",
-      "bytes": 5099,
+      "sha256": "76f6ddeceb26f0353ae0624b38028a10b7d83cd6526e8a7b414aac0dff3b7cb5",
+      "bytes": 5391,
       "original_research_artifact_preserved": false
     },
     {
       "path": "notebooks/03_Track1_IDS_Benchmark_CLEAN.ipynb",
-      "sha256": "afc4243149dd58ae997aa4ac64d3a5999d443665f0eb8574d70c3ed1aaf034b7",
-      "bytes": 158766,
+      "sha256": "b8a9c04115565843483290cdce98f7ab4730ddce0a87409e4253ff97cb697b21",
+      "bytes": 158875,
       "original_research_artifact_preserved": false
     },
     {
       "path": "notebooks/04_Selective_Deferral_CLEAN.ipynb",
-      "sha256": "f948772df012e553b89b3bb08bb14a27f895e436245f106ab1379dcbc2e1e6a7",
-      "bytes": 93271,
+      "sha256": "7541e866bc1e4371b87e5f0bc6eb4c532bacd74e67091d0ab0f8e451003af0e5",
+      "bytes": 93358,
       "original_research_artifact_preserved": false
     },
     {
       "path": "notebooks/05_External_Validation_CLEAN.ipynb",
-      "sha256": "af21d8275c81f43f30041ad157f01b6581f887e7d981f8b2cb7a6794b43c0987",
-      "bytes": 135057,
+      "sha256": "e182b7bb5c74410524522a3e80e276037a10bb4b8108945e8224777aa85499d5",
+      "bytes": 135144,
       "original_research_artifact_preserved": false
     },
     {
       "path": "notebooks/README.md",
-      "sha256": "8cfc13c07ab2890a9bb588ca42a4dad8ae37b10cb3c5fd6a14baf788f36bcd42",
-      "bytes": 1384,
+      "sha256": "be5d712d96a753121c9396b568fe83d91b2cd5362acf19b103ab2b5cf1087b34",
+      "bytes": 1491,
       "original_research_artifact_preserved": false
     },
     {
       "path": "results/README.md",
-      "sha256": "01198e18e3e5fdf1c0937642f7d9b6226b34720bc6ad39fe01407dbdcbaa6edc",
-      "bytes": 1476,
+      "sha256": "48329b51ab483a21a02103982d32d4c66c764b7baf22e3e72f81b5f9d9a36473",
+      "bytes": 1347,
       "original_research_artifact_preserved": false
     },
     {
@@ -199,26 +199,26 @@
     },
     {
       "path": "scripts/README.md",
-      "sha256": "42a507a317d01176d96ec11112b2197c02c5b662afbb9b11e229dba373ff8354",
-      "bytes": 636,
+      "sha256": "7f42fcbff3b075eb057df7d56001f675fa956c006c1882a21c348e35fd034b15",
+      "bytes": 954,
       "original_research_artifact_preserved": false
     },
     {
       "path": "scripts/quickstart_release_check.py",
-      "sha256": "d345531c3b90d0580d372b7b4936f89cce95cf1e6747393a8de3ed2f18b8e151",
-      "bytes": 1649,
+      "sha256": "5d11305336a95e0ca8758b1eaec7f74e8e6a619cc0226437f2e3d662751ac1b7",
+      "bytes": 1770,
       "original_research_artifact_preserved": false
     },
     {
       "path": "scripts/validate_original_release.py",
-      "sha256": "e05849d4a428ef5c0b36a7185edcc0bb46a2665a4d595c9525271c11e74b4cc8",
-      "bytes": 2807,
+      "sha256": "332d2c0bc2dcabdf38005c8fbd118b9989be56f0bd20780dae6543466260e8e2",
+      "bytes": 2948,
       "original_research_artifact_preserved": false
     },
     {
       "path": "scripts/verify_merged_release.py",
-      "sha256": "a1705e59179a4973d537ed891ab096481ae1c9550b21a6dbbfe8f9d0f3e7b5d5",
-      "bytes": 1649,
+      "sha256": "3bb66372ad5bc8550be3d671aca24d4e3341f91c2b9e8450d6971854f46bf9ef",
+      "bytes": 1786,
       "original_research_artifact_preserved": false
     },
     {

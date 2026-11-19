@@ -7,10 +7,13 @@ import sys
 from pathlib import Path
 import pandas as pd
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from hitl_paths import locate  # noqa: E402
+
 folder = Path(sys.argv[1]) if len(sys.argv)>1 else Path(__file__).resolve().parents[1] / 'data' / 'v1.1'
-data = pd.read_csv(folder / 'HITL-IoT_dataset_v1.1.csv', low_memory=False)
-splits = pd.read_csv(folder / 'HITL-IoT_splits_v1.1.csv')
-policy = json.loads((folder / 'HITL-IoT_feature_policy_v1.1.json').read_text())
+data = pd.read_csv(locate('HITL-IoT_dataset_v1.1.csv', folder), low_memory=False)
+splits = pd.read_csv(locate('HITL-IoT_splits_v1.1.csv', folder))
+policy = json.loads(locate('HITL-IoT_feature_policy_v1.1.json', folder).read_text())
 features = policy['track1_primary_flow_only']
 assert data.shape == (127845, 60)
 assert data['is_attack'].astype(str).str.lower().value_counts().to_dict() == {'false': 108668, 'true': 19177}
