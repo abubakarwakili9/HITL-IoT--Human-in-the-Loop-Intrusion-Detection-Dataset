@@ -1,26 +1,26 @@
 {
   "title": "HITL-IoT v1.1 — reorganized repository",
   "version": "1.1",
-  "root": "HITL-IoT--Human-in-the-Loop-Intrusion-Detection-Dataset/",
+  "root": "HITL-IoT-Dataset/",
   "file_count_before_manifest": 37,
   "original_research_artifacts_preserved": 19,
   "entries": [
     {
       "path": "CHANGELOG.md",
-      "sha256": "2537e098a4c350e6833bea5045fd011d8f24cfe04ce016342d6162635e594dbf",
-      "bytes": 3504,
+      "sha256": "ca55b41c1f386842702c6566cd59af380c999b413cce1756cec1bf97115e756e",
+      "bytes": 3465,
       "original_research_artifact_preserved": false
     },
     {
       "path": "CITATION.cff",
-      "sha256": "03e5607e36dcd0851972c2398412374197643a903782c59adc35d06bb0ceb01a",
-      "bytes": 2259,
+      "sha256": "616ae4a747f626b86b0d0e5a334970cd03d3dab7005e72c1590d06840a55e8cf",
+      "bytes": 2181,
       "original_research_artifact_preserved": false
     },
     {
       "path": "README.md",
-      "sha256": "31e4dc34af36df8b66949e025b52cb5e7a7eab9940b4cf7822168c1d647a0b20",
-      "bytes": 13487,
+      "sha256": "9aa80d642372511f6ebc44dc8bc7fe424555b9cb3d818cef0f6634641c0d8bdd",
+      "bytes": 13447,
       "original_research_artifact_preserved": false
     },
     {

@@ -129,8 +129,8 @@ Large research artifacts are distributed as release and deposit assets rather th
 ## Quick start
 
 ```bash
-git clone https://github.com/abubakarwakili9/HITL-IoT--Human-in-the-Loop-Intrusion-Detection-Dataset.git hitl-iot
-cd hitl-iot
+git clone https://github.com/abubakarwakili9/HITL-IoT-Dataset.git
+cd HITL-IoT-Dataset
 pip install pandas scikit-learn
 python scripts/download_release_assets.py    # fetches the three v1.1 CSVs into data/v1.1/ and verifies SHA-256
 python scripts/verify_merged_release.py      # checks all 13 frozen files, counts and splits

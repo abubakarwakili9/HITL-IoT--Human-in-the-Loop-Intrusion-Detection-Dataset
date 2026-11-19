@@ -18,7 +18,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-REPO = "abubakarwakili9/HITL-IoT--Human-in-the-Loop-Intrusion-Detection-Dataset"
+REPO = "abubakarwakili9/HITL-IoT-Dataset"
 TAG = "v1.1"
 ROOT = Path(__file__).resolve().parents[1]
 
