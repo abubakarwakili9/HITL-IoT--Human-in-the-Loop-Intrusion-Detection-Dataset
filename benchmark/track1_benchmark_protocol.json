@@ -1,0 +1,119 @@
+{
+  "benchmark": "HITL-IoT v1.1 Track-1 leakage-safe intrusion detection",
+  "dataset": {
+    "release": "HITL-IoT 1.1",
+    "file": "HITL-IoT_dataset_v1.1.csv",
+    "sha256": "c6dd623029f6ca0967773379b2afbba96b73ab9cb2028c5e81ef89a1b15e1291"
+  },
+  "splits": {
+    "file": "HITL-IoT_splits_v1.1.csv",
+    "primary": "temporal_split",
+    "secondary": "iid_split",
+    "partitions": {
+      "train": "model fitting only",
+      "validation": "hyperparameter selection / early stopping only",
+      "test": "final evaluation only; not used for any tuning"
+    }
+  },
+  "features": {
+    "policy_file": "HITL-IoT_feature_policy_v1.1.json",
+    "key": "track1_primary_flow_only",
+    "list": [
+      "hour",
+      "day_of_week",
+      "is_weekend",
+      "is_business_hours",
+      "is_night",
+      "protocol",
+      "dst_port",
+      "service_category",
+      "is_well_known_port",
+      "is_registered_port",
+      "is_dynamic_port",
+      "port_expected_for_device",
+      "device_type",
+      "device_thermostat",
+      "device_camera",
+      "device_speaker",
+      "device_tv",
+      "device_doorbell",
+      "ttl",
+      "packet_size",
+      "packet_count",
+      "duration",
+      "bytes_sent",
+      "bytes_received",
+      "bytes_ratio",
+      "bytes_per_second",
+      "packet_rate",
+      "baseline_deviation",
+      "duration_deviation",
+      "packet_size_deviation",
+      "connection_frequency",
+      "connection_count_prev_5min",
+      "connection_count_prev_10min",
+      "bytes_sent_mean_5",
+      "bytes_sent_std_5",
+      "bytes_sent_mean_10",
+      "bytes_sent_std_10",
+      "bytes_sent_mean_20",
+      "bytes_sent_std_20"
+    ],
+    "prohibited_inputs": [
+      "ambiguity_score",
+      "attack_type",
+      "configured_intrinsic_risk",
+      "device_name",
+      "dst_ip",
+      "dst_mac",
+      "flow_id",
+      "generated_attack_score",
+      "generated_decision_latency",
+      "generated_prediction",
+      "is_attack",
+      "model_profile_agreement",
+      "oversight_profile",
+      "oversight_selected",
+      "profile_confidence",
+      "profile_decision",
+      "profile_rationale",
+      "risk_score",
+      "src_ip",
+      "src_mac",
+      "src_port",
+      "timestamp"
+    ]
+  },
+  "target": {
+    "column": "is_attack",
+    "positive_class": "attack (1)"
+  },
+  "decision_threshold": 0.5,
+  "primary_metrics": [
+    "accuracy",
+    "balanced_accuracy",
+    "precision",
+    "recall",
+    "f1",
+    "macro_f1",
+    "mcc",
+    "auroc",
+    "fpr",
+    "fnr"
+  ],
+  "metric_definitions": {
+    "fpr": "FP/(FP+TN)",
+    "fnr": "FN/(FN+TP)",
+    "macro_f1": "unweighted mean of benign and attack F1",
+    "auroc": "area under ROC of P(attack)"
+  },
+  "submission_format": {
+    "columns": [
+      "flow_id",
+      "y_probability_attack"
+    ],
+    "rows": "exactly one per flow of the scored partition",
+    "range": "[0, 1]"
+  },
+  "reporting_rule": "report temporal-test results as primary; IID-test results only as secondary sensitivity analysis"
+}
