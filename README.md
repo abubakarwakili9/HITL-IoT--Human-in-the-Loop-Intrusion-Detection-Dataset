@@ -1,4 +1,4 @@
-# HITL-IoT
+# HITL-IoT: Human-in-the-Loop IoT Dataset
 
 [![Integrity](https://github.com/wakili-research/HITL-IoT-Dataset/actions/workflows/integrity.yml/badge.svg)](https://github.com/wakili-research/HITL-IoT-Dataset/actions/workflows/integrity.yml)
 [![Paper: TBench (accepted)](https://img.shields.io/badge/paper-TBench%20(accepted)-1f6feb)](https://journal.benchcouncil.org/TBench)
@@ -10,6 +10,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.NNNNNNNN.svg)](https://doi.org/10.5281/zenodo.NNNNNNNN) -->
 
 ### A reproducible benchmark for trustworthy human–AI oversight and selective deferral in IoT cybersecurity
+
+**HITL** stands for **Human-in-the-Loop**: uncertain AI decisions are passed to a person to review instead of being acted on automatically. In this benchmark, the reviewers are simulated profiles, so oversight strategies can be compared reproducibly.
 
 **Dataset:** v1.1 · **Research areas:** IoT intrusion detection, trustworthy AI, uncertainty, selective prediction and decision oversight · **Data type:** Deterministically generated flow-level records
 
