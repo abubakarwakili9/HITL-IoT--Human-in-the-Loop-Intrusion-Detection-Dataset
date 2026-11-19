@@ -21,28 +21,28 @@ Unlike capture-based IoT datasets focused primarily on network-event classificat
 
 ## ⬇ Download the data
 
-**You need only these three files.** Everything else in [`data/v1.1/`](data/v1.1/) is documentation or verification metadata.
+**You need only these three files.** They are in [`data/v1.1/dataset/`](data/v1.1/dataset/); documentation and verification files are in [`data/v1.1/metadata/`](data/v1.1/metadata/).
 
 | # | File | What it contains | Rows × columns | Size | Download |
 |:-:|:--|:--|:-:|:-:|:-:|
-| **1** | [`HITL-IoT_dataset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/HITL-IoT_dataset_v1.1.csv) | **The full dataset:** every flow with features, labels and oversight metadata | 127,845 × 60 | 55.1 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/HITL-IoT_dataset_v1.1.csv) |
-| **2** | [`HITL-IoT_splits_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/HITL-IoT_splits_v1.1.csv) | **Official train/validation/test assignment** (`temporal_split` is primary, `iid_split` secondary); join on `flow_id` | 127,845 × 4 | 5.8 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/HITL-IoT_splits_v1.1.csv) |
-| **3** | [`HITL-IoT_oversight_subset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/HITL-IoT_oversight_subset_v1.1.csv) | **The 10,227 oversight-selected flows** (same 60 columns) for deferral and review experiments | 10,227 × 60 | 5.9 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/HITL-IoT_oversight_subset_v1.1.csv) |
+| **1** | [`HITL-IoT_dataset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) | **The full dataset:** every flow with features, labels and oversight metadata | 127,845 × 60 | 55.1 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) |
+| **2** | [`HITL-IoT_splits_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) | **Official train/validation/test assignment** (`temporal_split` is primary, `iid_split` secondary); join on `flow_id` | 127,845 × 4 | 5.8 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) |
+| **3** | [`HITL-IoT_oversight_subset_v1.1.csv`](https://github.com/abubakarwakili9/HITL-IoT-Dataset/blob/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) | **The 10,227 oversight-selected flows** (same 60 columns) for deferral and review experiments | 10,227 × 60 | 5.9 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) |
 
-Also needed to train models correctly: [`HITL-IoT_feature_policy_v1.1.json`](data/v1.1/HITL-IoT_feature_policy_v1.1.json) lists the 39 permitted IDS features, and [`HITL-IoT_schema_v1.1.csv`](data/v1.1/HITL-IoT_schema_v1.1.csv) defines every column.
+Also needed to train models correctly: [`HITL-IoT_feature_policy_v1.1.json`](data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json) lists the 39 permitted IDS features, and [`HITL-IoT_schema_v1.1.csv`](data/v1.1/metadata/HITL-IoT_schema_v1.1.csv) defines every column.
 
 Load the data directly, without cloning:
 
 ```python
 import pandas as pd
-base = "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/"
+base = "https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/"
 df     = pd.read_csv(base + "HITL-IoT_dataset_v1.1.csv", low_memory=False)
 splits = pd.read_csv(base + "HITL-IoT_splits_v1.1.csv")
 df = df.merge(splits, on=["flow_id", "timestamp"])
 train = df[df.temporal_split == "train"]
 ```
 
-Other options: [Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) (browse in the browser) · `git clone` (everything, including results) · [Zenodo](#data-and-code-access) (archived, citable DOI). SHA-256 checksums: [`HITL-IoT_checksums_v1.1.txt`](data/v1.1/HITL-IoT_checksums_v1.1.txt).
+Other options: [Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) (browse in the browser) · `git clone` (everything, including results) · [Zenodo](#data-and-code-access) (archived, citable DOI). SHA-256 checksums: [`HITL-IoT_checksums_v1.1.txt`](data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt).
 
 **Navigate:** [Download](#-download-the-data) · [Overview](#dataset-at-a-glance) · [Design](#benchmark-design) · [Tasks](#research-tasks) · [Results](#reference-results) · [Access](#data-and-code-access) · [Quick start](#quick-start) · [Citation](#citation) · [Limitations](#scope-and-limitations)
 
@@ -141,8 +141,8 @@ The external CICIoT2023 and ToN-IoT experiments find substantial domain shift an
 
 | Path | Contents |
 |:--|:--|
-| [`data/v1.1/`](data/v1.1/) | Frozen v1.1 metadata: schema, feature policy, configuration, manifest, generation report, v1.0→v1.1 schema mapping, **generator** (`hitl_iot_generator_v1_1.py`) and SHA-256 checksums |
-| `data/v1.1/*.csv` | **Full dataset** (127,845 × 60), oversight subset (10,227) and fixed splits, ready to use after cloning |
+| [`data/v1.1/dataset/`](data/v1.1/dataset/) | **The three data files:** full dataset (127,845 × 60), fixed splits, oversight subset (10,227) |
+| [`data/v1.1/metadata/`](data/v1.1/metadata/) | Schema, feature policy, configuration, manifest, generation report, v1.0→v1.1 mapping, **generator** (`hitl_iot_generator_v1_1.py`) and SHA-256 checksums |
 | [`notebooks/`](notebooks/) | 01 quick start · 02 descriptive analysis · 03 nine-model IDS benchmark · 04 calibration, oversight and selective deferral · 05 external validation |
 | [`benchmark/`](benchmark/) | Official Track-1 scorer, protocol, submission template, frozen requirements |
 | [`results/`](results/) | Table 7 summary and the result archives (all four: descriptive analysis, nine-model IDS benchmark with held-out probabilities, calibration/oversight/deferral, external validation) |
@@ -168,9 +168,10 @@ import json
 from pathlib import Path
 import pandas as pd
 
-root = Path("data/v1.1")
-df = pd.read_csv(root / "HITL-IoT_dataset_v1.1.csv", low_memory=False)
-policy = json.loads((root / "HITL-IoT_feature_policy_v1.1.json").read_text())
+data_dir = Path("data/v1.1/dataset")     # the three data files
+meta_dir = Path("data/v1.1/metadata")    # feature policy, schema, checksums, ...
+df = pd.read_csv(data_dir / "HITL-IoT_dataset_v1.1.csv", low_memory=False)
+policy = json.loads((meta_dir / "HITL-IoT_feature_policy_v1.1.json").read_text())
 
 primary_features = policy["track1_primary_flow_only"]
 assert len(df) == 127_845

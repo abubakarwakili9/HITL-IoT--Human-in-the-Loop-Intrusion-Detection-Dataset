@@ -41,7 +41,7 @@ The dataset CSVs and result archives are stored in the repository at this tag, s
 
 ## Reproduce and verify
 
-The repository contains the `data/v1.1/` metadata and the deterministic generator, five notebooks (01–05) under `notebooks/`, the official scorer kit under `benchmark/`, download and validation scripts under `scripts/`, and the Table 7 summary under `results/intrusion_detection/`. The quickest way to get every asset into the right place is `python scripts/download_release_assets.py --results`, which also verifies each SHA-256 digest.
+The repository contains the three data files in `data/v1.1/dataset/`, the metadata and deterministic generator in `data/v1.1/metadata/`, five notebooks (01–05) under `notebooks/`, the official scorer kit under `benchmark/`, download and validation scripts under `scripts/`, and the Table 7 summary under `results/intrusion_detection/`. The quickest way to get every asset into the right place is `python scripts/download_release_assets.py --results`, which also verifies each SHA-256 digest.
 
 Download all seven release files into one folder. Check each file against the official [SHA-256 release manifest](RELEASE_ASSETS_v1.1.sha256) before using it. On Windows PowerShell, run `Get-FileHash -Algorithm SHA256 .\HITL-IoT_dataset_v1.1.csv` and compare the result with the manifest; on Linux/macOS run `sha256sum -c RELEASE_ASSETS_v1.1.sha256` in the download directory with the manifest saved there.
 
