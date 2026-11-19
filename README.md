@@ -1,425 +1,171 @@
-# HITL-IoT: Human-in-the-Loop Intrusion Detection Dataset
+# HITL-IoT
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17862333.svg)](https://doi.org/10.5281/zenodo.17862333)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Paper](https://img.shields.io/badge/Paper-blue)](https://doi.org/your-paper-doi)
+### A reproducible benchmark for trustworthy human–AI oversight and selective deferral in IoT cybersecurity
 
-> **The first IoT intrusion detection dataset with human decision metadata for human-AI collaboration research**
+**Dataset:** v1.1 · **Research areas:** IoT intrusion detection, trustworthy AI, uncertainty, selective prediction and decision oversight · **Data type:** Deterministically generated flow-level records
 
----
+HITL-IoT is an open research benchmark designed to study **both threat detection and what happens after an AI system makes a prediction**. It provides a controlled smart-home IoT environment, a fixed evaluation protocol and structured oversight variables for comparing intrusion detectors, confidence calibration, selective deferral and review-allocation strategies.
 
-## 🔍 Overview
+Unlike capture-based IoT datasets focused primarily on network-event classification, HITL-IoT makes it possible to investigate **when a decision should be accepted, reviewed, escalated or deferred** under consistent experimental conditions. It complements—not replaces—datasets collected from operational or experimental networks such as CICIoT2023 and ToN-IoT.
 
-**HITL-IoT** is the first benchmark dataset for IoT intrusion detection that incorporates **human decision behavior** into the labeling process. Unlike traditional IDS datasets that only provide automated benign/attack labels, HITL-IoT includes:
+> **Data provenance.** All network flows in HITL-IoT v1.1 are **synthetically generated**. The 10,227-record oversight subset contains **simulated profile decisions**, including generated confidence, latency and evidence-based rationales. These are not observations from recruited cybersecurity analysts, real human annotations or measured expertise levels.
 
-- 👥 **Human judgments** from security professionals
-- 💯 **Analyst confidence** scores (0-1 scale)
-- ⏱️ **Decision latency** (time taken per decision)
-- 📝 **Analyst reasoning** (justification text)
-- 🎓 **Expertise-level profiles** (expert/intermediate/novice)
-
-This enables research on **human-AI collaboration**, **analyst modeling**, **trustworthy AI**, and **regulatory compliance** (EU AI Act Article 14) in IoT cybersecurity.
+**Navigate:** [Overview](#dataset-at-a-glance) · [Design](#benchmark-design) · [Tasks](#research-tasks) · [Results](#reference-results) · [Access](#data-and-code-access) · [Quick start](#quick-start) · [Citation](#citation) · [Limitations](#scope-and-limitations)
 
 ---
 
-## 📊 Dataset Statistics
+## Dataset at a glance
 
-| Metric | Value |
-|--------|-------|
-| **Total Network Flows** | 127,845 |
-| **Benign Flows** | 108,630 (85%) |
-| **Attack Flows** | 19,215 (15%) |
-| **Human Annotations** | 10,227 |
-| **Expert Annotations** | 8,230 (80.5%) |
-| **Intermediate Annotations** | 1,473 (14.4%) |
-| **Novice Annotations** | 524 (5.1%) |
-| **IoT Devices** | 12 |
-| **Attack Categories** | 12 |
-| **Features per Flow** | 54 (CICFlowMeter-style) |
-| **ML Baselines** | 9 models evaluated |
+| Property | HITL-IoT v1.1 |
+|:--|--:|
+| Network-flow records | **127,845** |
+| Benign / attack records | **108,668 / 19,177** (85% / 15%) |
+| Dataset columns | **60** |
+| IoT device types / device instances | **5 / 12** |
+| Attack families | **12**, across 4 threat groups |
+| Simulated oversight subset | **10,227** records |
+| Primary IDS feature set | **39** permitted source features |
+| Context-enriched IDS feature set | **40** permitted source features |
+| Chronological train / validation / test | **89,492 / 19,176 / 19,177** |
+| Generation | **Seed 42**, seven-day controlled scenario |
 
----
+**Device categories:** IP cameras, thermostats, smart speakers, smart TVs and video doorbells.
 
-## 📂 Dataset Contents
+**Attack coverage:** reconnaissance (port scanning, network mapping, service enumeration); command and control (botnet communication, remote administration, device hijacking); data movement (DNS tunnelling, bulk data transfer, credential harvesting); and device manipulation (protocol abuse, firmware exploitation, configuration tampering).
 
-### **Core Files**
+## Why a benchmark for oversight?
 
-| File | Size | Description |
-|------|------|-------------|
-| `HITL-IoT_full_dataset.csv` | 142 MB | Complete dataset (127,845 flows) |
-| `HITL-IoT_human_annotations.csv` | 2.1 MB | Annotated subset (10,227 flows) |
-| `HITL-IoT_baseline_results.csv` | 1.2 KB | ML baseline results (9 models) |
+Strong intrusion-detection accuracy does not guarantee that model confidence is reliable or that intervention improves outcomes. HITL-IoT separates the **prediction task** from the **oversight task** so that researchers can assess error prioritisation, review workload, deferral decisions and the possibility that an intervention may correct—or harm—an automated decision.
 
-### **Metadata Structure**
+The benchmark makes four design choices explicit:
 
-#### **Network Flow Features (54 attributes)**
-- **Network:** Protocol, src/dst ports, src/dst IPs
-- **Traffic:** Bytes sent/received, packet rate, duration
-- **Behavioral:** Connection frequency, baseline deviation
-- **Device:** Device type, MAC address
-- **ML-Ready:** Risk score, ML confidence, ML prediction
+1. **Controlled generation:** a seeded, documented smart-home flow generator and configurable traffic overlap/ambiguity.
+2. **Feature governance:** detection features are separated from labels, construction signals, identifiers and oversight metadata.
+3. **Independent evaluation:** calibration and deferral use predictions from trained IDS models rather than the generator's scores.
+4. **Traceability:** frozen files, predefined data splits, schema, configuration and SHA-256 integrity records support repeatable evaluation.
 
-#### **Human Annotation Metadata**
-| Field | Type | Description |
-|-------|------|-------------|
-| `annotator_id` | string | Expertise level (expert/intermediate/novice) |
-| `human_decision` | binary | Analyst label (0=benign, 1=attack) |
-| `human_confidence` | float | Analyst certainty (0.0-1.0) |
-| `decision_time` | float | Time taken (seconds) |
-| `ml_human_agreement` | boolean | ML and human agree? |
-| `ground_truth` | binary | True label (0=benign, 1=attack) |
+## Benchmark design
 
----
-
-## ⚔️ Attack Categories
-The dataset covers twelve distinct IoT attack families:
-
-1. **Botnet C&C** - Command and control communications
-2. **Port Scanning** - Network reconnaissance via port probing
-3. **DNS Tunneling**- Covert data exfiltration through DNS
-4. **Network Mapping** - Topology discovery and enumeration
-5. **Remote Admin** - Unauthorized remote administration attempts
-6. **Bulk Exfiltration** - Large-scale data theft
-7. **Device Hijacking** - Unauthorized device control
-8. **Credential Harvesting** - Password and authentication theft
-9. **Config Tampering** - Configuration modification attacks
-10. **Firmware Exploit** - Firmware-level compromise
-11. **Protocol Abuse** - MQTT, CoAP, and IoT protocol manipulation
-12. **Service Enumeration** - Service discovery and fingerprinting
-
-
----
-
-## 🎯 Research Applications
-
-### **Primary Use Cases**
-- 🤝 **Human-AI Collaboration**: Design cooperative IDS workflows
-- 🎯 **Selective Deferral**: When should AI defer to humans?
-- 📊 **Confidence Calibration**: Study analyst self-assessment accuracy
-- 👨‍🏫 **Expertise Modeling**: Understand expert vs novice behavior
-- 🏛️ **Regulatory Compliance**: EU AI Act Article 14 oversight validation
-- 🔄 **Trust Dynamics**: How does trust evolve in human-AI teams?
-
-### **Secondary Applications**
-- Alert triage and prioritization
-- Analyst training and skill assessment
-- Benchmark comparison across datasets
-- Cross-dataset generalization studies
-- IoT device behavior profiling
-
----
-
-## 🤖 Baseline Results
-
-### **Top ML Models**
-
-| Model | Accuracy | F1-Score | Precision | Recall | Training Time | Inference (μs) |
-|-------|----------|----------|-----------|--------|---------------|----------------|
-| **Voting Ensemble** | 99.60% | 98.64% | 100.00% | 97.31% | 13.2s | 247 μs |
-| **XGBoost** | 99.59% | 98.61% | 99.97% | 97.29% | 1.67s | 2.3 μs |
-| **LightGBM** | 99.57% | 98.54% | 99.76% | 97.36% | 1.15s | 4.1 μs |
-| Random Forest | 99.48% | 98.30% | 99.60% | 97.04% | 14.2s | 6.8 μs |
-| 1D-CNN | 99.45% | 98.20% | 99.62% | 96.83% | 274s | 76 μs |
-| MLP | 99.41% | 98.07% | 99.45% | 96.74% | 1,704s | 342 μs |
-| LSTM | 99.34% | 97.82% | 99.23% | 96.45% | 848s | 673 μs |
-| Decision Tree | 98.96% | 96.65% | 98.38% | 94.99% | 3.2s | 2.1 μs |
-| Logistic Regression | 97.85% | 93.37% | 96.14% | 90.76% | 0.89s | 2.0 μs |
-
-**Key Findings:**
-- ✅ **XGBoost optimal**: Best accuracy-efficiency trade-off (99.59%, 1.67s training, 2.3μs inference)
-- ✅ **Zero false positives**: Voting Ensemble achieves 100% precision
-- ✅ **Real-time ready**: Tree-based models enable 2-7μs inference
-- ⚠️ **Deep learning cost**: 100-1000× slower training, 30-300× slower inference
-
-### **Human Annotation Performance**
-
-| Expertise | Accuracy | Mean Confidence | ECE (Calibration) | Decision Time |
-|-----------|----------|-----------------|-------------------|---------------|
-| **Expert** | 92.2% | 0.856 | 0.152 | 13.4s |
-| **Intermediate** | 84.0% | 0.719 | 0.204 | 22.1s |
-| **Novice** | 76.9% | 0.590 | 0.256 | 30.7s |
-
-**Key Findings:**
-- ✅ Experts are 1.7× better calibrated than novices (lower ECE)
-- ✅ Experts 2.3× faster than novices (13.4s vs 30.7s)
-- ⚠️ Confidence does NOT correlate with expertise (r=0.087)
-- ✅ Decision speed STRONGLY correlates with expertise
-
----
-
-## 📁 Repository Structure
-
-```
-HITL-IoT/
-├── data/
-│   ├── HITL-IoT_full_dataset.csv           # Complete dataset (127,845 flows)
-│   ├── HITL-IoT_human_annotations.csv      # Annotated subset (10,227 flows)
-│   ├── HITL-IoT_baseline_results.csv       # ML results (9 models)
-│   ├── feature_description.json            # Feature documentation
-│   ├── attack_categories.json              # Attack taxonomy
-│   └── checksums.txt                       # SHA256 checksums
-│
-├── code/
-│   ├── data_loader.py                      # Load and validate dataset
-│   ├── preprocessing.py                    # Data preprocessing
-│   ├── feature_engineering.py              # Feature extraction
-│   └── utils.py                            # Utility functions
-│
-├── benchmarks/
-│   ├── classical_ml/                       # Tree-based, logistic regression
-│   ├── deep_learning/                      # CNN, LSTM, MLP
-│   ├── ensemble/                           # Voting, stacking
-│   └── evaluate.py                         # Evaluation metrics
-│
-├── examples/
-│   ├── 01_basic_usage.ipynb                # Getting started
-│   ├── 02_ml_baseline.ipynb                # Reproduce baselines
-│   ├── 03_human_analysis.ipynb             # Analyze human annotations
-│   └── 04_hitl_workflow.ipynb              # Human-AI collaboration
-│
-├── figures/
-│   ├── Figure9_Baseline_Comparison.pdf
-│   ├── Figure10_Confusion_Matrices.pdf
-│   ├── Figure11_Training_Efficiency.pdf
-│   ├── Figure12_Annotation_Behavior.pdf
-│   └── Figure13_Confidence_Calibration.pdf
-│
-├── docs/
-│   ├── dataset_description.md              # Detailed methodology
-│   ├── baseline_results.md                 # Complete ML evaluation
-│   ├── annotation_protocol.md              # Human annotation process
-│   └── faq.md                              # Frequently asked questions
-│
-├── README.md                               # This file
-├── LICENSE                                 # CC BY 4.0
-├── CITATION.cff                            # Citation metadata
-├── requirements.txt                        # Python dependencies
-├── CHANGELOG.md                            # Version history
-└── .gitignore                              # Git ignore rules
+```mermaid
+flowchart LR
+    A[Controlled IoT scenario] --> B[Generated network flows]
+    B --> C[Frozen v1.1 dataset]
+    B --> D[Simulated oversight challenge set]
+    C --> E[IDS evaluation]
+    E --> F[Model probabilities]
+    F --> G[Calibration and selective deferral]
+    D --> G
+    G --> H[Review workload and correction-versus-harm analysis]
 ```
 
----
+The **oversight challenge set** is selected using construction-time ambiguity. Its configurable profiles are benchmark parameters, **not** proxies for empirically validated human expertise. Researchers must avoid using these generated variables as primary IDS predictors.
 
-## 🚀 Quick Start
+## Research tasks
 
-### **1. Installation**
+| Task | Evaluation focus | Suggested measures |
+|:--|:--|:--|
+| **T1 — Intrusion detection** | Binary benign/attack classification on the frozen split | Macro-F1, balanced accuracy, MCC, AUROC, FPR/FNR |
+| **T2 — Probability calibration** | Reliability of model-produced confidence | Brier score, expected calibration error, reliability diagrams |
+| **T3 — Selective prediction** | Errors remaining after uncertain cases are deferred | Coverage, selective risk, risk–coverage curves |
+| **T4 — Oversight and review allocation** | Which cases are reviewed and whether intervention helps | Review budget, errors reached, corrected vs harmed decisions |
+| **T5 — Learning to defer** | Policies allocating cases between model and simulated reviewer | Matched-budget performance, workload and decision cost |
+| **T6 — External validation** | Dataset shift with independently collected IoT datasets | Transfer performance, calibration and selective-review behaviour |
 
-```bash
-# Clone repository
-git clone https://github.com/abubakarwakili9/HITL-IoT.git
-cd HITL-IoT
+T1–T6 reflect the evaluation programme described in the accompanying manuscript. **Real-analyst validation and deployment studies remain future research**, not established properties of the released simulation.
 
-# Install dependencies
-pip install -r requirements.txt
+## Reference results
 
-# Download dataset from Zenodo
-# Place CSV files in data/ directory
-```
+The manuscript evaluates nine model families using a **chronological 70/15/15 train/validation/test protocol**. The validation-selected Random Forest is the reference IDS for subsequent calibration and deferral analyses.
 
-### **2. Load Dataset**
+| Model | Chronological test Macro-F1 |
+|:--|--:|
+| Logistic Regression | 0.9239 |
+| SVM (RBF) | 0.9428 |
+| **Random Forest** | **0.9688** |
+| XGBoost | 0.9677 |
+| LightGBM | 0.9682 |
+| MLP | 0.9584 |
+| 1D-CNN | 0.9624 |
+| LSTM | 0.9629 |
+| Soft-voting ensemble | 0.9684 |
+
+For the Random Forest reference: **accuracy 0.9849, balanced accuracy 0.9491, MCC 0.9395 and AUROC 0.9690**. These are **manuscript-reported results**, not a claim that every experiment has been independently rerun for this documentation update.
+
+The external CICIoT2023 and ToN-IoT experiments find substantial domain shift and restricted direct transfer; within-domain probability calibration and review prioritisation should not be mistaken for proven operational generalisation.
+
+## Data and code access
+
+| Resource | Purpose | Access |
+|:--|:--|:--|
+| **GitHub repository** | Source code, documentation, issue tracking and release history | This repository; see [Releases](../../releases) |
+| **Kaggle** | Existing public dataset page and notebook discovery | [HITL-IoT dataset on Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) |
+| **Zenodo** | Archival version record and persistent data citation | A verified **v1.1 version-specific DOI will be added after deposit** |
+
+**Release synchronization:** the existing GitHub and Kaggle pages may still show legacy v1.0 assets or metadata. The frozen **v1.1** files and their integrity records are prepared for publication; the versioned release should be treated as public **only after the matching archives and DOI are verified**. Earlier versions will remain available for provenance.
+
+The prepared v1.1 archive contains:
+
+| File or directory | Contents |
+|:--|:--|
+| `frozen_release_v1.1/HITL-IoT_dataset_v1.1.csv` | Full 60-column, 127,845-record dataset |
+| `frozen_release_v1.1/HITL-IoT_oversight_subset_v1.1.csv` | Simulated oversight-profile subset |
+| `frozen_release_v1.1/HITL-IoT_schema_v1.1.json` | Machine-readable field descriptions |
+| `frozen_release_v1.1/HITL-IoT_feature_policy_v1.1.json` | Permitted and restricted features by task |
+| `frozen_release_v1.1/HITL-IoT_splits_v1.1.csv` | Predefined chronological and IID splits |
+| `frozen_release_v1.1/hitl_iot_generator_v1_1.py` | Deterministic dataset generator |
+| `frozen_release_v1.1/HITL-IoT_checksums_v1.1.txt` | SHA-256 hashes for the frozen release |
+| `notebooks/` and `results_archives/` | Benchmark analyses, output artifacts and supporting evaluations |
+
+These paths describe the **prepared v1.1 release archive**, not a guarantee that all files are already present on this GitHub branch. Large research artifacts will be distributed as release/deposit assets rather than committed to source history. The separately packaged trained models should be loaded only in a trusted, isolated environment.
+
+## Quick start
+
+After downloading and extracting the **v1.1 archive**, a first inspection can be performed with Python and pandas:
 
 ```python
+import json
+from pathlib import Path
 import pandas as pd
-from code.data_loader import load_hitl_iot
 
-# Load full dataset
-df_full = load_hitl_iot('data/HITL-IoT_full_dataset.csv')
-print(f"Total flows: {len(df_full):,}")
+root = Path("frozen_release_v1.1")
+df = pd.read_csv(root / "HITL-IoT_dataset_v1.1.csv")
+policy = json.loads((root / "HITL-IoT_feature_policy_v1.1.json").read_text())
 
-# Load human annotations
-df_annotations = load_hitl_iot('data/HITL-IoT_human_annotations.csv')
-print(f"Annotated flows: {len(df_annotations):,}")
+primary_features = policy["track1_primary_flow_only"]
+assert len(df) == 127_845
+assert len(primary_features) == 39
+assert all(column in df.columns for column in primary_features)
 
-# Filter by expertise
-experts = df_annotations[df_annotations['annotator_id'] == 'expert']
-print(f"Expert annotations: {len(experts):,}")
+print("Dataset:", df.shape)
+print("Class counts:", df["is_attack"].value_counts().to_dict())
+print("Primary IDS features:", len(primary_features))
 ```
 
-### **3. Basic Analysis**
+For model training, apply the **provided split assignments**, fit preprocessing only on training records, use the **39 permitted primary features**, and reserve the test partition for final evaluation. Do not add `generated_attack_score`, `generated_prediction`, `ambiguity_score`, simulated oversight fields, labels or identifiers to the primary IDS feature matrix. The schema and policy files are authoritative for individual field roles.
 
-```python
-# Class distribution
-print(df_full['is_attack'].value_counts())
+## Citation
 
-# Attack type distribution
-print(df_full[df_full['is_attack'] == 1]['attack_type'].value_counts())
+**Associated accepted manuscript:**
 
-# Device type distribution
-print(df_full['device_type'].value_counts())
+> Wakili, A., Idris, M., and Bakkali, S. *HITL-IoT: A Reproducible Dataset and Benchmark for Studying Trustworthy Human–AI Collaboration, Oversight Mechanisms, and Selective Deferral in IoT Cybersecurity.*
 
-# Human annotation statistics
-print(df_annotations.groupby('annotator_id').agg({
-    'human_confidence': ['mean', 'std'],
-    'decision_time': ['mean', 'median'],
-    'human_decision': lambda x: (x == df_annotations.loc[x.index, 'is_attack']).mean()
-}).round(3))
-```
+**Journal:** [*BenchCouncil Transactions on Benchmarks, Standards and Evaluations* (TBench)](https://journal.benchcouncil.org/TBench)  
+**Publication status:** Accepted for publication; currently in copyediting. Final article DOI, volume, issue and page details are pending.
 
-### **4. Reproduce Baselines**
+For reproducible research, please cite **both the article and the exact dataset version** when the final identifiers are available. A validated `CITATION.cff` and version-specific Zenodo DOI will be provided with the public release. Do not cite an unverified DOI for v1.1.
 
-```python
-from benchmarks.evaluate import train_and_evaluate
-from sklearn.ensemble import RandomForestClassifier
+## Scope and limitations
 
-# Train model
-model = RandomForestClassifier(n_estimators=100, random_state=42)
-results = train_and_evaluate(model, df_full)
+- **Generated, not captured traffic.** The data model a controlled smart-home scenario; no raw network PCAP or production telemetry is implied.
+- **Simulated, not recruited reviewers.** Profile confidence, latency, decisions and rationales are constructed benchmark signals—not measurements of practitioners.
+- **Temporal split is not drift validation.** Chronological evaluation does not by itself demonstrate robustness to deliberate concept drift.
+- **Cross-domain transfer is limited.** Results on CICIoT2023 and ToN-IoT motivate independent external validation and realistic recalibration.
+- **No certification claim.** This research supports studies of oversight mechanisms; it does not establish compliance with AI regulation or fitness for deployment.
 
-print(f"Accuracy: {results['accuracy']:.4f}")
-print(f"F1-Score: {results['f1_score']:.4f}")
-print(f"Precision: {results['precision']:.4f}")
-print(f"Recall: {results['recall']:.4f}")
-```
+## License, contributions and maintenance
 
----
+The existing dataset release identifies **CC BY 4.0** for data. Source-code licensing and redistribution rights are being reviewed separately; no unverified MIT software license is claimed here. See the applicable license information with each published artifact.
 
-## 📥 Download
+**Corresponding author:** Abubakar Wakili. Issues reporting reproducibility problems, missing metadata, licensing questions or proposed benchmark extensions are welcome through [GitHub Issues](../../issues). Authorship and institutional details will be aligned with the final journal record.
 
-### **Primary Download (Zenodo)**
-
-**🔗 [Download from Zenodo](https://doi.org/10.5281/zenodo.17862334)**
-
-The complete HITL-IoT dataset is hosted on Zenodo with a permanent DOI for citation.
-
-### **Verify Downloads**
-
-```bash
-# Verify file integrity
-sha256sum -c data/checksums.txt
-
-# Expected output:
-# HITL-IoT_full_dataset.csv: OK
-# HITL-IoT_human_annotations.csv: OK
-# HITL-IoT_baseline_results.csv: OK
-```
-
----
-
-## 📚 Citation
-
-If you use this dataset in your research, please cite both the dataset and the paper:
-
-### **Dataset Citation**
-
-```bibtex
-@dataset{Wakili2025hitliot_dataset,
-  author       = {Abubakar Wakili, Muhammad Idris, Sara Bakkali 
-                  },
-  title        = {HITL-IoT: Human-in-the-Loop Intrusion Detection Dataset},
-  year         = 2025,
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.17862334},
-  url          = {https://doi.org/10.5281/zenodo.17862334}
-}
-```
-
-
-### **APA Style**
-
-Wakili A., et al. (2025). HITL-IoT: Human-in-the-Loop Intrusion Detection Dataset [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
-
----
-
-## 📖 Documentation
-
-- **[Dataset Description](docs/dataset_description.md)** - Detailed methodology and generation process
-- **[Baseline Results](docs/baseline_results.md)** - Complete ML/DL evaluation
-- **[Annotation Protocol](docs/annotation_protocol.md)** - Human annotation procedures
-- **[FAQ](docs/faq.md)** - Frequently asked questions
-- **[Changelog](CHANGELOG.md)** - Version history and updates
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### **How to Contribute:**
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### **Contribution Areas:**
-
-- Additional baseline models
-- Improved preprocessing scripts
-- New analysis notebooks
-- Documentation improvements
-- Bug fixes
-- Feature suggestions
-
----
-
-## 🐛 Issues
-
-Found a problem? Have a question?
-
-**👉 [Open an issue](https://github.com/abubakarwakili9/HITL-IoT/issues)**
-
-Before opening an issue, please:
-1. Check existing issues
-2. Provide detailed description
-3. Include code to reproduce (if applicable)
-4. Specify dataset version
-
----
-
-## 📜 License
-
-This dataset is licensed under the **[Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE)**.
-
-**You are free to:**
-- ✅ **Share** — copy and redistribute the material
-- ✅ **Adapt** — remix, transform, and build upon the material
-- ✅ **Commercial use** — use for commercial purposes
-
-**Under the following terms:**
-- 📝 **Attribution** — You must give appropriate credit and cite our paper
-
-
-
-## 📧 Contact
-
-**Lead Author:** Abubakar Wakili   
-**Email:** a.wakili@ueuromed.org  
-**Institution:** Euromed University of Fez, Morocco  
-**ORCID:** [orcid-id]
-
-### **Links:**
-- 🌐 **Project Website:** 
-- 📦 **Dataset (Zenodo):** https://doi.org/10.5281/zenodo.178623341
-- 📄 **Paper:** 
-- 💻 **GitHub:** 
-
----
-
-## 📊 Dataset Statistics
-
-![GitHub stars](https://img.shields.io/github/stars/[username]/HITL-IoT?style=social)
-![GitHub forks](https://img.shields.io/github/forks/[username]/HITL-IoT?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/[username]/HITL-IoT?style=social)
-![Downloads](https://img.shields.io/badge/dynamic/json?url=https://zenodo.org/api/records/17862334&label=downloads&query=$.metadata.downloads&color=blue)
-
----
-
-## 🔗 Related Resources
-
-- **CICIoT2023:** Large-scale IoT attack dataset
-- **Bot-IoT:** Botnet attack dataset
-- **ToN-IoT:** Telemetry data of IoT/IIoT sensors
-- **Edge-IIoTset:** Edge computing IoT dataset
-
-
----
-
-**⭐ If you find this dataset useful, please star this repository!**
-
----
-
-<p align="center">
-  Made with ❤️ for open science and cybersecurity research
-</p>
-```
+**Version note:** the **dataset is v1.1**; the editorial **manuscript revision v1.2** refers to a separate document version and does not rename the frozen dataset.

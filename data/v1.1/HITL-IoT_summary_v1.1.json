@@ -1,0 +1,902 @@
+{
+  "dataset": {
+    "name": "HITL-IoT",
+    "version": "1.1",
+    "seed": 42,
+    "rows": 127845,
+    "columns": 60,
+    "duration_hours": 168,
+    "first_timestamp": "2024-01-15T00:00:22",
+    "last_timestamp": "2024-01-21T23:59:54",
+    "score_mode": "evidence",
+    "legacy_profile_mode": false
+  },
+  "class_distribution": {
+    "benign": {
+      "count": 108668,
+      "percent": 85.0
+    },
+    "attack": {
+      "count": 19177,
+      "percent": 15.0
+    }
+  },
+  "device_distribution": {
+    "camera": {
+      "count": 25570,
+      "percent": 20.001
+    },
+    "thermostat": {
+      "count": 25570,
+      "percent": 20.001
+    },
+    "speaker": {
+      "count": 25569,
+      "percent": 20.0
+    },
+    "doorbell": {
+      "count": 25568,
+      "percent": 19.999
+    },
+    "tv": {
+      "count": 25568,
+      "percent": 19.999
+    }
+  },
+  "device_instances": {
+    "thermostat": 2,
+    "camera": 3,
+    "speaker": 3,
+    "tv": 2,
+    "doorbell": 2
+  },
+  "attack_distribution_observed": {
+    "botnet_communication": {
+      "count": 3442,
+      "percent": 17.949
+    },
+    "port_scanning": {
+      "count": 2681,
+      "percent": 13.98
+    },
+    "dns_tunneling": {
+      "count": 2395,
+      "percent": 12.489
+    },
+    "remote_administration": {
+      "count": 1602,
+      "percent": 8.354
+    },
+    "device_hijacking": {
+      "count": 1523,
+      "percent": 7.942
+    },
+    "network_mapping": {
+      "count": 1507,
+      "percent": 7.858
+    },
+    "protocol_abuse": {
+      "count": 1380,
+      "percent": 7.196
+    },
+    "bulk_data_transfer": {
+      "count": 1301,
+      "percent": 6.784
+    },
+    "service_enumeration": {
+      "count": 1205,
+      "percent": 6.284
+    },
+    "credential_harvesting": {
+      "count": 809,
+      "percent": 4.219
+    },
+    "configuration_tampering": {
+      "count": 745,
+      "percent": 3.885
+    },
+    "firmware_exploitation": {
+      "count": 587,
+      "percent": 3.061
+    }
+  },
+  "attack_distribution_configured_percent": {
+    "port_scanning": 13.978,
+    "network_mapping": 7.858,
+    "service_enumeration": 6.286,
+    "dns_tunneling": 12.49,
+    "protocol_abuse": 7.196,
+    "botnet_communication": 17.949,
+    "remote_administration": 8.354,
+    "bulk_data_transfer": 6.782,
+    "credential_harvesting": 4.218,
+    "firmware_exploitation": 3.06,
+    "configuration_tampering": 3.888,
+    "device_hijacking": 7.94
+  },
+  "protocol_distribution": {
+    "TCP": {
+      "count": 101852,
+      "percent": 79.668
+    },
+    "UDP": {
+      "count": 25993,
+      "percent": 20.332
+    }
+  },
+  "protocol_by_class": {
+    "benign": {
+      "TCP": {
+        "count": 86576,
+        "percent": 79.67
+      },
+      "UDP": {
+        "count": 22092,
+        "percent": 20.33
+      }
+    },
+    "attack": {
+      "TCP": {
+        "count": 15276,
+        "percent": 79.658
+      },
+      "UDP": {
+        "count": 3901,
+        "percent": 20.342
+      }
+    }
+  },
+  "service_category_distribution": {
+    "http": {
+      "count": 32613,
+      "percent": 25.51
+    },
+    "https": {
+      "count": 32404,
+      "percent": 25.346
+    },
+    "http_alt": {
+      "count": 14698,
+      "percent": 11.497
+    },
+    "rtsp": {
+      "count": 12264,
+      "percent": 9.593
+    },
+    "dns": {
+      "count": 8319,
+      "percent": 6.507
+    },
+    "vendor_app": {
+      "count": 5211,
+      "percent": 4.076
+    },
+    "mqtt_port": {
+      "count": 4419,
+      "percent": 3.457
+    },
+    "coap_port": {
+      "count": 4409,
+      "percent": 3.449
+    },
+    "ntp": {
+      "count": 4399,
+      "percent": 3.441
+    },
+    "other_high": {
+      "count": 2214,
+      "percent": 1.732
+    },
+    "other": {
+      "count": 802,
+      "percent": 0.627
+    },
+    "telnet_alt": {
+      "count": 592,
+      "percent": 0.463
+    },
+    "ftp": {
+      "count": 586,
+      "percent": 0.458
+    },
+    "ssh": {
+      "count": 545,
+      "percent": 0.426
+    },
+    "telnet": {
+      "count": 510,
+      "percent": 0.399
+    },
+    "https_alt": {
+      "count": 396,
+      "percent": 0.31
+    },
+    "irc": {
+      "count": 356,
+      "percent": 0.278
+    },
+    "ssdp": {
+      "count": 338,
+      "percent": 0.264
+    },
+    "rdp": {
+      "count": 327,
+      "percent": 0.256
+    },
+    "adb": {
+      "count": 325,
+      "percent": 0.254
+    },
+    "snmp": {
+      "count": 321,
+      "percent": 0.251
+    },
+    "upnp": {
+      "count": 257,
+      "percent": 0.201
+    },
+    "tr069": {
+      "count": 250,
+      "percent": 0.196
+    },
+    "vnc": {
+      "count": 210,
+      "percent": 0.164
+    },
+    "echo": {
+      "count": 195,
+      "percent": 0.153
+    },
+    "mdns": {
+      "count": 190,
+      "percent": 0.149
+    },
+    "mqtt_tls_port": {
+      "count": 177,
+      "percent": 0.138
+    },
+    "smb": {
+      "count": 124,
+      "percent": 0.097
+    },
+    "tftp": {
+      "count": 103,
+      "percent": 0.081
+    },
+    "pop3": {
+      "count": 102,
+      "percent": 0.08
+    },
+    "netbios": {
+      "count": 100,
+      "percent": 0.078
+    },
+    "smtp": {
+      "count": 89,
+      "percent": 0.07
+    }
+  },
+  "destination_category": {
+    "benign": {
+      "legitimate_like": {
+        "count": 92421,
+        "percent": 85.049
+      },
+      "ambiguous": {
+        "count": 10907,
+        "percent": 10.037
+      },
+      "suspicious_like": {
+        "count": 5340,
+        "percent": 4.914
+      }
+    },
+    "attack": {
+      "legitimate_like": {
+        "count": 7666,
+        "percent": 39.975
+      },
+      "ambiguous": {
+        "count": 5766,
+        "percent": 30.067
+      },
+      "suspicious_like": {
+        "count": 5745,
+        "percent": 29.958
+      }
+    }
+  },
+  "port_mimicry": {
+    "configured_range_percent": [
+      20.0,
+      70.0
+    ],
+    "observed_attack_rate_device_expected_port_percent": 50.92,
+    "per_attack_percent": {
+      "botnet_communication": 48.11,
+      "bulk_data_transfer": 37.28,
+      "configuration_tampering": 49.13,
+      "credential_harvesting": 69.72,
+      "device_hijacking": 39.46,
+      "dns_tunneling": 100.0,
+      "firmware_exploitation": 23.51,
+      "network_mapping": 48.51,
+      "port_scanning": 39.24,
+      "protocol_abuse": 65.22,
+      "remote_administration": 30.46,
+      "service_enumeration": 32.28
+    }
+  },
+  "byte_volume": {
+    "benign_median": 4076.0,
+    "attack_median": 13594.0,
+    "median_byte_volume_ratio": 0.2998,
+    "benign_iqr": [
+      1164.0,
+      52480.0
+    ],
+    "attack_iqr": [
+      4082.0,
+      153436.0
+    ],
+    "wasserstein_log10_bytes": 0.56793
+  },
+  "core_features": {
+    "bytes_sent": {
+      "mean": 76513.8647,
+      "std": 206811.6438,
+      "min": 48.0,
+      "50%": 4738.0,
+      "max": 4977338.0
+    },
+    "bytes_received": {
+      "mean": 85781.2125,
+      "std": 219630.4136,
+      "min": 19.0,
+      "50%": 5535.0,
+      "max": 7019720.0
+    },
+    "duration": {
+      "mean": 48.7943,
+      "std": 69.0864,
+      "min": 0.01,
+      "50%": 21.7479,
+      "max": 599.902
+    },
+    "packet_rate": {
+      "mean": 45.2049,
+      "std": 1668.8681,
+      "min": 0.0026,
+      "50%": 2.2031,
+      "max": 252945.0125
+    },
+    "baseline_deviation": {
+      "mean": 1.4094,
+      "std": 2.2426,
+      "min": 0.0,
+      "50%": 1.0414,
+      "max": 34.5079
+    },
+    "connection_frequency": {
+      "mean": 1.1073,
+      "std": 1.072,
+      "min": 0.0,
+      "50%": 1.0,
+      "max": 9.0
+    }
+  },
+  "construction_score": {
+    "accuracy_full": 0.84785,
+    "accuracy_oversight_subset": 0.5685,
+    "note": "Observed property of the generated construction score; not a trained-model result."
+  },
+  "oversight_subset": {
+    "label": "Properties of configured/generated oversight profiles - NOT measurements of real security analysts.",
+    "majority_class_baseline_accuracy": 0.8323,
+    "selected_count": 10227,
+    "selected_percent": 7.9995,
+    "selection_rule": "deterministic Top-K by ambiguity_score desc, tie-break flow order",
+    "ambiguity": {
+      "min": 0.881239,
+      "max": 0.999984,
+      "mean": 0.939768,
+      "median": 0.93954
+    },
+    "class_distribution": {
+      "benign": {
+        "count": 8512,
+        "percent": 83.231
+      },
+      "attack": {
+        "count": 1715,
+        "percent": 16.769
+      }
+    },
+    "profiles": {
+      "high_competence": {
+        "count": 8160,
+        "percent": 79.789,
+        "observed_accuracy": 0.8311,
+        "observed_balanced_accuracy": 0.7502,
+        "alarm_rate": 0.2124,
+        "model_profile_agreement": 0.5667,
+        "confidence_mean": 0.8839,
+        "confidence_median": 0.8899,
+        "confidence_min_max": [
+          0.7449,
+          0.9683
+        ],
+        "ece_10bin": 0.0528,
+        "latency_mean_s": 14.68,
+        "latency_median_s": 14.639,
+        "latency_sd_s": 4.234,
+        "disagreement_rate": 0.4333,
+        "profile_correct_within_disagreements": 0.8029
+      },
+      "low_competence": {
+        "count": 510,
+        "percent": 4.987,
+        "observed_accuracy": 0.549,
+        "observed_balanced_accuracy": 0.5205,
+        "alarm_rate": 0.4451,
+        "model_profile_agreement": 0.5157,
+        "confidence_mean": 0.6239,
+        "confidence_median": 0.6387,
+        "confidence_min_max": [
+          0.4507,
+          0.7319
+        ],
+        "ece_10bin": 0.0792,
+        "latency_mean_s": 34.085,
+        "latency_median_s": 33.957,
+        "latency_sd_s": 9.838,
+        "disagreement_rate": 0.4843,
+        "profile_correct_within_disagreements": 0.498
+      },
+      "medium_competence": {
+        "count": 1557,
+        "percent": 15.224,
+        "observed_accuracy": 0.7341,
+        "observed_balanced_accuracy": 0.6909,
+        "alarm_rate": 0.3064,
+        "model_profile_agreement": 0.5787,
+        "confidence_mean": 0.7456,
+        "confidence_median": 0.7564,
+        "confidence_min_max": [
+          0.6091,
+          0.8507
+        ],
+        "ece_10bin": 0.0312,
+        "latency_mean_s": 24.048,
+        "latency_median_s": 23.636,
+        "latency_sd_s": 7.292,
+        "disagreement_rate": 0.4213,
+        "profile_correct_within_disagreements": 0.6905
+      }
+    },
+    "overall_profile_accuracy": 0.8023,
+    "model_profile_agreement": 0.566,
+    "disagreements": {
+      "count": 4439,
+      "model_correct": 1024,
+      "profile_correct": 3415,
+      "model_benign_profile_attack": 1196,
+      "model_attack_profile_benign": 3243,
+      "by_attack_type_percent": {
+        "normal": 81.71,
+        "dns_tunneling": 3.85,
+        "botnet_communication": 3.06,
+        "port_scanning": 2.3,
+        "network_mapping": 1.58,
+        "protocol_abuse": 1.44,
+        "device_hijacking": 1.22,
+        "remote_administration": 1.08,
+        "service_enumeration": 1.08,
+        "credential_harvesting": 0.95,
+        "configuration_tampering": 0.68,
+        "bulk_data_transfer": 0.61,
+        "firmware_exploitation": 0.45
+      }
+    },
+    "profile_confidence_disagreement_auc": 0.5174,
+    "latency_overall_mean_sd_s": [
+      17.074,
+      7.323
+    ],
+    "descriptive_policies": {
+      "profile_override_on_disagreement": {
+        "name": "Profile-override-on-disagreement policy",
+        "accuracy": 0.8023,
+        "note": "Simple descriptive benchmark policy: the generated prediction is replaced by the profile decision whenever they disagree. Not an oracle and not optimal; deferral policies must be evaluated with probabilities from independently trained models."
+      }
+    }
+  },
+  "shortcut_audit": {
+    "features": {
+      "hour": {
+        "single_feature_auc": 0.5021
+      },
+      "day_of_week": {
+        "single_feature_auc": 0.5019
+      },
+      "is_weekend": {
+        "single_feature_auc": 0.5014
+      },
+      "is_business_hours": {
+        "single_feature_auc": 0.5005
+      },
+      "is_night": {
+        "single_feature_auc": 0.5001
+      },
+      "dst_category": {
+        "rows_in_near_pure_categories_percent": 0.0
+      },
+      "protocol": {
+        "rows_in_near_pure_categories_percent": 0.0
+      },
+      "dst_port": {
+        "single_feature_auc": 0.5438
+      },
+      "service_category": {
+        "rows_in_near_pure_categories_percent": 10.566
+      },
+      "is_well_known_port": {
+        "single_feature_auc": 0.6115
+      },
+      "is_registered_port": {
+        "single_feature_auc": 0.6034
+      },
+      "is_dynamic_port": {
+        "single_feature_auc": 0.5081
+      },
+      "port_expected_for_device": {
+        "single_feature_auc": 0.7454
+      },
+      "device_type": {
+        "rows_in_near_pure_categories_percent": 0.0
+      },
+      "device_thermostat": {
+        "single_feature_auc": 0.5
+      },
+      "device_camera": {
+        "single_feature_auc": 0.5
+      },
+      "device_speaker": {
+        "single_feature_auc": 0.5
+      },
+      "device_tv": {
+        "single_feature_auc": 0.5
+      },
+      "device_doorbell": {
+        "single_feature_auc": 0.5
+      },
+      "ttl": {
+        "single_feature_auc": 0.5
+      },
+      "packet_size": {
+        "single_feature_auc": 0.5358
+      },
+      "packet_count": {
+        "single_feature_auc": 0.6732
+      },
+      "duration": {
+        "single_feature_auc": 0.5424
+      },
+      "bytes_sent": {
+        "single_feature_auc": 0.6596
+      },
+      "bytes_received": {
+        "single_feature_auc": 0.6157
+      },
+      "bytes_ratio": {
+        "single_feature_auc": 0.7212
+      },
+      "bytes_per_second": {
+        "single_feature_auc": 0.6032
+      },
+      "packet_rate": {
+        "single_feature_auc": 0.6063
+      },
+      "baseline_deviation": {
+        "single_feature_auc": 0.7807
+      },
+      "duration_deviation": {
+        "single_feature_auc": 0.5491
+      },
+      "packet_size_deviation": {
+        "single_feature_auc": 0.5753
+      },
+      "connection_frequency": {
+        "single_feature_auc": 0.5022
+      },
+      "connection_count_prev_5min": {
+        "single_feature_auc": 0.5006
+      },
+      "connection_count_prev_10min": {
+        "single_feature_auc": 0.5007
+      },
+      "bytes_sent_mean_5": {
+        "single_feature_auc": 0.5002
+      },
+      "bytes_sent_std_5": {
+        "single_feature_auc": 0.5004
+      },
+      "bytes_sent_mean_10": {
+        "single_feature_auc": 0.5
+      },
+      "bytes_sent_std_10": {
+        "single_feature_auc": 0.5
+      },
+      "bytes_sent_mean_20": {
+        "single_feature_auc": 0.5001
+      },
+      "bytes_sent_std_20": {
+        "single_feature_auc": 0.5001
+      }
+    },
+    "flag_rule": "single_feature_auc >= 0.95 or >= 50% rows in near-pure categories",
+    "flagged": []
+  },
+  "splits": {
+    "temporal": {
+      "train": {
+        "count": 89492,
+        "proportion": 0.7,
+        "attack_count": 13469,
+        "attack_rate": 0.15051,
+        "first_timestamp": "2024-01-15T00:00:22",
+        "last_timestamp": "2024-01-19T21:34:44",
+        "oversight_selected": 7148
+      },
+      "validation": {
+        "count": 19176,
+        "proportion": 0.14999,
+        "attack_count": 2869,
+        "attack_rate": 0.14961,
+        "first_timestamp": "2024-01-19T21:34:48",
+        "last_timestamp": "2024-01-20T22:45:31",
+        "oversight_selected": 1538
+      },
+      "test": {
+        "count": 19177,
+        "proportion": 0.15,
+        "attack_count": 2839,
+        "attack_rate": 0.14804,
+        "first_timestamp": "2024-01-20T22:45:34",
+        "last_timestamp": "2024-01-21T23:59:54",
+        "oversight_selected": 1541
+      }
+    },
+    "iid_stratified": {
+      "train": {
+        "count": 89492,
+        "proportion": 0.7,
+        "attack_count": 13424,
+        "attack_rate": 0.15,
+        "first_timestamp": "2024-01-15T00:00:22",
+        "last_timestamp": "2024-01-21T23:59:54",
+        "oversight_selected": 7219
+      },
+      "validation": {
+        "count": 19175,
+        "proportion": 0.14999,
+        "attack_count": 2875,
+        "attack_rate": 0.14993,
+        "first_timestamp": "2024-01-15T00:01:44",
+        "last_timestamp": "2024-01-21T23:59:16",
+        "oversight_selected": 1527
+      },
+      "test": {
+        "count": 19178,
+        "proportion": 0.15001,
+        "attack_count": 2878,
+        "attack_rate": 0.15007,
+        "first_timestamp": "2024-01-15T00:00:25",
+        "last_timestamp": "2024-01-21T23:59:32",
+        "oversight_selected": 1481
+      }
+    }
+  },
+  "validation": [
+    {
+      "check": "row count",
+      "passed": true,
+      "detail": "127845 vs 127845"
+    },
+    {
+      "check": "class counts",
+      "passed": true,
+      "detail": "attack=19177 benign=108668"
+    },
+    {
+      "check": "unique flow_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "five device types",
+      "passed": true,
+      "detail": "['camera', 'doorbell', 'speaker', 'thermostat', 'tv']"
+    },
+    {
+      "check": "no Mixed/Unknown/Other device",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "one-hot devices complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "twelve attack types + normal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "attack category counts sum",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "oversight count == floor(N*rate)",
+      "passed": true,
+      "detail": "10227 vs 10227"
+    },
+    {
+      "check": "Top-K property",
+      "passed": true,
+      "detail": "max unselected=0.881232 min selected=0.881239"
+    },
+    {
+      "check": "ambiguity in [0,1]",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "score in [0,1]",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "selected rows have complete metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "non-selected rows have null metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "rationale non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "confidence in [0,1]",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "latency > 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "profile performance ordering: high > medium > low",
+      "passed": true,
+      "detail": "high_competence=0.8311 > medium_competence=0.7341 > low_competence=0.5490"
+    },
+    {
+      "check": "low-competence profile accuracy > 0.50",
+      "passed": true,
+      "detail": "0.5490"
+    },
+    {
+      "check": "durations > 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "byte counts >= 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "packet_count >= 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ports in range",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no constant dst_mac leakage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical features prior-only (independent recomputation)",
+      "passed": true,
+      "detail": "camera_21"
+    },
+    {
+      "check": "chronological row order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "primary Track-1 flow-only defined",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "contextual Track-1 defined",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Track-2 oversight defined",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Track-1 excludes labels/construction/oversight/identifiers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "every column documented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "device percentages sum to 100",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "split file covers every flow exactly once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "temporal split coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "temporal split approximately 70/15/15",
+      "passed": true,
+      "detail": "train=0.7000, validation=0.1500, test=0.1500"
+    },
+    {
+      "check": "IID split coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "IID split approximately 70/15/15",
+      "passed": true,
+      "detail": "train=0.7000, validation=0.1500, test=0.1500"
+    },
+    {
+      "check": "temporal train precedes validation (strict)",
+      "passed": true,
+      "detail": "2024-01-19T21:34:44 < 2024-01-19T21:34:48"
+    },
+    {
+      "check": "temporal validation precedes test (strict)",
+      "passed": true,
+      "detail": "2024-01-20T22:45:31 < 2024-01-20T22:45:34"
+    },
+    {
+      "check": "no temporal-train record later than any test record",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
