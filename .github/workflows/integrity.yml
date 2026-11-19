@@ -1,0 +1,48 @@
+name: Integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository:
+    name: Frozen files, citation and notebooks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check frozen files, notebooks and feature policy
+        run: python scripts/check_repository.py
+      - name: Validate CITATION.cff
+        run: |
+          pip install --quiet cffconvert
+          cffconvert --validate -i CITATION.cff
+
+  release-assets:
+    name: Download and verify the seven v1.1 release assets
+    # Runs when a release is published, or manually from the Actions tab once v1.1 exists.
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download assets and verify SHA-256
+        run: python scripts/download_release_assets.py --results
+      - name: Verify data, counts, splits and result archives
+        run: |
+          pip install --quiet "pandas>=2" scikit-learn
+          python scripts/verify_merged_release.py
+          python scripts/validate_original_release.py
+          python scripts/quickstart_release_check.py
+          python scripts/verify_results.py

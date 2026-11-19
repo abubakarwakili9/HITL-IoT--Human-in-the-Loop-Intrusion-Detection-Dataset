@@ -1,5 +1,6 @@
 # HITL-IoT
 
+[![Integrity](https://github.com/abubakarwakili9/HITL-IoT-Dataset/actions/workflows/integrity.yml/badge.svg)](https://github.com/abubakarwakili9/HITL-IoT-Dataset/actions/workflows/integrity.yml)
 [![Paper: TBench (accepted)](https://img.shields.io/badge/paper-TBench%20(accepted)-1f6feb)](https://journal.benchcouncil.org/TBench)
 [![Dataset v1.1](https://img.shields.io/badge/dataset-v1.1-orange)](CHANGELOG.md)
 [![Kaggle](https://img.shields.io/badge/Kaggle-dataset-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset)
