@@ -120,7 +120,7 @@ The external CICIoT2023 and ToN-IoT experiments find substantial domain shift an
 | `data/v1.1/*.csv` | **Full dataset** (127,845 × 60), oversight subset (10,227) and fixed splits, ready to use after cloning |
 | [`notebooks/`](notebooks/) | 01 quick start · 02 descriptive analysis · 03 nine-model IDS benchmark · 04 calibration, oversight and selective deferral · 05 external validation |
 | [`benchmark/`](benchmark/) | Official Track-1 scorer, protocol, submission template, frozen requirements |
-| [`results/`](results/) | Table 7 summary and the result archives (descriptive analysis, nine-model IDS benchmark with held-out probabilities, calibration/oversight/deferral, external validation) |
+| [`results/`](results/) | Table 7 summary and the result archives (all four: descriptive analysis, nine-model IDS benchmark with held-out probabilities, calibration/oversight/deferral, external validation) |
 | [`scripts/`](scripts/) | Download and integrity-verification scripts |
 | [`docs/`](docs/) | Project website (GitHub Pages) |
 | [`legacy/v1.0/`](legacy/v1.0/) | Superseded v1.0 files, kept for provenance only; **do not use for new results** |
