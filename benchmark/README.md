@@ -18,7 +18,6 @@ Use this kit to report results that are directly comparable with Table 7 of the 
 ## Score a submission
 
 ```bash
-python scripts/download_release_assets.py          # fetch the data once
 python benchmark/score_track1_submission.py my_temporal_test_predictions.csv
 ```
 
