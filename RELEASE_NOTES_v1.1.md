@@ -22,9 +22,9 @@ HITL-IoT v1.1 provides a controlled, deterministically generated smart-home IoT 
 
 **Provenance:** Flows are synthetically generated, not packet captures from a live operational network. The oversight decisions, rationales, confidence and latency are **simulated profile outputs**; these data do **not** represent decisions collected from cybersecurity professionals or empirical estimates of analyst expertise.
 
-## Seven separate download assets
+## Files
 
-Each file is provided individually, not bundled into one mandatory large download.
+The dataset CSVs and result archives are stored in the repository at this tag, so the source-code archive of this release already contains them (byte-exact). They may also be attached individually below. `python scripts/download_release_assets.py --results` fetches and verifies each one.
 
 ### Data (CSV)
 
