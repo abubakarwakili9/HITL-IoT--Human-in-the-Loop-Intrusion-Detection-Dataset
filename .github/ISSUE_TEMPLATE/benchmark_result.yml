@@ -1,0 +1,35 @@
+name: Benchmark result
+description: Submit a Track-1 (or oversight) result for the HITL-IoT v1.1 results table
+title: "[Result] <method name>"
+labels: [benchmark-result]
+body:
+  - type: input
+    id: method
+    attributes: {label: Method name, placeholder: "e.g. CatBoost (default)"}
+    validations: {required: true}
+  - type: input
+    id: paper
+    attributes: {label: Paper or code link (DOI, arXiv or repository)}
+  - type: dropdown
+    id: protocol
+    attributes:
+      label: Protocol
+      options: ["Chronological test (primary)", "IID test (secondary)"]
+    validations: {required: true}
+  - type: textarea
+    id: scores
+    attributes:
+      label: Output of benchmark/score_track1_submission.py
+      render: json
+    validations: {required: true}
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Protocol compliance
+      options:
+        - label: I used only the 39 track1_primary_flow_only features
+          required: true
+        - label: Preprocessing and tuning used only the train/validation partitions; the test partition was scored once
+          required: true
+        - label: I attached the submission CSV (flow_id, y_probability_attack)
+          required: true
