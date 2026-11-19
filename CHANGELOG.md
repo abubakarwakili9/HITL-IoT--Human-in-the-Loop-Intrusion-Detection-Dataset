@@ -32,6 +32,6 @@ This file records changes to the HITL-IoT research dataset and benchmark. Datase
 
 ## v1.0.0 — 2025-12-09 (historical release)
 
-The original public release remains available for historical traceability: [HITL-IoT v1.0.0](https://github.com/abubakarwakili9/HITL-IoT-Dataset/releases/tag/v1.0.0).
+The original public release remains available for historical traceability: [HITL-IoT v1.0.0](https://github.com/abubakarwakili9/HITL-IoT--Human-in-the-Loop-Intrusion-Detection-Dataset/releases/tag/v1.0.0).
 
 Its original documentation used descriptions such as `human-annotated` and `expert annotations` that must not be transferred to the v1.1 simulated oversight profiles. Earlier documentation can be examined in Git history; this version note is a correction of the public research description, not a claim of new participant data.
