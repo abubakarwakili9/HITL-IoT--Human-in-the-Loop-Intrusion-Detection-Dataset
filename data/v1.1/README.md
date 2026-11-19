@@ -4,9 +4,9 @@
 
 | # | File | What it contains | Rows × columns | Size | Download |
 |:-:|:--|:--|:-:|:-:|:-:|
-| **1** | [`HITL-IoT_dataset_v1.1.csv`](dataset/HITL-IoT_dataset_v1.1.csv) | **The full dataset:** every flow with features, labels and oversight metadata | 127,845 × 60 | 55.1 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) |
-| **2** | [`HITL-IoT_splits_v1.1.csv`](dataset/HITL-IoT_splits_v1.1.csv) | **Official train/validation/test assignment** (`temporal_split` is primary, `iid_split` secondary); join on `flow_id` | 127,845 × 4 | 5.8 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) |
-| **3** | [`HITL-IoT_oversight_subset_v1.1.csv`](dataset/HITL-IoT_oversight_subset_v1.1.csv) | **The 10,227 oversight-selected flows** (same 60 columns) for deferral and review experiments | 10,227 × 60 | 5.9 MB | [⬇ CSV](https://github.com/abubakarwakili9/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) |
+| **1** | [`HITL-IoT_dataset_v1.1.csv`](dataset/HITL-IoT_dataset_v1.1.csv) | **The full dataset:** every flow with features, labels and oversight metadata | 127,845 × 60 | 55.1 MB | [⬇ CSV](https://github.com/wakili-research/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_dataset_v1.1.csv) |
+| **2** | [`HITL-IoT_splits_v1.1.csv`](dataset/HITL-IoT_splits_v1.1.csv) | **Official train/validation/test assignment** (`temporal_split` is primary, `iid_split` secondary); join on `flow_id` | 127,845 × 4 | 5.8 MB | [⬇ CSV](https://github.com/wakili-research/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_splits_v1.1.csv) |
+| **3** | [`HITL-IoT_oversight_subset_v1.1.csv`](dataset/HITL-IoT_oversight_subset_v1.1.csv) | **The 10,227 oversight-selected flows** (same 60 columns) for deferral and review experiments | 10,227 × 60 | 5.9 MB | [⬇ CSV](https://github.com/wakili-research/HITL-IoT-Dataset/raw/main/data/v1.1/dataset/HITL-IoT_oversight_subset_v1.1.csv) |
 
 Use `temporal_split` from file 2 as the primary protocol, and train IDS models only on the 39 features listed in [`HITL-IoT_feature_policy_v1.1.json`](metadata/HITL-IoT_feature_policy_v1.1.json).
 
