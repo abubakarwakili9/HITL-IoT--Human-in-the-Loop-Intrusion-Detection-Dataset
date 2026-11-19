@@ -1,0 +1,33 @@
+v1.0 field,v1.1 field,action,reason
+—,flow_id,added,stable identifier for splits and Top-K tie-breaking
+timestamp..is_weekend,same,kept,
+"is_business_hours, is_night",same,kept,
+"src_ip, src_mac",same,kept,
+dst_ip,dst_ip,changed,RFC 5737 documentation addresses; no live reputation claims
+—,dst_category,added,explicit destination category
+dst_mac,dst_mac,changed,gateway MAC; removes attack-only FF:FF leak
+packet_size,packet_size,changed,device/attack-specific mean packet size
+ttl,ttl,changed,device-specific initial TTL (was uniform random)
+"is_internal_dst, is_localhost",—,removed,constant False
+protocol,protocol,changed,port-derived for both classes
+—,"service_category, port_expected_for_device",added,port semantics
+device_thermostat/camera/speaker,same,kept,
+—,"device_tv, device_doorbell",added,complete one-hot encoding
+—,packet_count,added,needed for packet_rate
+packet_rate,packet_rate,changed,packets/s
+baseline_deviation,baseline_deviation,changed,computed from configured device baseline
+—,"duration_deviation, packet_size_deviation",added,device-baseline deviations
+connection_frequency,connection_frequency,changed,prior flows per 60 s
+"connection_frequency_5, connection_frequency_10","connection_count_prev_5min, connection_count_prev_10min",renamed/changed,time-window counts
+bytes_sent_mean/std_5/10/20,same,changed,"prior-only, per instance"
+risk_score,— (configured_intrinsic_risk in legacy mode),removed,label-conditioned leakage
+ml_confidence,generated_attack_score,renamed/changed,not a trained-model confidence
+ml_prediction,generated_prediction,renamed,
+—,ambiguity_score,added,retained construction variable
+human_reviewed,oversight_selected,renamed,no human review occurred
+human_decision,profile_decision,renamed/changed,evidence-based generated decision
+human_confidence,profile_confidence,renamed/changed,no agreement leak
+decision_time,generated_decision_latency,renamed,"generated, not measured"
+ml_human_agreement,model_profile_agreement,renamed,
+annotator_id,oversight_profile,renamed,high/medium/low_competence (legacy expert/intermediate/novice)
+—,profile_rationale,added,template-generated rationale

@@ -1,0 +1,231 @@
+{
+  "title": "HITL-IoT v1.1 \u2014 reorganized repository",
+  "version": "1.1",
+  "root": "HITL-IoT-Dataset/",
+  "file_count_before_manifest": 37,
+  "original_research_artifacts_preserved": 19,
+  "entries": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "ca55b41c1f386842702c6566cd59af380c999b413cce1756cec1bf97115e756e",
+      "bytes": 3465,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "585c10afb301502e03c3fdfa45f2b4e130296a59216554cad15769c698dbcdce",
+      "bytes": 1988,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "b0432b5191156c27abe0d41b905284784e254c67d54f3da90f97c626c856952f",
+      "bytes": 13438,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "REPOSITORY_LAYOUT.md",
+      "sha256": "2719665d466e52fb6962d4f860dbc73746276476b1f84dccacae8a75ab634c82",
+      "bytes": 2813,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "de31e71289e9fce8280f7251d3a9fa1cb39dddaee2604fea21f0d7e6824f8faa",
+      "bytes": 381,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "data/v1.1/CHANGELOG_v1.1.md",
+      "sha256": "2e2b0a44ecf97f355975b76c86a98a03060a4f2c59e10d4aac64bbaa36797c8a",
+      "bytes": 5834,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_checksums_v1.1.txt",
+      "sha256": "c6071faf419b8aa8d1bf798eb43a0bd9232dba98b68ac22b816f4d99fbc4b2b5",
+      "bytes": 1244,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_config_v1.1.json",
+      "sha256": "a3262da1299493f7277c8fde04311628a6de71b54b50434dd577a4fe2776797d",
+      "bytes": 15277,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_dataset_v1.1.csv",
+      "sha256": "c6dd623029f6ca0967773379b2afbba96b73ab9cb2028c5e81ef89a1b15e1291",
+      "bytes": 57809716,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_feature_policy_v1.1.json",
+      "sha256": "0666306f134fabe252bb87ae61d5fa1819f50203ef4382a18b8a6fa25306282f",
+      "bytes": 7008,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_generation_report_v1.1.md",
+      "sha256": "e0faefc87cbaefaa07822bc2962dc005c64f4f7ea9129b725a702eda78d1544f",
+      "bytes": 7619,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_manifest_v1.1.json",
+      "sha256": "29d220e832697c3814a5a932542cb80025bbae2d0c5106aedc83dd3fa052668d",
+      "bytes": 5967,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_oversight_subset_v1.1.csv",
+      "sha256": "58fc268325fcbc5690a81c5acf5ae452b36cc30d853f5750547ac07d502f0237",
+      "bytes": 6222857,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_schema_mapping_v1.0_to_v1.1.csv",
+      "sha256": "c7d36e806fd564813632df3088c9ba8b66fbea0662ee2bd3ffa0dcb6868e8a1a",
+      "bytes": 2163,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_schema_v1.1.csv",
+      "sha256": "eb3e667b3f82fe136842189baee95d4a744e4ff893bb93f437610fc58408422d",
+      "bytes": 10405,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_schema_v1.1.json",
+      "sha256": "7967ffa9a8ac51d6bf81788c3551a606e3f73dc255f41c9320ec3585fb3285e5",
+      "bytes": 22608,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_splits_v1.1.csv",
+      "sha256": "6a0c19d3c957b92f3eefa53267eeca140f490cd2031637bcda9be8908c8166b8",
+      "bytes": 6034313,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/HITL-IoT_summary_v1.1.json",
+      "sha256": "c14f091cc997f40c6017dd0b07edd69e740642726b7d39fe85b81ce7c6162647",
+      "bytes": 21585,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "data/v1.1/README.md",
+      "sha256": "fbdd0cca9874f054ea19d43e00a80cbb2c7369f19b31b8788b6eb81e108ae00b",
+      "bytes": 957,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "data/v1.1/hitl_iot_generator_v1_1.py",
+      "sha256": "08e3914deeef5b74c2ad17b1da17294f4ee8721217261131d537391c2f543542",
+      "bytes": 95282,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "notebooks/01_Quickstart_Kaggle.ipynb",
+      "sha256": "307f03d503ff04e20e23dfb4f19cff661392889e550d4b1e5ad3bb3f7932558f",
+      "bytes": 5099,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "notebooks/03_Track1_IDS_Benchmark_CLEAN.ipynb",
+      "sha256": "afc4243149dd58ae997aa4ac64d3a5999d443665f0eb8574d70c3ed1aaf034b7",
+      "bytes": 158766,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "notebooks/04_Selective_Deferral_CLEAN.ipynb",
+      "sha256": "f948772df012e553b89b3bb08bb14a27f895e436245f106ab1379dcbc2e1e6a7",
+      "bytes": 93271,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "notebooks/05_External_Validation_CLEAN.ipynb",
+      "sha256": "af21d8275c81f43f30041ad157f01b6581f887e7d981f8b2cb7a6794b43c0987",
+      "bytes": 135057,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "notebooks/README.md",
+      "sha256": "db1cb85db5497424f7b98313ebf172a49593c5c424560d617131e5fca09c0cc1",
+      "bytes": 1019,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "results/README.md",
+      "sha256": "e30aef1e31da16b0f2b3c37927f9c55d98531f2bdacd95ff9c305f8ea3f3327d",
+      "bytes": 1337,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "results/RESULTS_SHA256.json",
+      "sha256": "0258d80c8cb11b809897ee095d7909db29a5eb92f58230af1e2f7f6a70e03516",
+      "bytes": 1629,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "results/dataset_characterization/analysis_v1.1.zip",
+      "sha256": "774fc4a2fb3aacf4044174ad211f63d11c949dcc6f4f125d38ac148671e1ef2c",
+      "bytes": 2961707,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "results/external_validation/step8_external_validation_v1.1.zip",
+      "sha256": "2e33b55c4b02f446779ef9dd7d118848784800b4eb490a03aa5ebf9dfc698df1",
+      "bytes": 3495037,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "results/intrusion_detection/Table7_Track1_Temporal_All9_Baselines.csv",
+      "sha256": "a1af5a9c2107882838c1cf5e29a0035b677036f3dd0c56f95808a9c79a400110",
+      "bytes": 1004,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "results/intrusion_detection/track1_benchmark_v1.1_review_revision.zip",
+      "sha256": "f7ffc3d6492c3b55c886d63feeb984f0bf5b86413f6d940a4435711a94ccfb27",
+      "bytes": 11380461,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "results/oversight_and_deferral/step7_selective_deferral_calibration_oversight_v1.1.zip",
+      "sha256": "f5e97c73ee08e2654c12bc60490a8f97ce9c089870775fcb7b85982c0d1ce851",
+      "bytes": 1675947,
+      "original_research_artifact_preserved": true
+    },
+    {
+      "path": "scripts/README.md",
+      "sha256": "0ae93495e33b97c408e29428a502aa85059fa2dd7b414b7009f7b7c4918983dd",
+      "bytes": 475,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "scripts/quickstart_release_check.py",
+      "sha256": "d345531c3b90d0580d372b7b4936f89cce95cf1e6747393a8de3ed2f18b8e151",
+      "bytes": 1649,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "scripts/validate_original_release.py",
+      "sha256": "e05849d4a428ef5c0b36a7185edcc0bb46a2665a4d595c9525271c11e74b4cc8",
+      "bytes": 2807,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "scripts/verify_merged_release.py",
+      "sha256": "a1705e59179a4973d537ed891ab096481ae1c9550b21a6dbbfe8f9d0f3e7b5d5",
+      "bytes": 1649,
+      "original_research_artifact_preserved": false
+    },
+    {
+      "path": "scripts/verify_results.py",
+      "sha256": "1907d6c8dabf186b477595b5fe6f82ecc65a36ad14493a679b2bbda78872913d",
+      "bytes": 674,
+      "original_research_artifact_preserved": false
+    }
+  ]
+}
