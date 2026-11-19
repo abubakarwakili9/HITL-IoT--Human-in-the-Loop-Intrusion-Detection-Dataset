@@ -117,15 +117,15 @@ The external CICIoT2023 and ToN-IoT experiments find substantial domain shift an
 | Path | Contents |
 |:--|:--|
 | [`data/v1.1/`](data/v1.1/) | Frozen v1.1 metadata: schema, feature policy, configuration, manifest, generation report, v1.0→v1.1 schema mapping, **generator** (`hitl_iot_generator_v1_1.py`) and SHA-256 checksums |
-| `data/v1.1/*.csv` | Dataset, oversight subset and splits: **release assets**, fetched by `scripts/download_release_assets.py` |
+| `data/v1.1/*.csv` | **Full dataset** (127,845 × 60), oversight subset (10,227) and fixed splits, ready to use after cloning |
 | [`notebooks/`](notebooks/) | 01 quick start · 02 descriptive analysis · 03 nine-model IDS benchmark · 04 calibration, oversight and selective deferral · 05 external validation |
 | [`benchmark/`](benchmark/) | Official Track-1 scorer, protocol, submission template, frozen requirements |
-| [`results/`](results/) | Table 7 summary; four result archives are release assets |
+| [`results/`](results/) | Table 7 summary and the result archives (descriptive analysis, nine-model IDS benchmark with held-out probabilities, calibration/oversight/deferral, external validation) |
 | [`scripts/`](scripts/) | Download and integrity-verification scripts |
 | [`docs/`](docs/) | Project website (GitHub Pages) |
 | [`legacy/v1.0/`](legacy/v1.0/) | Superseded v1.0 files, kept for provenance only; **do not use for new results** |
 
-Large research artifacts are distributed as release and deposit assets rather than committed to Git history. The trained-model package should be loaded only in a trusted, isolated environment (pickled models can execute code).
+All dataset files and result archives are in the repository; the trained-model package (128.6 MB, above GitHub's file limit) is distributed through Zenodo. The trained-model package should be loaded only in a trusted, isolated environment (pickled models can execute code).
 
 ## Quick start
 
@@ -133,7 +133,6 @@ Large research artifacts are distributed as release and deposit assets rather th
 git clone https://github.com/abubakarwakili9/HITL-IoT-Dataset.git
 cd HITL-IoT-Dataset
 pip install pandas scikit-learn
-python scripts/download_release_assets.py    # fetches the three v1.1 CSVs into data/v1.1/ and verifies SHA-256
 python scripts/verify_merged_release.py      # checks all 13 frozen files, counts and splits
 ```
 
