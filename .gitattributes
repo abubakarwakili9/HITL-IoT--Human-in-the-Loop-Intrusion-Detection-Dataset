@@ -1,2 +1,11 @@
-# Auto detect text files and perform LF normalization
+# Normalise line endings for ordinary source and documentation files
 * text=auto
+
+# Frozen research artefacts are byte-exact: their SHA-256 hashes are published.
+# Never let Git rewrite their line endings.
+data/v1.1/** -text
+results/**/*.csv -text
+*.csv -text
+*.zip binary
+*.pdf binary
+*.png binary

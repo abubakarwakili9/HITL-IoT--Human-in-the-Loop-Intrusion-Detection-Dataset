@@ -1,0 +1,15 @@
+name: Data or reproducibility problem
+description: Checksum mismatch, wrong count, broken notebook, schema question
+title: "[Data] "
+labels: [data]
+body:
+  - type: textarea
+    id: what
+    attributes: {label: What happened, description: "Include the command you ran and its full output."}
+    validations: {required: true}
+  - type: input
+    id: file
+    attributes: {label: File(s) involved, placeholder: data/v1.1/HITL-IoT_dataset_v1.1.csv}
+  - type: input
+    id: env
+    attributes: {label: Python / OS / package versions}

@@ -1,5 +1,13 @@
 # HITL-IoT
 
+[![Paper: TBench (accepted)](https://img.shields.io/badge/paper-TBench%20(accepted)-1f6feb)](https://journal.benchcouncil.org/TBench)
+[![Dataset v1.1](https://img.shields.io/badge/dataset-v1.1-orange)](CHANGELOG.md)
+[![Kaggle](https://img.shields.io/badge/Kaggle-dataset-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset)
+[![Data licence: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)](LICENSE)
+[![Citation file](https://img.shields.io/badge/cite-CITATION.cff-6f42c1)](CITATION.cff)
+<!-- After the Zenodo v1.1 record is published, add:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.NNNNNNNN.svg)](https://doi.org/10.5281/zenodo.NNNNNNNN) -->
+
 ### A reproducible benchmark for trustworthy human–AI oversight and selective deferral in IoT cybersecurity
 
 **Dataset:** v1.1 · **Research areas:** IoT intrusion detection, trustworthy AI, uncertainty, selective prediction and decision oversight · **Data type:** Deterministically generated flow-level records
@@ -64,7 +72,7 @@ The **oversight challenge set** is selected using construction-time ambiguity. I
 
 | Task | Evaluation focus | Suggested measures |
 |:--|:--|:--|
-| **T1 — Intrusion detection** | Binary benign/attack classification on the frozen split | Macro-F1, balanced accuracy, MCC, AUROC, FPR/FNR |
+| **T1 — Intrusion detection** | Binary benign/attack classification on the frozen split (scorer in [`benchmark/`](benchmark/)) | Macro-F1, balanced accuracy, MCC, AUROC, FPR/FNR |
 | **T2 — Probability calibration** | Reliability of model-produced confidence | Brier score, expected calibration error, reliability diagrams |
 | **T3 — Selective prediction** | Errors remaining after uncertain cases are deferred | Coverage, selective risk, risk–coverage curves |
 | **T4 — Oversight and review allocation** | Which cases are reviewed and whether intervention helps | Review budget, errors reached, corrected vs harmed decisions |
@@ -89,7 +97,7 @@ The manuscript evaluates nine model families using a **chronological 70/15/15 tr
 | LSTM | 0.9629 |
 | Soft-voting ensemble | 0.9684 |
 
-For the Random Forest reference: **accuracy 0.9849, balanced accuracy 0.9491, MCC 0.9395 and AUROC 0.9690**. These are **manuscript-reported results**, not a claim that every experiment has been independently rerun for this documentation update.
+For the Random Forest reference: **accuracy 0.9849, balanced accuracy 0.9491, MCC 0.9395 and AUROC 0.9690**. Any row can be re-scored from the released held-out probabilities with [`benchmark/score_track1_submission.py`](benchmark/); for example, scoring the Random Forest probabilities gives exactly the values above. Notebook 03 retrains all nine models from scratch.
 
 The external CICIoT2023 and ToN-IoT experiments find substantial domain shift and restricted direct transfer; within-domain probability calibration and review prioritisation should not be mistaken for proven operational generalisation.
 
@@ -97,38 +105,46 @@ The external CICIoT2023 and ToN-IoT experiments find substantial domain shift an
 
 | Resource | Purpose | Access |
 |:--|:--|:--|
-| **GitHub repository** | Source code, documentation, issue tracking and release history | This repository; see [Releases](../../releases) |
+| **GitHub repository** | Source code, documentation, issue tracking and release assets | This repository; see [Releases](../../releases) |
 | **Kaggle** | Existing public dataset page and notebook discovery | [HITL-IoT dataset on Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) |
 | **Zenodo** | Archival version record and persistent data citation | A verified **v1.1 version-specific DOI will be added after deposit** |
 
 **Release synchronization:** the existing GitHub and Kaggle pages may still show legacy v1.0 assets or metadata. The frozen **v1.1** files and their integrity records are prepared for publication; the versioned release should be treated as public **only after the matching archives and DOI are verified**. Earlier versions will remain available for provenance.
 
-The prepared v1.1 archive contains:
+### Repository structure
 
-| File or directory | Contents |
+| Path | Contents |
 |:--|:--|
-| `frozen_release_v1.1/HITL-IoT_dataset_v1.1.csv` | Full 60-column, 127,845-record dataset |
-| `frozen_release_v1.1/HITL-IoT_oversight_subset_v1.1.csv` | Simulated oversight-profile subset |
-| `frozen_release_v1.1/HITL-IoT_schema_v1.1.json` | Machine-readable field descriptions |
-| `frozen_release_v1.1/HITL-IoT_feature_policy_v1.1.json` | Permitted and restricted features by task |
-| `frozen_release_v1.1/HITL-IoT_splits_v1.1.csv` | Predefined chronological and IID splits |
-| `frozen_release_v1.1/hitl_iot_generator_v1_1.py` | Deterministic dataset generator |
-| `frozen_release_v1.1/HITL-IoT_checksums_v1.1.txt` | SHA-256 hashes for the frozen release |
-| `notebooks/` and `results_archives/` | Benchmark analyses, output artifacts and supporting evaluations |
+| [`data/v1.1/`](data/v1.1/) | Frozen v1.1 metadata: schema, feature policy, configuration, manifest, generation report, v1.0→v1.1 schema mapping, **generator** (`hitl_iot_generator_v1_1.py`) and SHA-256 checksums |
+| `data/v1.1/*.csv` | Dataset, oversight subset and splits: **release assets**, fetched by `scripts/download_release_assets.py` |
+| [`notebooks/`](notebooks/) | 01 quick start · 02 descriptive analysis · 03 nine-model IDS benchmark · 04 calibration, oversight and selective deferral · 05 external validation |
+| [`benchmark/`](benchmark/) | Official Track-1 scorer, protocol, submission template, frozen requirements |
+| [`results/`](results/) | Table 7 summary; four result archives are release assets |
+| [`scripts/`](scripts/) | Download and integrity-verification scripts |
+| [`docs/`](docs/) | Project website (GitHub Pages) |
+| [`legacy/v1.0/`](legacy/v1.0/) | Superseded v1.0 files, kept for provenance only; **do not use for new results** |
 
-These paths describe the **prepared v1.1 release archive**, not a guarantee that all files are already present on this GitHub branch. Large research artifacts will be distributed as release/deposit assets rather than committed to source history. The separately packaged trained models should be loaded only in a trusted, isolated environment.
+Large research artifacts are distributed as release and deposit assets rather than committed to Git history. The trained-model package should be loaded only in a trusted, isolated environment (pickled models can execute code).
 
 ## Quick start
 
-After downloading and extracting the **v1.1 archive**, a first inspection can be performed with Python and pandas:
+```bash
+git clone https://github.com/abubakarwakili9/HITL-IoT-Dataset.git
+cd HITL-IoT-Dataset
+pip install pandas scikit-learn
+python scripts/download_release_assets.py    # fetches the three v1.1 CSVs into data/v1.1/ and verifies SHA-256
+python scripts/verify_merged_release.py      # checks all 13 frozen files, counts and splits
+```
+
+Then load the data:
 
 ```python
 import json
 from pathlib import Path
 import pandas as pd
 
-root = Path("frozen_release_v1.1")
-df = pd.read_csv(root / "HITL-IoT_dataset_v1.1.csv")
+root = Path("data/v1.1")
+df = pd.read_csv(root / "HITL-IoT_dataset_v1.1.csv", low_memory=False)
 policy = json.loads((root / "HITL-IoT_feature_policy_v1.1.json").read_text())
 
 primary_features = policy["track1_primary_flow_only"]
@@ -156,7 +172,7 @@ For reproducible research, please cite **both the article and the exact dataset 
 
 ## Scope and limitations
 
-- **Generated, not captured traffic.** The data model a controlled smart-home scenario; no raw network PCAP or production telemetry is implied.
+- **Generated, not captured traffic.** The data represent a controlled smart-home scenario; no raw network PCAP or production telemetry is implied.
 - **Simulated, not recruited reviewers.** Profile confidence, latency, decisions and rationales are constructed benchmark signals—not measurements of practitioners.
 - **Temporal split is not drift validation.** Chronological evaluation does not by itself demonstrate robustness to deliberate concept drift.
 - **Cross-domain transfer is limited.** Results on CICIoT2023 and ToN-IoT motivate independent external validation and realistic recalibration.

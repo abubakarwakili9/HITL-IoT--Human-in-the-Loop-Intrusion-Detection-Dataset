@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Paper (BenchCouncil TBench)
+    url: https://journal.benchcouncil.org/TBench
+    about: Accepted article describing the benchmark design and results.
