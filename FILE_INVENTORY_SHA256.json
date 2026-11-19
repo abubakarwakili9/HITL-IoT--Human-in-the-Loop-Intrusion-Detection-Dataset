@@ -1,32 +1,32 @@
 {
-  "title": "HITL-IoT v1.1 \u2014 reorganized repository",
+  "title": "HITL-IoT v1.1 — reorganized repository",
   "version": "1.1",
-  "root": "HITL-IoT-Dataset/",
+  "root": "HITL-IoT--Human-in-the-Loop-Intrusion-Detection-Dataset/",
   "file_count_before_manifest": 37,
   "original_research_artifacts_preserved": 19,
   "entries": [
     {
       "path": "CHANGELOG.md",
-      "sha256": "ca55b41c1f386842702c6566cd59af380c999b413cce1756cec1bf97115e756e",
-      "bytes": 3465,
+      "sha256": "2537e098a4c350e6833bea5045fd011d8f24cfe04ce016342d6162635e594dbf",
+      "bytes": 3504,
       "original_research_artifact_preserved": false
     },
     {
       "path": "CITATION.cff",
-      "sha256": "585c10afb301502e03c3fdfa45f2b4e130296a59216554cad15769c698dbcdce",
-      "bytes": 1988,
+      "sha256": "03e5607e36dcd0851972c2398412374197643a903782c59adc35d06bb0ceb01a",
+      "bytes": 2259,
       "original_research_artifact_preserved": false
     },
     {
       "path": "README.md",
-      "sha256": "b0432b5191156c27abe0d41b905284784e254c67d54f3da90f97c626c856952f",
-      "bytes": 13438,
+      "sha256": "31e4dc34af36df8b66949e025b52cb5e7a7eab9940b4cf7822168c1d647a0b20",
+      "bytes": 13487,
       "original_research_artifact_preserved": false
     },
     {
       "path": "REPOSITORY_LAYOUT.md",
-      "sha256": "2719665d466e52fb6962d4f860dbc73746276476b1f84dccacae8a75ab634c82",
-      "bytes": 2813,
+      "sha256": "773d8a9c9ecc7cfcba9500027628f4bf83ae82d149bfcf7f5321498d362e6597",
+      "bytes": 1542,
       "original_research_artifact_preserved": false
     },
     {
@@ -151,14 +151,14 @@
     },
     {
       "path": "notebooks/README.md",
-      "sha256": "db1cb85db5497424f7b98313ebf172a49593c5c424560d617131e5fca09c0cc1",
-      "bytes": 1019,
+      "sha256": "8cfc13c07ab2890a9bb588ca42a4dad8ae37b10cb3c5fd6a14baf788f36bcd42",
+      "bytes": 1384,
       "original_research_artifact_preserved": false
     },
     {
       "path": "results/README.md",
-      "sha256": "e30aef1e31da16b0f2b3c37927f9c55d98531f2bdacd95ff9c305f8ea3f3327d",
-      "bytes": 1337,
+      "sha256": "01198e18e3e5fdf1c0937642f7d9b6226b34720bc6ad39fe01407dbdcbaa6edc",
+      "bytes": 1476,
       "original_research_artifact_preserved": false
     },
     {
@@ -199,8 +199,8 @@
     },
     {
       "path": "scripts/README.md",
-      "sha256": "0ae93495e33b97c408e29428a502aa85059fa2dd7b414b7009f7b7c4918983dd",
-      "bytes": 475,
+      "sha256": "42a507a317d01176d96ec11112b2197c02c5b662afbb9b11e229dba373ff8354",
+      "bytes": 636,
       "original_research_artifact_preserved": false
     },
     {
