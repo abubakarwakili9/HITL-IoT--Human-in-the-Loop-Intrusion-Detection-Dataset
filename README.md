@@ -10,9 +10,20 @@
 <!-- After the Zenodo v1.1 record is published, add:
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.NNNNNNNN.svg)](https://doi.org/10.5281/zenodo.NNNNNNNN) -->
 
-### Beyond intrusion detection: reliable AI decisions, calibrated confidence and oversight-aware IoT cybersecurity
 
-**HITL-IoT (Human-in-the-Loop IoT)** is an open, research-ready benchmark for studying **intrusion detection and the decisions that follow an AI security prediction**. It connects a controlled smart-home IoT traffic scenario with standardized evaluation splits, feature-governance rules, reference model results and configurable simulated oversight profiles.
+### Beyond Intrusion Detection: Advancing Trustworthy AI, Human–AI Collaboration, and Oversight in IoT Cybersecurity
+
+**HITL-IoT (Human-in-the-Loop IoT)** is an open, reproducible research dataset and benchmarking framework designed to advance **IoT intrusion detection, trustworthy artificial intelligence, human–AI collaboration, human–AI oversight, and selective deferral**.
+
+Moving beyond conventional intrusion-detection benchmarks that primarily evaluate classification performance, HITL-IoT provides a unified experimental foundation for investigating **not only whether AI can detect cyberattacks, but also how confidently, reliably, and responsibly AI-assisted cybersecurity decisions can be made**.
+
+The benchmark integrates **127,845 IoT network-flow records, 12 attack families, standardized evaluation protocols, nine reference intrusion-detection models, and 10,227 oversight-enriched records with configurable simulated reviewer profiles**.
+
+By combining controlled IoT traffic scenarios, predictive uncertainty, confidence calibration, and structured oversight evaluation, HITL-IoT enables researchers to systematically investigate **when AI security predictions should be accepted, prioritized for review, escalated, or deferred** under reproducible experimental conditions.
+
+Its controlled and transparent research design supports the development and evaluation of **trustworthy, uncertainty-aware, and oversight-informed AI cybersecurity systems**, providing a foundation for advancing human–AI decision-making research in IoT environments.
+
+
 
 **Dataset version:** v1.1 · **Core records:** 127,845 network flows · **Oversight challenge set:** 10,227 records · **Primary IDS inputs:** 39 approved features · **Reference models:** 9
 
