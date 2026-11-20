@@ -4,26 +4,34 @@
 [![Paper: TBench (accepted)](https://img.shields.io/badge/paper-TBench%20(accepted)-1f6feb)](https://journal.benchcouncil.org/TBench)
 [![Dataset v1.1](https://img.shields.io/badge/dataset-v1.1-orange)](CHANGELOG.md)
 [![Kaggle](https://img.shields.io/badge/Kaggle-dataset-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset)
+[![Research portal](https://img.shields.io/badge/research-website-1769D2)](https://wakili-research.github.io/HITL-IoT-Dataset/)
 [![Data licence: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)](LICENSE)
 [![Citation file](https://img.shields.io/badge/cite-CITATION.cff-6f42c1)](CITATION.cff)
 <!-- After the Zenodo v1.1 record is published, add:
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.NNNNNNNN.svg)](https://doi.org/10.5281/zenodo.NNNNNNNN) -->
 
-### A reproducible benchmark for trustworthy human–AI oversight and selective deferral in IoT cybersecurity
+### Beyond intrusion detection: reliable AI decisions, calibrated confidence and oversight-aware IoT cybersecurity
 
-**HITL** stands for **Human-in-the-Loop**: uncertain AI decisions are passed to a person to review instead of being acted on automatically. In this benchmark, the reviewers are simulated profiles, so oversight strategies can be compared reproducibly.
+**HITL-IoT (Human-in-the-Loop IoT)** is an open, research-ready benchmark for studying **intrusion detection and the decisions that follow an AI security prediction**. It connects a controlled smart-home IoT traffic scenario with standardized evaluation splits, feature-governance rules, reference model results and configurable simulated oversight profiles.
 
-**Dataset:** v1.1 · **Research areas:** IoT intrusion detection, trustworthy AI, uncertainty, selective prediction and decision oversight · **Data type:** Deterministically generated flow-level records
+**Dataset version:** v1.1 · **Core records:** 127,845 network flows · **Oversight challenge set:** 10,227 records · **Primary IDS inputs:** 39 approved features · **Reference models:** 9
 
-HITL-IoT is an open research benchmark designed to study **both threat detection and what happens after an AI system makes a prediction**. It provides a controlled smart-home IoT environment, a fixed evaluation protocol and structured oversight variables for comparing intrusion detectors, confidence calibration, selective deferral and review-allocation strategies.
+### Why researchers use HITL-IoT
 
-Unlike capture-based IoT datasets focused primarily on network-event classification, HITL-IoT makes it possible to investigate **when a decision should be accepted, reviewed, escalated or deferred** under consistent experimental conditions. It complements—not replaces—datasets collected from operational or experimental networks such as CICIoT2023 and ToN-IoT.
+- **Detection and decision quality:** compare attack detectors and examine when a prediction should be accepted, reviewed or deferred.
+- **Uncertainty and calibration:** measure whether model confidence reflects observed correctness, rather than relying on accuracy alone.
+- **Oversight-aware experiments:** evaluate simulated review allocation, selective deferral and correction-versus-harm outcomes at matched review budgets.
+- **Comparable, auditable research:** use predefined chronological and IID splits, documented feature permissions, reference predictions and SHA-256 integrity records.
 
-> **Data provenance.** All network flows in HITL-IoT v1.1 are **synthetically generated**. The 10,227-record oversight subset contains **simulated profile decisions**, including generated confidence, latency and evidence-based rationales. These are not observations from recruited cybersecurity analysts, real human annotations or measured expertise levels.
+> **Controlled design and research provenance.** HITL-IoT v1.1 uses **deterministically generated IoT network flows with known reference labels** and **configurable simulated oversight profiles**. The 10,227-record oversight challenge set provides structured decisions, confidence, latency and rationales for repeatable comparisons of review and deferral policies. This design supports controlled experiments, traceable evaluation and privacy-conscious research without requiring operational network captures or participant data. The profiles model review behaviour; they are not measurements from recruited cybersecurity analysts.
+
+**Research themes:** IoT cybersecurity · Intrusion detection · Trustworthy AI · Human–AI collaboration · Human–AI oversight · Predictive uncertainty · Confidence calibration · Selective prediction · Learning to defer
+
+**Explore:** [Official research website](https://wakili-research.github.io/HITL-IoT-Dataset/) · [Kaggle dataset](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) · [Benchmark code](benchmark/) · [Publication and citation](#citation)
 
 ## ⬇ Download the data
 
-**You need only these three files.** They are in [`data/v1.1/dataset/`](data/v1.1/dataset/); documentation and verification files are in [`data/v1.1/metadata/`](data/v1.1/metadata/).
+**Start with the three core CSVs** in [`data/v1.1/dataset/`](data/v1.1/dataset/). For benchmark-comparable training, also use the [feature policy](data/v1.1/metadata/HITL-IoT_feature_policy_v1.1.json) and [schema](data/v1.1/metadata/HITL-IoT_schema_v1.1.csv) in [`data/v1.1/metadata/`](data/v1.1/metadata/).
 
 | # | File | What it contains | Rows × columns | Size | Download |
 |:-:|:--|:--|:-:|:-:|:-:|
@@ -44,9 +52,9 @@ df = df.merge(splits, on=["flow_id", "timestamp"])
 train = df[df.temporal_split == "train"]
 ```
 
-Other options: [Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) (browse in the browser) · `git clone` (everything, including results) · [Zenodo](#data-and-code-access) (archived, citable DOI). SHA-256 checksums: [`HITL-IoT_checksums_v1.1.txt`](data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt).
+Other access routes: [Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) · [Research website](https://wakili-research.github.io/HITL-IoT-Dataset/) · `git clone` for data, code and results · [Zenodo status](#data-and-code-access). Verify files using [`HITL-IoT_checksums_v1.1.txt`](data/v1.1/metadata/HITL-IoT_checksums_v1.1.txt).
 
-**Navigate:** [Download](#-download-the-data) · [Overview](#dataset-at-a-glance) · [Design](#benchmark-design) · [Tasks](#research-tasks) · [Results](#reference-results) · [Access](#data-and-code-access) · [Quick start](#quick-start) · [Citation](#citation) · [Limitations](#scope-and-limitations)
+**Navigate:** [Download](#-download-the-data) · [Overview](#dataset-at-a-glance) · [Design](#benchmark-design) · [Tasks](#research-tasks) · [Results](#reference-results) · [Access](#data-and-code-access) · [Quick start](#quick-start) · [Citation](#citation) · [Research scope](#research-scope-and-interpretation)
 
 ---
 
@@ -69,16 +77,16 @@ Other options: [Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-
 
 **Attack coverage:** reconnaissance (port scanning, network mapping, service enumeration); command and control (botnet communication, remote administration, device hijacking); data movement (DNS tunnelling, bulk data transfer, credential harvesting); and device manipulation (protocol abuse, firmware exploitation, configuration tampering).
 
-## Why a benchmark for oversight?
+## Scientific contribution: from detection to decision assurance
 
-Strong intrusion-detection accuracy does not guarantee that model confidence is reliable or that intervention improves outcomes. HITL-IoT separates the **prediction task** from the **oversight task** so that researchers can assess error prioritisation, review workload, deferral decisions and the possibility that an intervention may correct—or harm—an automated decision.
+HITL-IoT offers a controlled environment in which **classification quality, calibrated confidence and oversight-policy outcomes can be studied together**. Researchers can quantify not only detection errors, but also how review policies allocate limited attention, which errors they identify and when interventions change outcomes.
 
-The benchmark makes four design choices explicit:
+Four deliberate design choices support rigorous comparisons:
 
-1. **Controlled generation:** a seeded, documented smart-home flow generator and configurable traffic overlap/ambiguity.
-2. **Feature governance:** detection features are separated from labels, construction signals, identifiers and oversight metadata.
-3. **Independent evaluation:** calibration and deferral use predictions from trained IDS models rather than the generator's scores.
-4. **Traceability:** frozen files, predefined data splits, schema, configuration and SHA-256 integrity records support repeatable evaluation.
+1. **Scenario control:** a documented, seeded smart-home traffic generator with adjustable overlap and ambiguity supports repeatable experiments and known labels.
+2. **Leakage-aware feature governance:** labels, construction signals, identifiers and simulated oversight metadata are separated from the primary IDS predictor set.
+3. **Model-based uncertainty:** calibration and deferral experiments use probabilities from independently trained IDS models rather than construction-time scores.
+4. **Versioned traceability:** fixed evaluation splits, a documented schema, configuration files, benchmark code, reference outputs and SHA-256 manifests make results inspectable and comparable.
 
 ## Benchmark design
 
@@ -94,7 +102,7 @@ flowchart LR
     G --> H[Review workload and correction-versus-harm analysis]
 ```
 
-The **oversight challenge set** is selected using construction-time ambiguity. Its configurable profiles are benchmark parameters, **not** proxies for empirically validated human expertise. Researchers must avoid using these generated variables as primary IDS predictors.
+The **10,227-record oversight challenge set** provides a repeatable test environment for simulated review and deferral policies. It is selected using construction-time ambiguity, and its configurable reviewer profiles are explicit experimental parameters. Their role is to support controlled policy comparisons—not to estimate the behaviour or expertise of recruited professionals. Generated oversight variables are excluded from the primary IDS predictors by the feature policy.
 
 ## Research tasks
 
@@ -107,7 +115,7 @@ The **oversight challenge set** is selected using construction-time ambiguity. I
 | **T5 — Learning to defer** | Policies allocating cases between model and simulated reviewer | Matched-budget performance, workload and decision cost |
 | **T6 — External validation** | Dataset shift with independently collected IoT datasets | Transfer performance, calibration and selective-review behaviour |
 
-T1–T6 reflect the evaluation programme described in the accompanying manuscript. **Real-analyst validation and deployment studies remain future research**, not established properties of the released simulation.
+T1–T6 summarize the research programme described in the accompanying manuscript. The released benchmark supports controlled evaluation of these tasks; studies with recruited practitioners and deployment settings are complementary opportunities for future validation.
 
 ## Reference results
 
@@ -127,17 +135,18 @@ The manuscript evaluates nine model families using a **chronological 70/15/15 tr
 
 For the Random Forest reference: **accuracy 0.9849, balanced accuracy 0.9491, MCC 0.9395 and AUROC 0.9690**. Any row can be re-scored from the released held-out probabilities with [`benchmark/score_track1_submission.py`](benchmark/); for example, scoring the Random Forest probabilities gives exactly the values above. Notebook 03 retrains all nine models from scratch.
 
-The external CICIoT2023 and ToN-IoT experiments find substantial domain shift and restricted direct transfer; within-domain probability calibration and review prioritisation should not be mistaken for proven operational generalisation.
+**External-validation insight:** experiments involving CICIoT2023 and ToN-IoT reveal substantial domain shift and constrained direct transfer. These findings make the benchmark useful for studying recalibration, transfer robustness and the conditions under which oversight policies need adaptation. The reported in-domain scores should be interpreted within the documented experimental protocol.
 
 ## Data and code access
 
 | Resource | Purpose | Access |
 |:--|:--|:--|
-| **GitHub repository** | Source code, documentation, issue tracking and release assets | This repository; see [Releases](../../releases) |
-| **Kaggle** | Existing public dataset page and notebook discovery | [HITL-IoT dataset on Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) |
-| **Zenodo** | Archival version record and persistent data citation | A verified **v1.1 version-specific DOI will be added after deposit** |
+| **Research website** | Visual overview, interactive demonstration, downloads and documentation | [HITL-IoT research portal](https://wakili-research.github.io/HITL-IoT-Dataset/) |
+| **GitHub repository** | Source code, documentation, issue tracking and release files | This repository; see [Releases](https://github.com/wakili-research/HITL-IoT-Dataset/releases) |
+| **Kaggle** | Dataset discovery, individual data files and example notebooks | [HITL-IoT dataset on Kaggle](https://www.kaggle.com/datasets/abubakarwakili/hitl-iot-human-in-the-loop-iot-ids-dataset) |
+| **Zenodo** | Versioned archival deposit and persistent citation | Add the verified **v1.1 version-specific DOI after publication** |
 
-**Release synchronization:** the existing GitHub and Kaggle pages may still show legacy v1.0 assets or metadata. The frozen **v1.1** files and their integrity records are prepared for publication; the versioned release should be treated as public **only after the matching archives and DOI are verified**. Earlier versions will remain available for provenance.
+**Version alignment:** The frozen v1.1 data files and verification materials are available in this repository. Kaggle, GitHub Releases and Zenodo maintain separate publication/version histories; check the file names, SHA-256 manifest and version-specific DOI before citing an archived release. Historical v1.0 files remain available for traceability.
 
 ### Repository structure
 
@@ -150,9 +159,9 @@ The external CICIoT2023 and ToN-IoT experiments find substantial domain shift an
 | [`results/`](results/) | Table 7 summary and the result archives (all four: descriptive analysis, nine-model IDS benchmark with held-out probabilities, calibration/oversight/deferral, external validation) |
 | [`scripts/`](scripts/) | Download and integrity-verification scripts |
 | [`docs/`](docs/) | Project website (GitHub Pages) |
-| [`legacy/v1.0/`](legacy/v1.0/) | Superseded v1.0 files, kept for provenance only; **do not use for new results** |
+| [`legacy/v1.0/`](legacy/v1.0/) | Preserved v1.0 snapshot for historical comparisons; use v1.1 for new benchmark comparisons |
 
-All dataset files and result archives are in the repository; the trained-model package (128.6 MB, above GitHub's file limit) is distributed through Zenodo. The trained-model package should be loaded only in a trusted, isolated environment (pickled models can execute code).
+The repository provides the frozen data files, benchmark code and result archives. The 128.6 MB trained-model package exceeds GitHub's regular file-size limit; use the version-specific Zenodo deposit once its availability is confirmed. Treat externally obtained serialized model files as trusted-code artifacts and load them only in an appropriate isolated environment.
 
 ## Quick start
 
@@ -196,20 +205,24 @@ For model training, apply the **provided split assignments**, fit preprocessing 
 **Journal:** [*BenchCouncil Transactions on Benchmarks, Standards and Evaluations* (TBench)](https://journal.benchcouncil.org/TBench)  
 **Publication status:** Accepted for publication; currently in copyediting. Final article DOI, volume, issue and page details are pending.
 
-For reproducible research, please cite **both the article and the exact dataset version** when the final identifiers are available. A validated `CITATION.cff` and version-specific Zenodo DOI will be provided with the public release. Do not cite an unverified DOI for v1.1.
+For reproducible research, cite **both the associated article and the exact dataset version**. Use [`CITATION.cff`](CITATION.cff) for the current citation metadata; add the verified Zenodo v1.1 DOI after its corresponding deposit is published. The article DOI and the dataset DOI are separate identifiers.
 
-## Scope and limitations
+## Research scope and interpretation
 
-- **Fully controlled, generated data.** Flows come from a documented, seeded smart-home scenario, so every label is known and every result is reproducible; no raw PCAP or production telemetry is included, and none is needed to use the benchmark.
-- **Simulated, not recruited reviewers.** Profile confidence, latency, decisions and rationales are constructed benchmark signals—not measurements of practitioners.
-- **Temporal split is not drift validation.** Chronological evaluation does not by itself demonstrate robustness to deliberate concept drift.
-- **Cross-domain transfer is limited.** Results on CICIoT2023 and ToN-IoT motivate independent external validation and realistic recalibration.
-- **No certification claim.** This research supports studies of oversight mechanisms; it does not establish compliance with AI regulation or fitness for deployment.
+HITL-IoT is a **controlled research benchmark**, designed for reproducible comparisons rather than as a replacement for operational telemetry or prospective human-subject studies. The distinctions below help researchers choose valid evaluation questions:
+
+- **Controlled network-flow data:** records and attack labels are generated from a seeded smart-home scenario. The dataset does not contain captured PCAPs or production-network telemetry.
+- **Configurable simulated oversight:** reviewer-profile decisions, confidence, latency and rationales are generated experimental signals—not observations from recruited analysts or empirical measures of professional expertise.
+- **Chronological evaluation:** the supplied temporal split supports time-ordered testing, but does not alone establish robustness to deliberate concept drift.
+- **Cross-domain evidence:** CICIoT2023 and ToN-IoT experiments show meaningful distribution shift, motivating further transfer, adaptation and external validation research.
+- **Governance relevance:** the benchmark supports research on risk-aware decision-making and oversight; it is not a certification of regulatory compliance or operational readiness.
+
+These boundaries make the benchmark's intended uses **explicit, auditable and reproducible**, and provide a roadmap for follow-on studies with independent traffic captures and actual cybersecurity practitioners.
 
 ## License, contributions and maintenance
 
 The existing dataset release identifies **CC BY 4.0** for data. Source-code licensing and redistribution rights are being reviewed separately; no unverified MIT software license is claimed here. See the applicable license information with each published artifact.
 
-**Corresponding author:** Abubakar Wakili. Issues reporting reproducibility problems, missing metadata, licensing questions or proposed benchmark extensions are welcome through [GitHub Issues](../../issues). Authorship and institutional details will be aligned with the final journal record.
+**Corresponding author:** Abubakar Wakili. Reproducibility feedback, metadata corrections and new benchmark ideas are welcome through [GitHub Issues](https://github.com/wakili-research/HITL-IoT-Dataset/issues). Authorship and institutional details will follow the final journal record.
 
 **Version note:** the **dataset is v1.1**; the editorial **manuscript revision v1.2** refers to a separate document version and does not rename the frozen dataset.
